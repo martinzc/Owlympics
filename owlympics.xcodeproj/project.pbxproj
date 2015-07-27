@@ -13,6 +13,8 @@
 		A9C877A81B65CF0D00D161F2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9C877A71B65CF0D00D161F2 /* Images.xcassets */; };
 		A9C877AB1B65CF0D00D161F2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9C877A91B65CF0D00D161F2 /* LaunchScreen.xib */; };
 		A9C877B71B65CF0D00D161F2 /* owlympicsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C877B61B65CF0D00D161F2 /* owlympicsTests.swift */; };
+		A9C877C11B65D29C00D161F2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C877C01B65D29C00D161F2 /* libz.dylib */; };
+		A9C877C51B65D32200D161F2 /* Gimbal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C877C41B65D32200D161F2 /* Gimbal.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,9 @@
 		A9C877B01B65CF0D00D161F2 /* owlympicsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = owlympicsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9C877B51B65CF0D00D161F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9C877B61B65CF0D00D161F2 /* owlympicsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = owlympicsTests.swift; sourceTree = "<group>"; };
+		A9C877C01B65D29C00D161F2 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		A9C877C41B65D32200D161F2 /* Gimbal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Gimbal.framework; sourceTree = "<group>"; };
+		A9C877C71B65D48C00D161F2 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +48,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9C877C51B65D32200D161F2 /* Gimbal.framework in Frameworks */,
+				A9C877C11B65D29C00D161F2 /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +66,9 @@
 		A9C877921B65CF0D00D161F2 = {
 			isa = PBXGroup;
 			children = (
+				A9C877C71B65D48C00D161F2 /* Header.h */,
+				A9C877C41B65D32200D161F2 /* Gimbal.framework */,
+				A9C877C01B65D29C00D161F2 /* libz.dylib */,
 				A9C8779D1B65CF0D00D161F2 /* owlympics */,
 				A9C877B31B65CF0D00D161F2 /* owlympicsTests */,
 				A9C8779C1B65CF0D00D161F2 /* Products */,
@@ -340,9 +350,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEFINES_MODULE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = owlympics/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = Header.h;
 			};
 			name = Debug;
 		};
@@ -350,9 +367,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEFINES_MODULE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = owlympics/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = Header.h;
 			};
 			name = Release;
 		};
@@ -409,6 +433,7 @@
 				A9C877BC1B65CF0D00D161F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A9C877BD1B65CF0D00D161F2 /* Build configuration list for PBXNativeTarget "owlympicsTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +442,7 @@
 				A9C877BF1B65CF0D00D161F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
