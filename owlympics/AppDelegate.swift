@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        // Sets the API key for owlympics
+        Gimbal.setAPIKey("002b464f-ce8e-48eb-b889-eaee22169175", options: nil)
         return true
     }
 
