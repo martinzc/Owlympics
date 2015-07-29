@@ -18,7 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         // Sets the API key for owlympics
         Gimbal.setAPIKey("002b464f-ce8e-48eb-b889-eaee22169175", options: nil)
+        // Register Notification
+        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Sound | UIUserNotificationType.Alert | UIUserNotificationType.Badge, categories: nil))
         return true
+    }
+    
+    func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
+        if (!GMBLPlaceManager.isMonitoring()){
+            GMBLPlaceManager.startMonitoring()
+        }
+        GMBLCommunicationManager.startReceivingCommunications()
     }
 
     func applicationWillResignActive(application: UIApplication) {
