@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  FirstViewController.swift
 //  owlympics
 //
 //  Created by Martin Zhou on 7/27/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, GMBLCommunicationManagerDelegate, GMBLPlaceManagerDelegate {
+class FirstViewController: UIViewController, GMBLCommunicationManagerDelegate, GMBLPlaceManagerDelegate {
     
     var placeManager: GMBLPlaceManager!
     var commManager: GMBLCommunicationManager!
