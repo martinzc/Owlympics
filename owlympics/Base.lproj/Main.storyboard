@@ -34,9 +34,35 @@
                     <view key="view" contentMode="scaleToFill" id="yGP-3y-sr0">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Location is:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDF-dK-Gso">
+                                <rect key="frame" x="242" y="114" width="117" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Can't Detect" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGG-40-5ej">
+                                <rect key="frame" x="0.0" y="172" width="600" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qDF-dK-Gso" firstAttribute="centerX" secondItem="yGP-3y-sr0" secondAttribute="centerX" id="1hb-XL-ZxL"/>
+                            <constraint firstItem="IGG-40-5ej" firstAttribute="centerX" secondItem="qDF-dK-Gso" secondAttribute="centerX" id="CeA-hx-Mew"/>
+                            <constraint firstItem="gSr-yi-O1i" firstAttribute="top" secondItem="IGG-40-5ej" secondAttribute="bottom" constant="358" id="DGK-ho-N7p"/>
+                            <constraint firstItem="IGG-40-5ej" firstAttribute="top" secondItem="qDF-dK-Gso" secondAttribute="bottom" constant="37" id="GAY-Dn-AFz"/>
+                            <constraint firstItem="IGG-40-5ej" firstAttribute="leading" secondItem="yGP-3y-sr0" secondAttribute="leading" id="Q60-0X-eBS"/>
+                            <constraint firstItem="qDF-dK-Gso" firstAttribute="top" secondItem="rWy-3s-lIe" secondAttribute="bottom" constant="94" id="rxo-vz-239"/>
+                            <constraint firstItem="gSr-yi-O1i" firstAttribute="top" secondItem="qDF-dK-Gso" secondAttribute="bottom" constant="416" id="zzC-kG-ntq"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Today" id="3uV-aw-rHG"/>
+                    <connections>
+                        <outlet property="locationName" destination="IGG-40-5ej" id="Bqr-3Q-bf2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JZP-z0-zqg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

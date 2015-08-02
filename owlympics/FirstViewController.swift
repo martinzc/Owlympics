@@ -13,6 +13,8 @@ class FirstViewController: UIViewController, GMBLCommunicationManagerDelegate, G
     var placeManager: GMBLPlaceManager!
     var commManager: GMBLCommunicationManager!
 
+    @IBOutlet weak var locationName: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -26,6 +28,7 @@ class FirstViewController: UIViewController, GMBLCommunicationManagerDelegate, G
     
     func placeManager(manager: GMBLPlaceManager!, didBeginVisit visit: GMBLVisit!) {
         println("The user visited \(visit.place.name) at \(visit.arrivalDate)")
+        locationName.text = "The user visited \(visit.place.name) at \(visit.arrivalDate)"
         
         let atts = visit.place.attributes as GMBLAttributes
         let attKeys = atts.allKeys()
@@ -36,6 +39,7 @@ class FirstViewController: UIViewController, GMBLCommunicationManagerDelegate, G
     
     func placeManager(manager: GMBLPlaceManager!, didEndVisit visit: GMBLVisit!) {
         println("The user exited \(visit.place.name) at \(visit.departureDate)")
+        locationName.text = "The user exited \(visit.place.name) at \(visit.departureDate)"
     }
     
     func communicationManager(manager: GMBLCommunicationManager!, presentLocalNotificationsForCommunications communications: [AnyObject]!, forVisit visit: GMBLVisit!) -> [AnyObject]! {
