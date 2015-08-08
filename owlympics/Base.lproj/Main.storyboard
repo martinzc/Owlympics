@@ -21,7 +21,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tnb-Qu-LQY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="850" y="536"/>
+            <point key="canvasLocation" x="30" y="938"/>
         </scene>
         <!--Today-->
         <scene sceneID="WaX-Ld-5FW">
@@ -36,27 +36,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Location is:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDF-dK-Gso">
-                                <rect key="frame" x="242" y="114" width="117" height="21"/>
+                                <rect key="frame" x="242" y="114" width="117" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="fMO-VC-S4H"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Can't Detect" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGG-40-5ej">
-                                <rect key="frame" x="0.0" y="172" width="600" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Can't Detect" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGG-40-5ej">
+                                <rect key="frame" x="0.0" y="255" width="600" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="UFm-Mf-cgf"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="qDF-dK-Gso" firstAttribute="centerX" secondItem="yGP-3y-sr0" secondAttribute="centerX" id="1hb-XL-ZxL"/>
-                            <constraint firstItem="IGG-40-5ej" firstAttribute="centerX" secondItem="qDF-dK-Gso" secondAttribute="centerX" id="CeA-hx-Mew"/>
-                            <constraint firstItem="gSr-yi-O1i" firstAttribute="top" secondItem="IGG-40-5ej" secondAttribute="bottom" constant="358" id="DGK-ho-N7p"/>
-                            <constraint firstItem="IGG-40-5ej" firstAttribute="top" secondItem="qDF-dK-Gso" secondAttribute="bottom" constant="37" id="GAY-Dn-AFz"/>
-                            <constraint firstItem="IGG-40-5ej" firstAttribute="leading" secondItem="yGP-3y-sr0" secondAttribute="leading" id="Q60-0X-eBS"/>
-                            <constraint firstItem="qDF-dK-Gso" firstAttribute="top" secondItem="rWy-3s-lIe" secondAttribute="bottom" constant="94" id="rxo-vz-239"/>
-                            <constraint firstItem="gSr-yi-O1i" firstAttribute="top" secondItem="qDF-dK-Gso" secondAttribute="bottom" constant="416" id="zzC-kG-ntq"/>
+                            <constraint firstItem="qDF-dK-Gso" firstAttribute="top" secondItem="rWy-3s-lIe" secondAttribute="bottom" constant="94" id="Y4q-v7-p7D"/>
+                            <constraint firstItem="gSr-yi-O1i" firstAttribute="top" secondItem="IGG-40-5ej" secondAttribute="bottom" constant="221" id="bL1-N7-YWi"/>
+                            <constraint firstAttribute="trailing" secondItem="IGG-40-5ej" secondAttribute="trailing" id="iUu-ZN-9hf"/>
+                            <constraint firstItem="IGG-40-5ej" firstAttribute="centerX" secondItem="qDF-dK-Gso" secondAttribute="centerX" id="y8m-bt-pWj"/>
+                            <constraint firstItem="IGG-40-5ej" firstAttribute="leading" secondItem="yGP-3y-sr0" secondAttribute="leading" id="yMh-8u-Xvh"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Today" id="3uV-aw-rHG"/>
@@ -66,7 +70,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JZP-z0-zqg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="850" y="-126"/>
+            <point key="canvasLocation" x="876" y="164"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ntX-HN-pPa">
@@ -85,7 +89,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WoQ-zs-Msi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="30" y="204"/>
+            <point key="canvasLocation" x="30" y="164"/>
         </scene>
     </scenes>
 </document>
