@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A90AEBDA1B6891D100F6695C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90AEBD91B6891D100F6695C /* SecondViewController.swift */; };
+		A97EFE471B7D382800D7DA74 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97EFE461B7D382800D7DA74 /* Exercise.swift */; };
 		A9C877A11B65CF0D00D161F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C877A01B65CF0D00D161F2 /* AppDelegate.swift */; };
 		A9C877A31B65CF0D00D161F2 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C877A21B65CF0D00D161F2 /* FirstViewController.swift */; };
 		A9C877A61B65CF0D00D161F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C877A41B65CF0D00D161F2 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		A90AEBD91B6891D100F6695C /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecondViewController.swift; path = ../SecondViewController.swift; sourceTree = "<group>"; };
+		A97EFE461B7D382800D7DA74 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		A9C8779B1B65CF0D00D161F2 /* owlympics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = owlympics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9C8779F1B65CF0D00D161F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9C877A01B65CF0D00D161F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				A9C877C71B65D48C00D161F2 /* Header.h */,
+				A97EFE461B7D382800D7DA74 /* Exercise.swift */,
 				A9C877C41B65D32200D161F2 /* Gimbal.framework */,
 				A9C877C01B65D29C00D161F2 /* libz.dylib */,
 				A9C8779D1B65CF0D00D161F2 /* owlympics */,
@@ -232,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A90AEBDA1B6891D100F6695C /* SecondViewController.swift in Sources */,
+				A97EFE471B7D382800D7DA74 /* Exercise.swift in Sources */,
 				A9C877A31B65CF0D00D161F2 /* FirstViewController.swift in Sources */,
 				A9C877A11B65CF0D00D161F2 /* AppDelegate.swift in Sources */,
 			);

@@ -11,7 +11,6 @@ import UIKit
 class FirstViewController: UIViewController, GMBLCommunicationManagerDelegate, GMBLPlaceManagerDelegate {
     
     var placeManager: GMBLPlaceManager!
-    var commManager: GMBLCommunicationManager!
 
     @IBOutlet weak var locationName: UILabel!
     
@@ -21,37 +20,47 @@ class FirstViewController: UIViewController, GMBLCommunicationManagerDelegate, G
         
         placeManager = GMBLPlaceManager()
         placeManager.delegate = self
-        
-        commManager = GMBLCommunicationManager()
-        commManager.delegate = self
     }
     
     func placeManager(manager: GMBLPlaceManager!, didBeginVisit visit: GMBLVisit!) {
         println("The user visited \(visit.place.name) at \(visit.arrivalDate)")
-        locationName.text = "The user visited \(visit.place.name) at \(visit.arrivalDate)"
-        
-        let atts = visit.place.attributes as GMBLAttributes
-        let attKeys = atts.allKeys()
-        for attkey in attKeys {
-            println("\(attkey): \(atts.stringForKey(attkey as! String))")
-        }
+        locationName.text = "The user visited \(visit.place.name) at \(visit.arrivalDate.description)"
     }
     
     func placeManager(manager: GMBLPlaceManager!, didEndVisit visit: GMBLVisit!) {
         println("The user exited \(visit.place.name) at \(visit.departureDate)")
-        locationName.text = "The user exited \(visit.place.name) at \(visit.departureDate)"
-    }
-    
-    func communicationManager(manager: GMBLCommunicationManager!, presentLocalNotificationsForCommunications communications: [AnyObject]!, forVisit visit: GMBLVisit!) -> [AnyObject]! {
-        if communications is [GMBLCommunication] {
-            for comm in communications {
-                println("title: \(comm.title), description: \(comm.description))")
-            }
+        locationName.text = "The user exited \(visit.place.name) at \(visit.departureDate.description), he was there for \(visit.dwellTime.description) seconds"
+        
+        //        Claude
+        //        Here we need a notification asking whether he want to log in the exercise or not. He can then choose the sport and intensity.
+        
+        // If he choose yes, create a new exercise
+        
+        let arrivaltime:String = visit.arrivalDate.description
+        let duration:Int = Int(visit.dwellTime)
+        var newExercise = Exercise(tim: arrivaltime, dur: duration, spo: "basketball", inten: 0)
+        
+        // Initialize data storage
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        if let dictOfExercise = defaults.valueForKey(defaultsKeys.keyDict) as? NSData {
+            var allExercise = NSKeyedUnarchiver.unarchiveObjectWithData(dictOfExercise) as! [Exercise]
+            allExercise.append(newExercise)
+            let exerciseData = NSKeyedArchiver.archivedDataWithRootObject(allExercise)
+            defaults.setValue(exerciseData, forKey: defaultsKeys.keyDict)
+        } else {
+            var allExercise = [Exercise]()
+            allExercise.append(newExercise)
+            println(allExercise)
+            let exerciseData = NSKeyedArchiver.archivedDataWithRootObject(allExercise)
+            defaults.setValue(exerciseData, forKey: defaultsKeys.keyDict)
         }
-        return communications
+        
+        let test = defaults.valueForKey(defaultsKeys.keyDict) as? NSData
+        println(test)
+
+
     }
-    
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
