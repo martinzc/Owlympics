@@ -37,8 +37,7 @@ class FirstViewController: UIViewController, GMBLCommunicationManagerDelegate, G
         // If he choose yes, create a new exercise
         
         let arrivaltime:String = visit.arrivalDate.description
-        let duration:Int = Int(visit.dwellTime)
-        var newExercise = Exercise(tim: arrivaltime, dur: duration, spo: "basketball", inten: 0)
+        var newExercise = Exercise(tim: arrivaltime, dur: "User Input", spo: "User Input", inten: "User Input")
         newExercise.storeToLocal()
 
     }

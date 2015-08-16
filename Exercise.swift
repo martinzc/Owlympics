@@ -9,13 +9,13 @@
 import Foundation
 
 class Exercise:NSObject {
-    var time: String
-    var duration: Int
+    var arrivaltime: String
+    var duration: String
     var sport: String
-    var intensity: Int
+    var intensity: String
     
-    init(tim: String, dur: Int, spo: String, inten: Int){
-        self.time = tim
+    init(tim: String, dur: String, spo: String, inten: String){
+        self.arrivaltime = tim
         self.duration = dur
         self.sport = spo
         self.intensity = inten
@@ -39,17 +39,17 @@ class Exercise:NSObject {
     }
     
     func encodeWithCoder(aCoder: NSCoder!) {
-        aCoder.encodeInteger(duration, forKey:"duration")
-        aCoder.encodeInteger(intensity, forKey:"intensity")
-        aCoder.encodeObject(time, forKey:"time")
+        aCoder.encodeObject(duration, forKey:"duration")
+        aCoder.encodeObject(intensity, forKey:"intensity")
+        aCoder.encodeObject(arrivaltime, forKey:"arrivaltime")
         aCoder.encodeObject(sport, forKey:"sport")
     }
     
     init(coder aDecoder: NSCoder!) {
         
-        duration = aDecoder.decodeIntegerForKey("duration")
-        intensity = aDecoder.decodeIntegerForKey("intensity")
-        time = aDecoder.decodeObjectForKey("time") as! String
+        duration = aDecoder.decodeObjectForKey("duration") as! String
+        intensity = aDecoder.decodeObjectForKey("intensity") as! String
+        arrivaltime = aDecoder.decodeObjectForKey("arrivaltime") as! String
         sport = aDecoder.decodeObjectForKey("sport")as! String
         
     }
