@@ -21,6 +21,23 @@ class Exercise:NSObject {
         self.intensity = inten
     }
     
+    func storeToLocal() {
+        // Initialize data storage
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        if let dictOfExercise = defaults.valueForKey(defaultsKeys.keyDict) as? NSData {
+            var allExercise = NSKeyedUnarchiver.unarchiveObjectWithData(dictOfExercise) as! [Exercise]
+            allExercise.append(self)
+            let exerciseData = NSKeyedArchiver.archivedDataWithRootObject(allExercise)
+            defaults.setValue(exerciseData, forKey: defaultsKeys.keyDict)
+        } else {
+            var allExercise = [Exercise]()
+            allExercise.append(self)
+            let exerciseData = NSKeyedArchiver.archivedDataWithRootObject(allExercise)
+            defaults.setValue(exerciseData, forKey: defaultsKeys.keyDict)
+        }
+    }
+    
     func encodeWithCoder(aCoder: NSCoder!) {
         aCoder.encodeInteger(duration, forKey:"duration")
         aCoder.encodeInteger(intensity, forKey:"intensity")
@@ -39,7 +56,6 @@ class Exercise:NSObject {
 }
 
 struct defaultsKeys {
-    static let keyIndex = "IndexOfInput"
-    static let keyDict = "DictionaryOfExercise"
+    static let keyDict = "DictionaryOfExercise" // Where an array of exercise is stored
 }
 

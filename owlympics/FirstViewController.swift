@@ -39,26 +39,7 @@ class FirstViewController: UIViewController, GMBLCommunicationManagerDelegate, G
         let arrivaltime:String = visit.arrivalDate.description
         let duration:Int = Int(visit.dwellTime)
         var newExercise = Exercise(tim: arrivaltime, dur: duration, spo: "basketball", inten: 0)
-        
-        // Initialize data storage
-        let defaults = NSUserDefaults.standardUserDefaults()
-        
-        if let dictOfExercise = defaults.valueForKey(defaultsKeys.keyDict) as? NSData {
-            var allExercise = NSKeyedUnarchiver.unarchiveObjectWithData(dictOfExercise) as! [Exercise]
-            allExercise.append(newExercise)
-            let exerciseData = NSKeyedArchiver.archivedDataWithRootObject(allExercise)
-            defaults.setValue(exerciseData, forKey: defaultsKeys.keyDict)
-        } else {
-            var allExercise = [Exercise]()
-            allExercise.append(newExercise)
-            println(allExercise)
-            let exerciseData = NSKeyedArchiver.archivedDataWithRootObject(allExercise)
-            defaults.setValue(exerciseData, forKey: defaultsKeys.keyDict)
-        }
-        
-        let test = defaults.valueForKey(defaultsKeys.keyDict) as? NSData
-        println(test)
-
+        newExercise.storeToLocal()
 
     }
 
