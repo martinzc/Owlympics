@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  TodayViewController.swift
 //  owlympics
 //
 //  Created by Martin Zhou on 7/27/15.
@@ -8,11 +8,9 @@
 
 import UIKit
 
-class FirstViewController: UIViewController, GMBLCommunicationManagerDelegate, GMBLPlaceManagerDelegate {
+class TodayViewController: UIViewController, GMBLCommunicationManagerDelegate, GMBLPlaceManagerDelegate {
     
     var placeManager: GMBLPlaceManager!
-
-    @IBOutlet weak var locationName: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,12 +22,10 @@ class FirstViewController: UIViewController, GMBLCommunicationManagerDelegate, G
     
     func placeManager(manager: GMBLPlaceManager!, didBeginVisit visit: GMBLVisit!) {
         println("The user visited \(visit.place.name) at \(visit.arrivalDate)")
-        locationName.text = "The user visited \(visit.place.name) at \(visit.arrivalDate.description)"
     }
     
     func placeManager(manager: GMBLPlaceManager!, didEndVisit visit: GMBLVisit!) {
         println("The user exited \(visit.place.name) at \(visit.departureDate)")
-        locationName.text = "The user exited \(visit.place.name) at \(visit.departureDate.description), he was there for \(visit.dwellTime.description) seconds"
         
         //        Claude
         //        Here we need a notification asking whether he want to log in the exercise or not. He can then choose the sport and intensity.
