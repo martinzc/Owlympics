@@ -8,7 +8,32 @@
 
 import UIKit
 
-class TodayViewController: UIViewController, GMBLCommunicationManagerDelegate, GMBLPlaceManagerDelegate {
+class TodayViewController: UIViewController, UITableViewDataSource, GMBLCommunicationManagerDelegate, GMBLPlaceManagerDelegate {
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        if indexPath.row == 0 {
+            let cell_select = tableView.dequeueReusableCellWithIdentifier("summary_select", forIndexPath: indexPath) as! UITableViewCell
+            cell_select.textLabel!.text = "workout summaries"
+            return cell_select
+        }
+        else if indexPath.row == 1 {
+            let cell_select = tableView.dequeueReusableCellWithIdentifier("history_select", forIndexPath: indexPath) as! UITableViewCell
+            cell_select.textLabel!.text = "detailed history"
+            return cell_select
+        }
+        else {
+            let cell = UITableViewCell()
+            return cell
+        }
+    }
     
     var placeManager: GMBLPlaceManager!
     
@@ -37,6 +62,9 @@ class TodayViewController: UIViewController, GMBLCommunicationManagerDelegate, G
         newExercise.storeToLocal()
 
     }
+
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

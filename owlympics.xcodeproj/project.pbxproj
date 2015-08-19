@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A95E7F9C1B8433BF00410E7B /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95E7F9B1B8433BF00410E7B /* AccountTableViewController.swift */; };
+		A95E7F9E1B84387300410E7B /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95E7F9D1B84387300410E7B /* SummaryViewController.swift */; };
 		A97EFE471B7D382800D7DA74 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97EFE461B7D382800D7DA74 /* Exercise.swift */; };
 		A9C877A11B65CF0D00D161F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C877A01B65CF0D00D161F2 /* AppDelegate.swift */; };
 		A9C877A31B65CF0D00D161F2 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C877A21B65CF0D00D161F2 /* TodayViewController.swift */; };
@@ -17,6 +19,7 @@
 		A9C877C11B65D29C00D161F2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C877C01B65D29C00D161F2 /* libz.dylib */; };
 		A9C877C51B65D32200D161F2 /* Gimbal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C877C41B65D32200D161F2 /* Gimbal.framework */; };
 		A9F956CA1B83F7DF005262A8 /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F956C91B83F7DF005262A8 /* HttpRequest.swift */; };
+		A9F956CE1B83FD4B005262A8 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F956CD1B83FD4B005262A8 /* HistoryTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A95E7F9B1B8433BF00410E7B /* AccountTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
+		A95E7F9D1B84387300410E7B /* SummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		A97EFE461B7D382800D7DA74 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		A9C8779B1B65CF0D00D161F2 /* owlympics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = owlympics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9C8779F1B65CF0D00D161F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,6 +50,7 @@
 		A9C877C41B65D32200D161F2 /* Gimbal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Gimbal.framework; sourceTree = "<group>"; };
 		A9C877C71B65D48C00D161F2 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		A9F956C91B83F7DF005262A8 /* HttpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
+		A9F956CD1B83FD4B005262A8 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryTableViewController.swift; path = ../HistoryTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +101,9 @@
 			children = (
 				A9C877A01B65CF0D00D161F2 /* AppDelegate.swift */,
 				A9C877A21B65CF0D00D161F2 /* TodayViewController.swift */,
+				A9F956CD1B83FD4B005262A8 /* HistoryTableViewController.swift */,
+				A95E7F9D1B84387300410E7B /* SummaryViewController.swift */,
+				A95E7F9B1B8433BF00410E7B /* AccountTableViewController.swift */,
 				A9C877A41B65CF0D00D161F2 /* Main.storyboard */,
 				A9C877A71B65CF0D00D161F2 /* Images.xcassets */,
 				A9C877A91B65CF0D00D161F2 /* LaunchScreen.xib */,
@@ -236,8 +245,11 @@
 			files = (
 				A97EFE471B7D382800D7DA74 /* Exercise.swift in Sources */,
 				A9F956CA1B83F7DF005262A8 /* HttpRequest.swift in Sources */,
+				A95E7F9C1B8433BF00410E7B /* AccountTableViewController.swift in Sources */,
 				A9C877A31B65CF0D00D161F2 /* TodayViewController.swift in Sources */,
 				A9C877A11B65CF0D00D161F2 /* AppDelegate.swift in Sources */,
+				A95E7F9E1B84387300410E7B /* SummaryViewController.swift in Sources */,
+				A9F956CE1B83FD4B005262A8 /* HistoryTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
