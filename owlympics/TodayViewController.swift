@@ -8,15 +8,20 @@
 
 import UIKit
 
-class TodayViewController: UIViewController, UITableViewDataSource, GMBLCommunicationManagerDelegate, GMBLPlaceManagerDelegate {
+class TodayViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, GMBLCommunicationManagerDelegate, GMBLPlaceManagerDelegate {
+    
+    // view outlets
+    
+    @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var graphView: GraphView!
+    
     // label outlets
     
     @IBOutlet weak var AverageTime: UILabel!
     
     @IBOutlet weak var maxLabel: UILabel!
-    
+
     func setupGraphDisplay() {
         
         //Use 7 days for graph - can use any number,
@@ -76,12 +81,12 @@ class TodayViewController: UIViewController, UITableViewDataSource, GMBLCommunic
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell_select = tableView.dequeueReusableCellWithIdentifier("summary_select", forIndexPath: indexPath) as! UITableViewCell
-            cell_select.textLabel!.text = "workout summaries"
+            cell_select.textLabel!.text = "Summaries"
             return cell_select
         }
         else if indexPath.row == 1 {
             let cell_select = tableView.dequeueReusableCellWithIdentifier("history_select", forIndexPath: indexPath) as! UITableViewCell
-            cell_select.textLabel!.text = "detailed history"
+            cell_select.textLabel!.text = "Workout History"
             return cell_select
         }
         else {
@@ -90,9 +95,11 @@ class TodayViewController: UIViewController, UITableViewDataSource, GMBLCommunic
         }
     }
     
+    
     var placeManager: GMBLPlaceManager!
     
     override func viewDidLoad() {
+        tableView.tableFooterView = UIView()
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
@@ -125,6 +132,13 @@ class TodayViewController: UIViewController, UITableViewDataSource, GMBLCommunic
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if let indexPath = self.tableView.indexPathForSelectedRow() {
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        }
     }
 
 

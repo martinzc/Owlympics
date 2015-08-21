@@ -31,7 +31,7 @@ class AccountTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 1
+        return 2
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -41,16 +41,33 @@ class AccountTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("account_detail", forIndexPath: indexPath) as! UITableViewCell
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCellWithIdentifier("account_detail", forIndexPath: indexPath) as! UITableViewCell
+            cell.textLabel?.text = "cz16@rice.edu"
+            return cell
+        }
+        else if indexPath.section == 1 {
+            let cell = tableView.dequeueReusableCellWithIdentifier("account_detail", forIndexPath: indexPath) as! UITableViewCell
+            cell.textLabel?.text = "Log out"
+            return cell
+        }
+        else {
+            let cell = tableView.dequeueReusableCellWithIdentifier("account_detail", forIndexPath: indexPath) as! UITableViewCell
+            return cell
+        }
         
-        // Configure the cell...
-        cell.textLabel?.text = "cz16@rice.edu"
-        
-        return cell
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "account"
+        if section == 0 {
+            return "Account"
+        }
+        else if section == 1 {
+            return "Action"
+        }
+        else {
+            return nil
+        }
     }
     
     
