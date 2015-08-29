@@ -21,6 +21,7 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var AverageTime: UILabel!
     
     @IBOutlet weak var maxLabel: UILabel!
+    
 
     func setupGraphDisplay() {
         
@@ -98,7 +99,9 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     var placeManager: GMBLPlaceManager!
     
+    
     override func viewDidLoad() {
+        self.navigationItem.setHidesBackButton(true, animated: true)
         tableView.tableFooterView = UIView()
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -106,6 +109,7 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
         placeManager = GMBLPlaceManager()
         placeManager.delegate = self
         setupGraphDisplay()
+        
     }
     
     func placeManager(manager: GMBLPlaceManager!, didBeginVisit visit: GMBLVisit!) {
@@ -115,14 +119,30 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
     func placeManager(manager: GMBLPlaceManager!, didEndVisit visit: GMBLVisit!) {
         println("The user exited \(visit.place.name) at \(visit.departureDate)")
         
-        //        Claude
-        //        Here we need a notification asking whether he want to log in the exercise or not. He can then choose the sport and intensity.
+//        Create notification both for foreground and background
+        //        ******The following line of code can be moved for test purposes ************
+        var alert = UIAlertController(title: "Alert", message: "You've exited the gym, do you want to input your exercise data?", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Input data", style: UIAlertActionStyle.Default, handler:{ (_) -> Void in
+            self.performSegueWithIdentifier("ShowInput", sender: self)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler:nil))
+        self.parentViewController!.presentViewController(alert, animated: true, completion: nil)
+        //        ********End of movable code*************
         
-        // If he choose yes, create a new exercise
+//        Foreground notification (Move the code above to here)
+
         
-        let arrivaltime:String = visit.arrivalDate.description
-        var newExercise = Exercise(tim: arrivaltime, dur: "User Input", spo: "User Input", inten: "User Input")
-        newExercise.storeToLocal()
+//        Background notification
+        var localNotification:UILocalNotification = UILocalNotification()
+        localNotification.alertAction = "Pops when user exits the gym"
+        localNotification.alertBody = "You've exited the gym, do you want to input your exercise data?"
+        localNotification.fireDate = NSDate(timeIntervalSinceNow: 10)
+        localNotification.category = "INVITE_CATEGORY";
+        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+        
+        
+//        let arrivaltime:String = visit.arrivalDate.description
+        
 
     }
 
