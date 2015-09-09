@@ -19,9 +19,7 @@ class InputViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         let sport = input_exercise.text
         let intensity = "Mild"
         var newExercise = Exercise(tim: "Passed from parent", dur: duration, spo: sport, inten: intensity)
-        newExercise.storeToLocal()
-        
-        
+        storeToLocal(newExercise)
     }
     
     override func viewDidLoad() {

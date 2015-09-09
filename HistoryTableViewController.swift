@@ -27,7 +27,7 @@ class HistoryTableViewController: UITableViewController {
 
     // MARK: - Table view data source
     
-    let allExercises = [("2015-06-20 9:00am", "Basketball", "20min"), ("2015-06-10 8:00 am", "Soccer", "10min")]
+    let allExercises = loadFromLocal()
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
@@ -46,10 +46,10 @@ class HistoryTableViewController: UITableViewController {
 
         // Configure the cell...
         
-        let (time, sport, duration) = allExercises[indexPath.row]
-        cell.textLabel?.text = time
-        cell.detailTextLabel?.text = sport + " for " + duration
-        if let sport_image = UIImage(named: sport) {
+        let event = allExercises[-indexPath.row]
+        cell.textLabel?.text = event.arrivaltime
+        cell.detailTextLabel?.text = event.sport + " for " + event.duration
+        if let sport_image = UIImage(named: event.sport) {
             cell.imageView?.image = sport_image
         }
         

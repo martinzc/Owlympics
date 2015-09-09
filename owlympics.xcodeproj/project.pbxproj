@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A918F32A1BA0E38400970E0A /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A918F3291BA0E38400970E0A /* LocalStorage.swift */; };
 		A91E4C2E1B84F90500E98CDC /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91E4C2D1B84F90500E98CDC /* GraphView.swift */; };
 		A9203D621B9191C1008B82C3 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9203D611B9191C1008B82C3 /* InputViewController.swift */; };
 		A95E7F9C1B8433BF00410E7B /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95E7F9B1B8433BF00410E7B /* AccountTableViewController.swift */; };
@@ -35,7 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A91E4C2D1B84F90500E98CDC /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		A918F3291BA0E38400970E0A /* LocalStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
+		A91E4C2D1B84F90500E98CDC /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GraphView.swift; path = owlympics/GraphView.swift; sourceTree = "<group>"; };
 		A9203D611B9191C1008B82C3 /* InputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
 		A95E7F9B1B8433BF00410E7B /* AccountTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
 		A95E7F9D1B84387300410E7B /* SummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
@@ -77,12 +79,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A918F3271BA0E32200970E0A /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A9C877A21B65CF0D00D161F2 /* TodayViewController.swift */,
+				A9F956CD1B83FD4B005262A8 /* HistoryTableViewController.swift */,
+				A95E7F9D1B84387300410E7B /* SummaryViewController.swift */,
+				A95E7F9B1B8433BF00410E7B /* AccountTableViewController.swift */,
+				A9203D611B9191C1008B82C3 /* InputViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		A918F3281BA0E33200970E0A /* Helper Files */ = {
+			isa = PBXGroup;
+			children = (
+				A97EFE461B7D382800D7DA74 /* Exercise.swift */,
+				A918F3291BA0E38400970E0A /* LocalStorage.swift */,
+				A9F956C91B83F7DF005262A8 /* HttpRequest.swift */,
+				A91E4C2D1B84F90500E98CDC /* GraphView.swift */,
+			);
+			name = "Helper Files";
+			sourceTree = "<group>";
+		};
 		A9C877921B65CF0D00D161F2 = {
 			isa = PBXGroup;
 			children = (
 				A9C877C71B65D48C00D161F2 /* Header.h */,
-				A97EFE461B7D382800D7DA74 /* Exercise.swift */,
-				A9F956C91B83F7DF005262A8 /* HttpRequest.swift */,
+				A918F3281BA0E33200970E0A /* Helper Files */,
 				A9C8779D1B65CF0D00D161F2 /* owlympics */,
 				A9C877B31B65CF0D00D161F2 /* owlympicsTests */,
 				A9C8779C1B65CF0D00D161F2 /* Products */,
@@ -102,12 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				A9C877A01B65CF0D00D161F2 /* AppDelegate.swift */,
-				A9C877A21B65CF0D00D161F2 /* TodayViewController.swift */,
-				A91E4C2D1B84F90500E98CDC /* GraphView.swift */,
-				A9F956CD1B83FD4B005262A8 /* HistoryTableViewController.swift */,
-				A95E7F9D1B84387300410E7B /* SummaryViewController.swift */,
-				A95E7F9B1B8433BF00410E7B /* AccountTableViewController.swift */,
-				A9203D611B9191C1008B82C3 /* InputViewController.swift */,
+				A918F3271BA0E32200970E0A /* View Controllers */,
 				A9C877A41B65CF0D00D161F2 /* Main.storyboard */,
 				A990969C1BA0B3450010052E /* Images.xcassets */,
 				A9C877A91B65CF0D00D161F2 /* LaunchScreen.xib */,
@@ -253,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9203D621B9191C1008B82C3 /* InputViewController.swift in Sources */,
+				A918F32A1BA0E38400970E0A /* LocalStorage.swift in Sources */,
 				A97EFE471B7D382800D7DA74 /* Exercise.swift in Sources */,
 				A9F956CA1B83F7DF005262A8 /* HttpRequest.swift in Sources */,
 				A95E7F9C1B8433BF00410E7B /* AccountTableViewController.swift in Sources */,
