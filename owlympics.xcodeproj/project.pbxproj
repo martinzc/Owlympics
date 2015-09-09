@@ -51,7 +51,7 @@
 		A9C877B51B65CF0D00D161F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9C877B61B65CF0D00D161F2 /* owlympicsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = owlympicsTests.swift; sourceTree = "<group>"; };
 		A9C877C01B65D29C00D161F2 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		A9C877C41B65D32200D161F2 /* Gimbal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Gimbal.framework; sourceTree = "<group>"; };
+		A9C877C41B65D32200D161F2 /* Gimbal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gimbal.framework; path = ../Gimbal.framework; sourceTree = "<group>"; };
 		A9C877C71B65D48C00D161F2 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		A9F956C91B83F7DF005262A8 /* HttpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
 		A9F956CD1B83FD4B005262A8 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryTableViewController.swift; path = ../HistoryTableViewController.swift; sourceTree = "<group>"; };
@@ -83,8 +83,6 @@
 				A9C877C71B65D48C00D161F2 /* Header.h */,
 				A97EFE461B7D382800D7DA74 /* Exercise.swift */,
 				A9F956C91B83F7DF005262A8 /* HttpRequest.swift */,
-				A9C877C41B65D32200D161F2 /* Gimbal.framework */,
-				A9C877C01B65D29C00D161F2 /* libz.dylib */,
 				A9C8779D1B65CF0D00D161F2 /* owlympics */,
 				A9C877B31B65CF0D00D161F2 /* owlympicsTests */,
 				A9C8779C1B65CF0D00D161F2 /* Products */,
@@ -122,6 +120,8 @@
 			isa = PBXGroup;
 			children = (
 				A9C8779F1B65CF0D00D161F2 /* Info.plist */,
+				A9C877C01B65D29C00D161F2 /* libz.dylib */,
+				A9C877C41B65D32200D161F2 /* Gimbal.framework */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -196,6 +196,9 @@
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
+							};
+							com.apple.HealthKit = {
+								enabled = 0;
 							};
 						};
 					};
