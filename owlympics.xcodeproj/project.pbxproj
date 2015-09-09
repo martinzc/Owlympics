@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		A91E4C2E1B84F90500E98CDC /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91E4C2D1B84F90500E98CDC /* GraphView.swift */; };
 		A9203D621B9191C1008B82C3 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9203D611B9191C1008B82C3 /* InputViewController.swift */; };
-		A955837F1B86D54A00D7753F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A955837E1B86D54A00D7753F /* Images.xcassets */; };
 		A95E7F9C1B8433BF00410E7B /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95E7F9B1B8433BF00410E7B /* AccountTableViewController.swift */; };
 		A95E7F9E1B84387300410E7B /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95E7F9D1B84387300410E7B /* SummaryViewController.swift */; };
 		A97EFE471B7D382800D7DA74 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97EFE461B7D382800D7DA74 /* Exercise.swift */; };
+		A990969D1BA0B3450010052E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A990969C1BA0B3450010052E /* Images.xcassets */; };
 		A9C877A11B65CF0D00D161F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C877A01B65CF0D00D161F2 /* AppDelegate.swift */; };
 		A9C877A31B65CF0D00D161F2 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C877A21B65CF0D00D161F2 /* TodayViewController.swift */; };
 		A9C877A61B65CF0D00D161F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C877A41B65CF0D00D161F2 /* Main.storyboard */; };
@@ -37,10 +37,10 @@
 /* Begin PBXFileReference section */
 		A91E4C2D1B84F90500E98CDC /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		A9203D611B9191C1008B82C3 /* InputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
-		A955837E1B86D54A00D7753F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A95E7F9B1B8433BF00410E7B /* AccountTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
 		A95E7F9D1B84387300410E7B /* SummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		A97EFE461B7D382800D7DA74 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		A990969C1BA0B3450010052E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A9C8779B1B65CF0D00D161F2 /* owlympics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = owlympics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9C8779F1B65CF0D00D161F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9C877A01B65CF0D00D161F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,8 +111,8 @@
 				A95E7F9B1B8433BF00410E7B /* AccountTableViewController.swift */,
 				A9203D611B9191C1008B82C3 /* InputViewController.swift */,
 				A9C877A41B65CF0D00D161F2 /* Main.storyboard */,
+				A990969C1BA0B3450010052E /* Images.xcassets */,
 				A9C877A91B65CF0D00D161F2 /* LaunchScreen.xib */,
-				A955837E1B86D54A00D7753F /* Images.xcassets */,
 				A9C8779E1B65CF0D00D161F2 /* Supporting Files */,
 			);
 			path = owlympics;
@@ -229,7 +229,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A955837F1B86D54A00D7753F /* Images.xcassets in Resources */,
+				A990969D1BA0B3450010052E /* Images.xcassets in Resources */,
 				A9C877A61B65CF0D00D161F2 /* Main.storyboard in Resources */,
 				A9C877AB1B65CF0D00D161F2 /* LaunchScreen.xib in Resources */,
 			);

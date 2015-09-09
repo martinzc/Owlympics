@@ -6,9 +6,13 @@
 //  Copyright (c) 2015 Martin Zhou. All rights reserved.
 //
 
+/* Defines the structure for exercise objects */
+
 import Foundation
 
 class Exercise:NSObject {
+    
+//    Initialize variables
     var arrivaltime: String
     var duration: String
     var sport: String
@@ -22,7 +26,8 @@ class Exercise:NSObject {
     }
     
     func storeToLocal() {
-        // Initialize data storage
+//        Initialize data storage
+//        Create user default delegate
         let defaults = NSUserDefaults.standardUserDefaults()
         
         if let dictOfExercise = defaults.valueForKey(defaultsKeys.keyDict) as? NSData {
