@@ -10,8 +10,10 @@ import UIKit
 
 @IBDesignable class GraphView: UIView {
     
-    //Weekly sample data
-    var graphPoints:[Int] = [4, 2, 6, 4, 5, 8, 3]
+    // Weekly sample data
+    // Has seven entires, while the last entry is the total duration today
+    let graphPoints = durationOfPastSevenDays()
+//    let graphPoints = [0, 0, 10, 0, 0, 0, 0]
     
     //1 - the properties for the gradient
     @IBInspectable var startColor: UIColor = UIColor.redColor()
@@ -78,22 +80,44 @@ import UIKit
         }
         
         // draw the line graph
-        
         UIColor.whiteColor().setFill()
         UIColor.whiteColor().setStroke()
         
         //set up the points line
         var graphPath = UIBezierPath()
-        //go to start of line
-        graphPath.moveToPoint(CGPoint(x:columnXPoint(0),
-            y:columnYPoint(graphPoints[0])))
         
-        //add points for each item in the graphPoints array
-        //at the correct (x, y) for the point
-        for i in 1..<graphPoints.count {
-            let nextPoint = CGPoint(x:columnXPoint(i),
-                y:columnYPoint(graphPoints[i]))
-            graphPath.addLineToPoint(nextPoint)
+        /* Check if data is empty, this solves the problem of throwing an error when there
+is no data */
+        
+        if !(columnYPoint(graphPoints[0]).isNaN)    {
+            
+            //go to start of line
+            graphPath.moveToPoint(CGPoint(x:columnXPoint(0),
+                y:columnYPoint(self.graphPoints[0])))
+            
+            //add points for each item in the graphPoints array
+            //at the correct (x, y) for the point
+            for i in 1..<graphPoints.count {
+                let nextPoint = CGPoint(x:columnXPoint(i),
+                    y:columnYPoint(graphPoints[i]))
+                graphPath.addLineToPoint(nextPoint)
+            }
+            
+        }
+        
+        else {
+            
+            //go to start of line
+            graphPath.moveToPoint(CGPoint(x:columnXPoint(0),
+                y:200))
+            
+            //add points for each item in the graphPoints array
+            //at the correct (x, y) for the point
+            for i in 1..<graphPoints.count {
+                let nextPoint = CGPoint(x:columnXPoint(i),
+                    y:200)
+                graphPath.addLineToPoint(nextPoint)
+            }
         }
         
         //Create the clipping path for the graph gradient

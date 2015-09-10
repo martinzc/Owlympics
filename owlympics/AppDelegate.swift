@@ -50,7 +50,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if (!GMBLPlaceManager.isMonitoring()){
             GMBLPlaceManager.startMonitoring()
         }
-        GMBLCommunicationManager.startReceivingCommunications()
     }
 
     func applicationWillResignActive(application: UIApplication) {

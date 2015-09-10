@@ -18,7 +18,7 @@ class InputViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         let duration = input_duration.text
         let sport = input_exercise.text
         let intensity = "Mild"
-        var newExercise = Exercise(tim: "Passed from parent", dur: duration, spo: sport, inten: intensity)
+        var newExercise = Exercise(tim: NSDate(), dur: duration, spo: sport, inten: intensity)
         storeToLocal(newExercise)
     }
     

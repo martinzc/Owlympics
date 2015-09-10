@@ -38,4 +38,29 @@ func loadFromLocal() -> [Exercise] {
     
     return allExercise
 }
-   
+
+func durationOfPastSevenDays() -> [Int] {
+    
+    var durationList = [0, 0, 0, 0, 0, 0, 0]
+    
+//    Load local data
+    let exerciseList = loadFromLocal()
+    
+//    Update the durationList according to localData
+    for eachExercise:Exercise in exerciseList {
+//        Get the two times
+        let exerciseTime = eachExercise.arrivaltime
+        let currentTime = NSDate()
+        
+//        Calculate the days between the two times
+        let daysBetween = calculateDaysBetween(exerciseTime, currentTime)
+        
+//        Add the duration to that day if it's within six days
+        if daysBetween < 7 {
+            let dur:Int! = eachExercise.duration.toInt()
+            durationList[durationList.count - 1 - daysBetween] += dur
+        }
+    }
+    
+    return durationList
+}

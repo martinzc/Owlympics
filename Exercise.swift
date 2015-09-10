@@ -13,12 +13,12 @@ import Foundation
 class Exercise:NSObject {
     
 //    Initialize variables
-    var arrivaltime: String
+    var arrivaltime: NSDate
     var duration: String
     var sport: String
     var intensity: String
     
-    init(tim: String, dur: String, spo: String, inten: String){
+    init(tim: NSDate, dur: String, spo: String, inten: String){
         self.arrivaltime = tim
         self.duration = dur
         self.sport = spo
@@ -36,7 +36,7 @@ class Exercise:NSObject {
         
         duration = aDecoder.decodeObjectForKey("duration") as! String
         intensity = aDecoder.decodeObjectForKey("intensity") as! String
-        arrivaltime = aDecoder.decodeObjectForKey("arrivaltime") as! String
+        arrivaltime = aDecoder.decodeObjectForKey("arrivaltime") as! NSDate
         sport = aDecoder.decodeObjectForKey("sport")as! String
         
     }

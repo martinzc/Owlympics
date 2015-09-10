@@ -21,6 +21,7 @@
 		A9C877B71B65CF0D00D161F2 /* owlympicsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C877B61B65CF0D00D161F2 /* owlympicsTests.swift */; };
 		A9C877C11B65D29C00D161F2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C877C01B65D29C00D161F2 /* libz.dylib */; };
 		A9C877C51B65D32200D161F2 /* Gimbal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C877C41B65D32200D161F2 /* Gimbal.framework */; };
+		A9E0CAE61BA213040008BCFD /* DateProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E0CAE51BA213040008BCFD /* DateProcessor.swift */; };
 		A9F956CA1B83F7DF005262A8 /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F956C91B83F7DF005262A8 /* HttpRequest.swift */; };
 		A9F956CE1B83FD4B005262A8 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F956CD1B83FD4B005262A8 /* HistoryTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,7 @@
 		A9C877C01B65D29C00D161F2 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		A9C877C41B65D32200D161F2 /* Gimbal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gimbal.framework; path = ../Gimbal.framework; sourceTree = "<group>"; };
 		A9C877C71B65D48C00D161F2 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		A9E0CAE51BA213040008BCFD /* DateProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateProcessor.swift; sourceTree = "<group>"; };
 		A9F956C91B83F7DF005262A8 /* HttpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
 		A9F956CD1B83FD4B005262A8 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryTableViewController.swift; path = ../HistoryTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,6 +100,7 @@
 				A918F3291BA0E38400970E0A /* LocalStorage.swift */,
 				A9F956C91B83F7DF005262A8 /* HttpRequest.swift */,
 				A91E4C2D1B84F90500E98CDC /* GraphView.swift */,
+				A9E0CAE51BA213040008BCFD /* DateProcessor.swift */,
 			);
 			name = "Helper Files";
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			files = (
 				A9203D621B9191C1008B82C3 /* InputViewController.swift in Sources */,
 				A918F32A1BA0E38400970E0A /* LocalStorage.swift in Sources */,
+				A9E0CAE61BA213040008BCFD /* DateProcessor.swift in Sources */,
 				A97EFE471B7D382800D7DA74 /* Exercise.swift in Sources */,
 				A9F956CA1B83F7DF005262A8 /* HttpRequest.swift in Sources */,
 				A95E7F9C1B8433BF00410E7B /* AccountTableViewController.swift in Sources */,

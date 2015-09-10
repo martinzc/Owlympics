@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TodayViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, GMBLCommunicationManagerDelegate, GMBLPlaceManagerDelegate {
+class TodayViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, GMBLPlaceManagerDelegate {
     
     // view outlets
     
@@ -38,9 +38,9 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
         maxLabel.text = "\(maxElement(graphView.graphPoints))"
         
         //3 - calculate average from graphPoints
-        let average = graphView.graphPoints.reduce(0, combine: +)
-            / graphView.graphPoints.count
-        AverageTime.text = "\(average)"
+        let average = Double(graphView.graphPoints.reduce(0, combine: +)) / Double(graphView.graphPoints.count)
+        let average_rounded = Double(round(100*average)/100)
+        AverageTime.text = "\(average_rounded) Hours"
         
         //set up labels
         //day of week labels are set up in storyboard with tags
@@ -120,14 +120,12 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
         println("The user exited \(visit.place.name) at \(visit.departureDate)")
         
 //        Create notification both for foreground and background
-        //        ******The following line of code can be moved for test purposes ************
         var alert = UIAlertController(title: "Alert", message: "You've exited the gym, do you want to input your exercise data?", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Input data", style: UIAlertActionStyle.Default, handler:{ (_) -> Void in
             self.performSegueWithIdentifier("ShowInput", sender: self)
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler:nil))
         self.parentViewController!.presentViewController(alert, animated: true, completion: nil)
-        //        ********End of movable code*************
         
 //        Foreground notification (Move the code above to here)
 
