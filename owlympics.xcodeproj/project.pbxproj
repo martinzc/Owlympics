@@ -14,6 +14,9 @@
 		A95E7F9E1B84387300410E7B /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95E7F9D1B84387300410E7B /* SummaryViewController.swift */; };
 		A97EFE471B7D382800D7DA74 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97EFE461B7D382800D7DA74 /* Exercise.swift */; };
 		A990969D1BA0B3450010052E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A990969C1BA0B3450010052E /* Images.xcassets */; };
+		A9A6B8D71BA3341000EE9AD3 /* RootPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A6B8D61BA3341000EE9AD3 /* RootPageViewController.swift */; };
+		A9A6B8D91BA3348A00EE9AD3 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A6B8D81BA3348A00EE9AD3 /* ModelController.swift */; };
+		A9A6B8DB1BA34F5400EE9AD3 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A6B8DA1BA34F5400EE9AD3 /* CircleView.swift */; };
 		A9C877A11B65CF0D00D161F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C877A01B65CF0D00D161F2 /* AppDelegate.swift */; };
 		A9C877A31B65CF0D00D161F2 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C877A21B65CF0D00D161F2 /* TodayViewController.swift */; };
 		A9C877A61B65CF0D00D161F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C877A41B65CF0D00D161F2 /* Main.storyboard */; };
@@ -44,6 +47,9 @@
 		A95E7F9D1B84387300410E7B /* SummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		A97EFE461B7D382800D7DA74 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		A990969C1BA0B3450010052E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A9A6B8D61BA3341000EE9AD3 /* RootPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootPageViewController.swift; sourceTree = "<group>"; };
+		A9A6B8D81BA3348A00EE9AD3 /* ModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
+		A9A6B8DA1BA34F5400EE9AD3 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		A9C8779B1B65CF0D00D161F2 /* owlympics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = owlympics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9C8779F1B65CF0D00D161F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9C877A01B65CF0D00D161F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,9 +92,11 @@
 			children = (
 				A9C877A21B65CF0D00D161F2 /* TodayViewController.swift */,
 				A9F956CD1B83FD4B005262A8 /* HistoryTableViewController.swift */,
-				A95E7F9D1B84387300410E7B /* SummaryViewController.swift */,
 				A95E7F9B1B8433BF00410E7B /* AccountTableViewController.swift */,
 				A9203D611B9191C1008B82C3 /* InputViewController.swift */,
+				A95E7F9D1B84387300410E7B /* SummaryViewController.swift */,
+				A9A6B8D81BA3348A00EE9AD3 /* ModelController.swift */,
+				A9A6B8D61BA3341000EE9AD3 /* RootPageViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -98,9 +106,10 @@
 			children = (
 				A97EFE461B7D382800D7DA74 /* Exercise.swift */,
 				A918F3291BA0E38400970E0A /* LocalStorage.swift */,
+				A9E0CAE51BA213040008BCFD /* DateProcessor.swift */,
 				A9F956C91B83F7DF005262A8 /* HttpRequest.swift */,
 				A91E4C2D1B84F90500E98CDC /* GraphView.swift */,
-				A9E0CAE51BA213040008BCFD /* DateProcessor.swift */,
+				A9A6B8DA1BA34F5400EE9AD3 /* CircleView.swift */,
 			);
 			name = "Helper Files";
 			sourceTree = "<group>";
@@ -277,13 +286,16 @@
 				A9203D621B9191C1008B82C3 /* InputViewController.swift in Sources */,
 				A918F32A1BA0E38400970E0A /* LocalStorage.swift in Sources */,
 				A9E0CAE61BA213040008BCFD /* DateProcessor.swift in Sources */,
+				A9A6B8D71BA3341000EE9AD3 /* RootPageViewController.swift in Sources */,
 				A97EFE471B7D382800D7DA74 /* Exercise.swift in Sources */,
+				A9A6B8D91BA3348A00EE9AD3 /* ModelController.swift in Sources */,
 				A9F956CA1B83F7DF005262A8 /* HttpRequest.swift in Sources */,
 				A95E7F9C1B8433BF00410E7B /* AccountTableViewController.swift in Sources */,
 				A9C877A31B65CF0D00D161F2 /* TodayViewController.swift in Sources */,
 				A9C877A11B65CF0D00D161F2 /* AppDelegate.swift in Sources */,
 				A95E7F9E1B84387300410E7B /* SummaryViewController.swift in Sources */,
 				A9F956CE1B83FD4B005262A8 /* HistoryTableViewController.swift in Sources */,
+				A9A6B8DB1BA34F5400EE9AD3 /* CircleView.swift in Sources */,
 				A91E4C2E1B84F90500E98CDC /* GraphView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

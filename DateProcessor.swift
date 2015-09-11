@@ -31,6 +31,18 @@ func getDayOfWeek(date:NSDate) -> String {
     return dayofweekString
 }
 
+/*    Return a string that indicates which month of which year it is.
+        The return style would be like "2015, 9"    */
+func getMonthOfYear(date:NSDate) -> String {
+    
+    let monthofyearFormatter = NSDateFormatter()
+    
+    //    Format of the return value. It has three letters
+    monthofyearFormatter.dateFormat = "YYYY, M"
+    let monthofyearString = monthofyearFormatter.stringFromDate(date)
+    return monthofyearString
+}
+
 /* Calculate the days between two NSDate */
 func calculateDaysBetween(date1:NSDate, date2:NSDate) -> Int {
     
@@ -40,3 +52,4 @@ func calculateDaysBetween(date1:NSDate, date2:NSDate) -> Int {
     let daysBetween = components.day
     return daysBetween
 }
+

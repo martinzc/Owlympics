@@ -17,14 +17,19 @@ func storeToLocal(exercisefile:Exercise) {
     if let dictOfExercise = defaults.valueForKey(defaultsKeys.keyDict) as? NSData {
         var allExercise = NSKeyedUnarchiver.unarchiveObjectWithData(dictOfExercise) as! [Exercise]
         allExercise.append(exercisefile)
+//        println("there is data in local storage")
+//        println(allExercise)
         let exerciseData = NSKeyedArchiver.archivedDataWithRootObject(allExercise)
         defaults.setValue(exerciseData, forKey: defaultsKeys.keyDict)
     } else {
         var allExercise = [Exercise]()
         allExercise.append(exercisefile)
+        print("there is not data in local storage")
+//        println(allExercise)
         let exerciseData = NSKeyedArchiver.archivedDataWithRootObject(allExercise)
         defaults.setValue(exerciseData, forKey: defaultsKeys.keyDict)
     }
+//    println("successfully stored data")
 }
 
 func loadFromLocal() -> [Exercise] {
@@ -33,9 +38,11 @@ func loadFromLocal() -> [Exercise] {
     var allExercise: [Exercise] = []
     
     if let dictOfExercise = defaults.valueForKey(defaultsKeys.keyDict) as? NSData {
-        var allExercise = NSKeyedUnarchiver.unarchiveObjectWithData(dictOfExercise) as! [Exercise]
+        allExercise = NSKeyedUnarchiver.unarchiveObjectWithData(dictOfExercise) as! [Exercise]
+//        println("Successfully Loaded Data")
+//        println(allExercise)
     }
-    
+//    println(allExercise)
     return allExercise
 }
 

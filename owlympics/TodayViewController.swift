@@ -101,6 +101,13 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     
     override func viewDidLoad() {
+        /*
+//        Create a new exercise for debug
+        let sample_exercise = Exercise(tim: NSDate(), dur: "2", spo: "YOO", inten: "high")
+        storeToLocal(sample_exercise)
+        let exerciselist = loadFromLocal()
+*/
+        
         self.navigationItem.setHidesBackButton(true, animated: true)
         tableView.tableFooterView = UIView()
         super.viewDidLoad()
@@ -143,8 +150,6 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
         
 
     }
-
-    
     
 
     override func didReceiveMemoryWarning() {
