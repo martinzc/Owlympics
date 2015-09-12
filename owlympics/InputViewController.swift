@@ -14,12 +14,29 @@ class InputViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     @IBOutlet weak var input_duration: UITextField!
     @IBOutlet weak var intensityPicker: UIPickerView!
     
+    @IBAction func AddExercise(sender: AnyObject) {
+        if(count(input_exercise.text) > 0 && count(input_duration.text) > 0){
+            
+            let httpSender = requestSender()
+            let timeString = NSDate().description //need get time
+            let sportString = input_exercise.text //need to get from the textfiled
+            let durationString = input_duration.text
+            let intensityString = "Mild"
+            let uuidString = "cz16"
+            let locationString = "unclear"
+            let urlString = "http://ec2-52-6-56-55.compute-1.amazonaws.com/upload"
+            
+            httpSender.buildRequestFromStringsAndSend(timeString, durationString: durationString, sportString: sportString, locationString: locationString, intensityString: intensityString, uuidString: uuidString, urlString: urlString)
+            
+            var newExercise = Exercise(tim: NSDate(), dur: durationString, spo: sportString, inten: intensityString)
+            storeToLocal(newExercise)
+        }
+        input_duration.text = ""
+        input_exercise.text = ""
+        
+    }
     @IBAction func doneButton(sender: AnyObject) {
-        let duration = input_duration.text
-        let sport = input_exercise.text
-        let intensity = "Mild"
-        var newExercise = Exercise(tim: NSDate(), dur: duration, spo: sport, inten: intensity)
-        storeToLocal(newExercise)
+
     }
     
     override func viewDidLoad() {

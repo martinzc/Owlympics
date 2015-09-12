@@ -120,6 +120,7 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         
         registerBackgroundNotification()
+        registerForegroundNotification(self)
         
     }
     
