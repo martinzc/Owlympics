@@ -105,12 +105,7 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     
     override func viewDidLoad() {
-        /*
-//        Create a new exercise for debug
-        let sample_exercise = Exercise(tim: NSDate(), dur: "2", spo: "YOO", inten: "high")
-        storeToLocal(sample_exercise)
-        let exerciselist = loadFromLocal()
-*/
+        
 //        Hide the back button on home screen
         setUpSignUp()
         self.navigationItem.setHidesBackButton(true, animated: true)
@@ -118,16 +113,14 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
         tableView.tableFooterView = UIView()
         
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
 //        Set up for iBeacon
         placeManager = GMBLPlaceManager()
         placeManager.delegate = self
+        
+//        Create the fitness graph
         setupGraphDisplay()
-        
-        
-        registerBackgroundNotification()
-        registerForegroundNotification(self)
-        
     }
     
     func placeManager(manager: GMBLPlaceManager!, didBeginVisit visit: GMBLVisit!) {
