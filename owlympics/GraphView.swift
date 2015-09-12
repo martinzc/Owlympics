@@ -103,22 +103,7 @@ is no data */
                 graphPath.addLineToPoint(nextPoint)
             }
             
-        }
         
-        else {
-            
-            //go to start of line
-            graphPath.moveToPoint(CGPoint(x:columnXPoint(0),
-                y:200))
-            
-            //add points for each item in the graphPoints array
-            //at the correct (x, y) for the point
-            for i in 1..<graphPoints.count {
-                let nextPoint = CGPoint(x:columnXPoint(i),
-                    y:200)
-                graphPath.addLineToPoint(nextPoint)
-            }
-        }
         
         //Create the clipping path for the graph gradient
         
@@ -162,6 +147,22 @@ is no data */
                 CGRect(origin: point,
                     size: CGSize(width: 5.0, height: 5.0)))
             circle.fill()
+        }
+        }
+            
+        else {
+            
+            //go to start of line
+            graphPath.moveToPoint(CGPoint(x:columnXPoint(0),
+                y:200))
+            
+            //add points for each item in the graphPoints array
+            //at the correct (x, y) for the point
+            for i in 1..<graphPoints.count {
+                let nextPoint = CGPoint(x:columnXPoint(i),
+                    y:200)
+                graphPath.addLineToPoint(nextPoint)
+            }
         }
         
         //Draw horizontal graph lines on the top of everything

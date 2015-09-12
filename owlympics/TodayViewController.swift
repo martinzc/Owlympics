@@ -117,10 +117,6 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
         placeManager = GMBLPlaceManager()
         placeManager.delegate = self
         setupGraphDisplay()
-        
-        
-        registerBackgroundNotification()
-        
     }
     
     func placeManager(manager: GMBLPlaceManager!, didBeginVisit visit: GMBLVisit!) {
