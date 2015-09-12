@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import AddressBook
+import MediaPlayer
+import AssetsLibrary
+import CoreLocation
+import CoreMotion
 
-class TodayViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, GMBLPlaceManagerDelegate {
+class TodayViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, GMBLPlaceManagerDelegate, GPPSignInDelegate {
     
     // view outlets
     
@@ -24,7 +29,7 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     
     var placeManager: GMBLPlaceManager!
-    
+    var signIn: GPPSignIn?
 
     func setupGraphDisplay() {
         
@@ -107,6 +112,7 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
         let exerciselist = loadFromLocal()
 */
 //        Hide the back button on home screen
+        setUpSignUp()
         self.navigationItem.setHidesBackButton(true, animated: true)
         
         tableView.tableFooterView = UIView()
@@ -117,6 +123,11 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
         placeManager = GMBLPlaceManager()
         placeManager.delegate = self
         setupGraphDisplay()
+        
+        
+        registerBackgroundNotification()
+        registerForegroundNotification(self)
+        
     }
     
     func placeManager(manager: GMBLPlaceManager!, didBeginVisit visit: GMBLVisit!) {
@@ -141,7 +152,27 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
         }
     }
+    func finishedWithAuth(auth: GTMOAuth2Authentication!, error: NSError!) {
+        GPPSignIn.sharedInstance()
+        let acccount = signIn?.userEmail
+        storeDataToLocal(acccount!, "account")
 
+    }
+    
+    func didDisconnectWithError(error: NSError!) {
+        println("not signed in")
+    }
+    
+    func setUpSignUp(){
+        signIn = GPPSignIn.sharedInstance()
+        signIn?.shouldFetchGooglePlusUser = true
+        signIn?.shouldFetchGoogleUserEmail = true  // Uncomment to get the user's email
+        signIn?.shouldFetchGoogleUserID = true
+        signIn?.clientID = "323701751721-nq3900gl90p3js5nig9i5k1a65cbv371.apps.googleusercontent.com"
+        signIn?.scopes = [kGTLAuthScopePlusLogin]
+        signIn?.delegate = self
+        signIn?.authenticate()
+    }
 
 }
 
