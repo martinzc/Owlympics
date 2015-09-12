@@ -22,11 +22,11 @@ class InputViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
             let sportString = input_exercise.text //need to get from the textfiled
             let durationString = input_duration.text
             let intensityString = "Mild"
-            let uuidString = "cz16"
+            let uuidString = loadFromLocal("account")
             let locationString = "unclear"
             let urlString = "http://ec2-52-6-56-55.compute-1.amazonaws.com/upload"
             
-            httpSender.buildRequestFromStringsAndSend(timeString, durationString: durationString, sportString: sportString, locationString: locationString, intensityString: intensityString, uuidString: uuidString, urlString: urlString)
+            httpSender.buildRequestFromStringsAndSend(timeString, durationString: durationString, sportString: sportString, locationString: locationString, intensityString: intensityString, uuidString: uuidString!, urlString: urlString)
             
             var newExercise = Exercise(tim: NSDate(), dur: durationString, spo: sportString, inten: intensityString)
             storeToLocal(newExercise)

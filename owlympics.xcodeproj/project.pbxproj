@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		0B7A9E841BA3B6CC00E3AD81 /* NumericField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7A9E831BA3B6CC00E3AD81 /* NumericField.swift */; };
 		0B7A9E861BA3B6F400E3AD81 /* CharactersField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7A9E851BA3B6F400E3AD81 /* CharactersField.swift */; };
+		0B7A9E881BA3CB9600E3AD81 /* LocalSaveAny.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7A9E871BA3CB9600E3AD81 /* LocalSaveAny.swift */; };
+		0B7A9E8A1BA3CEB000E3AD81 /* GoogleOpenSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B7A9E891BA3CEB000E3AD81 /* GoogleOpenSource.framework */; };
+		0B7A9E8C1BA3CEBA00E3AD81 /* GooglePlus.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0B7A9E8B1BA3CEBA00E3AD81 /* GooglePlus.bundle */; };
+		0B7A9E8E1BA3CECC00E3AD81 /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B7A9E8D1BA3CECC00E3AD81 /* GooglePlus.framework */; };
 		A918F32A1BA0E38400970E0A /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A918F3291BA0E38400970E0A /* LocalStorage.swift */; };
 		A91E4C2E1B84F90500E98CDC /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91E4C2D1B84F90500E98CDC /* GraphView.swift */; };
 		A9203D621B9191C1008B82C3 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9203D611B9191C1008B82C3 /* InputViewController.swift */; };
@@ -45,6 +49,10 @@
 /* Begin PBXFileReference section */
 		0B7A9E831BA3B6CC00E3AD81 /* NumericField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericField.swift; sourceTree = "<group>"; };
 		0B7A9E851BA3B6F400E3AD81 /* CharactersField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersField.swift; sourceTree = "<group>"; };
+		0B7A9E871BA3CB9600E3AD81 /* LocalSaveAny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalSaveAny.swift; sourceTree = "<group>"; };
+		0B7A9E891BA3CEB000E3AD81 /* GoogleOpenSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleOpenSource.framework; path = "../../google-plus-ios-sdk-1.7.1/GoogleOpenSource.framework"; sourceTree = "<group>"; };
+		0B7A9E8B1BA3CEBA00E3AD81 /* GooglePlus.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GooglePlus.bundle; path = "../../google-plus-ios-sdk-1.7.1/GooglePlus.bundle"; sourceTree = "<group>"; };
+		0B7A9E8D1BA3CECC00E3AD81 /* GooglePlus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlus.framework; path = "../../google-plus-ios-sdk-1.7.1/GooglePlus.framework"; sourceTree = "<group>"; };
 		A918F3291BA0E38400970E0A /* LocalStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		A91E4C2D1B84F90500E98CDC /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GraphView.swift; path = owlympics/GraphView.swift; sourceTree = "<group>"; };
 		A9203D611B9191C1008B82C3 /* InputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +87,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9C877C51B65D32200D161F2 /* Gimbal.framework in Frameworks */,
+				0B7A9E8E1BA3CECC00E3AD81 /* GooglePlus.framework in Frameworks */,
+				0B7A9E8A1BA3CEB000E3AD81 /* GoogleOpenSource.framework in Frameworks */,
 				A9C877C11B65D29C00D161F2 /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -112,6 +122,9 @@
 		A918F3281BA0E33200970E0A /* Helper Files */ = {
 			isa = PBXGroup;
 			children = (
+				0B7A9E8D1BA3CECC00E3AD81 /* GooglePlus.framework */,
+				0B7A9E8B1BA3CEBA00E3AD81 /* GooglePlus.bundle */,
+				0B7A9E891BA3CEB000E3AD81 /* GoogleOpenSource.framework */,
 				A97EFE461B7D382800D7DA74 /* Exercise.swift */,
 				A918F3291BA0E38400970E0A /* LocalStorage.swift */,
 				A9E0CAE51BA213040008BCFD /* DateProcessor.swift */,
@@ -119,6 +132,7 @@
 				A91E4C2D1B84F90500E98CDC /* GraphView.swift */,
 				A9A6B8DA1BA34F5400EE9AD3 /* CircleView.swift */,
 				A941EA691BA3909B006DDC6E /* RegisterNotification.swift */,
+				0B7A9E871BA3CB9600E3AD81 /* LocalSaveAny.swift */,
 			);
 			name = "Helper Files";
 			sourceTree = "<group>";
@@ -274,6 +288,7 @@
 			files = (
 				A990969D1BA0B3450010052E /* Images.xcassets in Resources */,
 				A9C877A61B65CF0D00D161F2 /* Main.storyboard in Resources */,
+				0B7A9E8C1BA3CEBA00E3AD81 /* GooglePlus.bundle in Resources */,
 				A9C877AB1B65CF0D00D161F2 /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,6 +310,7 @@
 				0B7A9E861BA3B6F400E3AD81 /* CharactersField.swift in Sources */,
 				A9203D621B9191C1008B82C3 /* InputViewController.swift in Sources */,
 				A918F32A1BA0E38400970E0A /* LocalStorage.swift in Sources */,
+				0B7A9E881BA3CB9600E3AD81 /* LocalSaveAny.swift in Sources */,
 				A941EA6A1BA3909B006DDC6E /* RegisterNotification.swift in Sources */,
 				A9E0CAE61BA213040008BCFD /* DateProcessor.swift in Sources */,
 				0B7A9E841BA3B6CC00E3AD81 /* NumericField.swift in Sources */,
@@ -441,13 +457,17 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					/Users/Wangziyun/Documents/Computer,
+					Science/2015,
+					"Research/google-plus-ios-sdk-1.7.1",
 				);
 				INFOPLIST_FILE = owlympics/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = Header.h;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Wangziyun/Documents/Computer Science/2015 Research/Owlympics-Alpha/owlympics/Header.h";
 			};
 			name = Debug;
 		};
@@ -461,13 +481,17 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					/Users/Wangziyun/Documents/Computer,
+					Science/2015,
+					"Research/google-plus-ios-sdk-1.7.1",
 				);
 				INFOPLIST_FILE = owlympics/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = Header.h;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Wangziyun/Documents/Computer Science/2015 Research/Owlympics-Alpha/owlympics/Header.h";
 			};
 			name = Release;
 		};

@@ -43,7 +43,7 @@ class AccountTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier("account_detail", forIndexPath: indexPath) as! UITableViewCell
-            cell.textLabel?.text = "cz16@rice.edu"
+            cell.textLabel?.text = loadFromLocal("account")
             return cell
         }
         else if indexPath.section == 1 {
