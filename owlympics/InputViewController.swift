@@ -35,6 +35,7 @@ class InputViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         input_exercise.text = ""
         
     }
+    
     @IBAction func doneButton(sender: AnyObject) {
 
     }

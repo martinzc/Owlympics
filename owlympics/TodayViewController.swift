@@ -106,6 +106,8 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         
+        registerForegroundNotification(self)
+        
 //        Hide the back button on home screen
         setUpSignUp()
         self.navigationItem.setHidesBackButton(true, animated: true)
