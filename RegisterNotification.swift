@@ -8,7 +8,7 @@
 
 import Foundation
 
-func registerForegroundNotification(viewController:UIViewController) {
+func registerForegroundNotificationForInput(viewController:UIViewController) {
     //        Foreground notification
     var alert = UIAlertController(title: "Alert", message: "You've exited the gym, do you want to input your exercise data?", preferredStyle: UIAlertControllerStyle.Alert)
     alert.addAction(UIAlertAction(title: "Input data", style: UIAlertActionStyle.Default, handler:{ (_) -> Void in
@@ -17,6 +17,14 @@ func registerForegroundNotification(viewController:UIViewController) {
     alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler:nil))
     viewController.parentViewController!.presentViewController(alert, animated: true, completion: nil)
     
+}
+
+func registerForegroundNotificationForAny(viewController:UIViewController, message: String, title: String) {
+//    println("success")
+    //        Foreground notification
+    var alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:nil))
+    viewController.parentViewController!.presentViewController(alert, animated: true, completion: nil)
 }
 
 func registerBackgroundNotification() {

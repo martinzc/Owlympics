@@ -10,13 +10,14 @@
 		0B7A9E841BA3B6CC00E3AD81 /* NumericField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7A9E831BA3B6CC00E3AD81 /* NumericField.swift */; };
 		0B7A9E861BA3B6F400E3AD81 /* CharactersField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7A9E851BA3B6F400E3AD81 /* CharactersField.swift */; };
 		0B7A9E881BA3CB9600E3AD81 /* LocalSaveAny.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7A9E871BA3CB9600E3AD81 /* LocalSaveAny.swift */; };
-		A918F32A1BA0E38400970E0A /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A918F3291BA0E38400970E0A /* LocalStorage.swift */; };
+		A918F32A1BA0E38400970E0A /* ExerciseLocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A918F3291BA0E38400970E0A /* ExerciseLocalStorage.swift */; };
 		A91E4C2E1B84F90500E98CDC /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91E4C2D1B84F90500E98CDC /* GraphView.swift */; };
 		A9203D621B9191C1008B82C3 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9203D611B9191C1008B82C3 /* InputViewController.swift */; };
 		A941EA6A1BA3909B006DDC6E /* RegisterNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = A941EA691BA3909B006DDC6E /* RegisterNotification.swift */; };
 		A95E7F9C1B8433BF00410E7B /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95E7F9B1B8433BF00410E7B /* AccountTableViewController.swift */; };
 		A95E7F9E1B84387300410E7B /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95E7F9D1B84387300410E7B /* SummaryViewController.swift */; };
 		A97EFE471B7D382800D7DA74 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97EFE461B7D382800D7DA74 /* Exercise.swift */; };
+		A98086101BAC97EF00E3677A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980860F1BAC97EF00E3677A /* LoginViewController.swift */; };
 		A990969D1BA0B3450010052E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A990969C1BA0B3450010052E /* Images.xcassets */; };
 		A9A6B8D71BA3341000EE9AD3 /* RootPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A6B8D61BA3341000EE9AD3 /* RootPageViewController.swift */; };
 		A9A6B8D91BA3348A00EE9AD3 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A6B8D81BA3348A00EE9AD3 /* ModelController.swift */; };
@@ -50,13 +51,14 @@
 		0B7A9E831BA3B6CC00E3AD81 /* NumericField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericField.swift; sourceTree = "<group>"; };
 		0B7A9E851BA3B6F400E3AD81 /* CharactersField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersField.swift; sourceTree = "<group>"; };
 		0B7A9E871BA3CB9600E3AD81 /* LocalSaveAny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalSaveAny.swift; sourceTree = "<group>"; };
-		A918F3291BA0E38400970E0A /* LocalStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
+		A918F3291BA0E38400970E0A /* ExerciseLocalStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseLocalStorage.swift; sourceTree = "<group>"; };
 		A91E4C2D1B84F90500E98CDC /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GraphView.swift; path = owlympics/GraphView.swift; sourceTree = "<group>"; };
 		A9203D611B9191C1008B82C3 /* InputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
 		A941EA691BA3909B006DDC6E /* RegisterNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterNotification.swift; sourceTree = "<group>"; };
 		A95E7F9B1B8433BF00410E7B /* AccountTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
 		A95E7F9D1B84387300410E7B /* SummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		A97EFE461B7D382800D7DA74 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		A980860F1BAC97EF00E3677A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A990969C1BA0B3450010052E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A9A6B8D61BA3341000EE9AD3 /* RootPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootPageViewController.swift; sourceTree = "<group>"; };
 		A9A6B8D81BA3348A00EE9AD3 /* ModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				A9F956CD1B83FD4B005262A8 /* HistoryTableViewController.swift */,
 				A95E7F9B1B8433BF00410E7B /* AccountTableViewController.swift */,
 				A9203D611B9191C1008B82C3 /* InputViewController.swift */,
+				A980860F1BAC97EF00E3677A /* LoginViewController.swift */,
 				A95E7F9D1B84387300410E7B /* SummaryViewController.swift */,
 				A9A6B8D81BA3348A00EE9AD3 /* ModelController.swift */,
 				A9A6B8D61BA3341000EE9AD3 /* RootPageViewController.swift */,
@@ -123,12 +126,12 @@
 			isa = PBXGroup;
 			children = (
 				A97EFE461B7D382800D7DA74 /* Exercise.swift */,
-				A918F3291BA0E38400970E0A /* LocalStorage.swift */,
 				A9E0CAE51BA213040008BCFD /* DateProcessor.swift */,
 				A9F956C91B83F7DF005262A8 /* HttpRequest.swift */,
 				A91E4C2D1B84F90500E98CDC /* GraphView.swift */,
 				A9A6B8DA1BA34F5400EE9AD3 /* CircleView.swift */,
 				A941EA691BA3909B006DDC6E /* RegisterNotification.swift */,
+				A918F3291BA0E38400970E0A /* ExerciseLocalStorage.swift */,
 				0B7A9E871BA3CB9600E3AD81 /* LocalSaveAny.swift */,
 			);
 			name = "Helper Files";
@@ -309,8 +312,9 @@
 			files = (
 				0B7A9E861BA3B6F400E3AD81 /* CharactersField.swift in Sources */,
 				A9203D621B9191C1008B82C3 /* InputViewController.swift in Sources */,
-				A918F32A1BA0E38400970E0A /* LocalStorage.swift in Sources */,
+				A918F32A1BA0E38400970E0A /* ExerciseLocalStorage.swift in Sources */,
 				0B7A9E881BA3CB9600E3AD81 /* LocalSaveAny.swift in Sources */,
+				A98086101BAC97EF00E3677A /* LoginViewController.swift in Sources */,
 				A941EA6A1BA3909B006DDC6E /* RegisterNotification.swift in Sources */,
 				A9E0CAE61BA213040008BCFD /* DateProcessor.swift in Sources */,
 				0B7A9E841BA3B6CC00E3AD81 /* NumericField.swift in Sources */,
