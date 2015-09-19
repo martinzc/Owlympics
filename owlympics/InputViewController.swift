@@ -13,15 +13,18 @@ class InputViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     @IBOutlet weak var input_exercise: UITextField!
     @IBOutlet weak var input_duration: UITextField!
     @IBOutlet weak var intensityPicker: UIPickerView!
+    //    Configure Picker View
+    let intensity_lst = ["Light","Mild","Heavy","Very Heavy"]
     
     @IBAction func AddExercise(sender: AnyObject) {
         if(count(input_exercise.text) > 0 && count(input_duration.text) > 0){
-            
+            println("in")
             let httpSender = requestSender()
             let timeString = NSDate().description //need get time
             let sportString = input_exercise.text //need to get from the textfiled
             let durationString = input_duration.text
-            let intensityString = "Mild"
+            let intensityString = intensity_lst[intensityPicker.selectedRowInComponent(0)]
+            println(intensityString)
             let uuidString = loadFromLocal("account")
             let locationString = "unclear"
             let urlString = "http://ec2-52-6-56-55.compute-1.amazonaws.com/upload"
@@ -31,6 +34,7 @@ class InputViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
             var newExercise = Exercise(tim: NSDate(), dur: durationString, spo: sportString, inten: intensityString)
             storeToLocal(newExercise)
         }
+        println("out")
         input_duration.text = ""
         input_exercise.text = ""
         
@@ -52,8 +56,7 @@ class InputViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         // Dispose of any resources that can be recreated.
     }
     
-//    Configure Picker View
-    let intensity_lst = ["Light","Mild","Heavy","Very Heavy"]
+
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
