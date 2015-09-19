@@ -29,9 +29,7 @@ class SummaryViewController: UIViewController,  UITableViewDataSource, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        tableView.tableFooterView = UIView()
-        
+        // Do any additional setup after loading the view, typically from a nib.        
     }
     
     override func didReceiveMemoryWarning() {
@@ -49,6 +47,7 @@ class SummaryViewController: UIViewController,  UITableViewDataSource, UITableVi
         visitLabel.text = visitText
         activityLabel.text = activityText
         minLabel.text = minText
+        tableView.tableFooterView = UIView()
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {

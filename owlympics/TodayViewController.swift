@@ -13,7 +13,7 @@ import AssetsLibrary
 import CoreLocation
 import CoreMotion
 
-class TodayViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, GMBLPlaceManagerDelegate, GPPSignInDelegate {
+class TodayViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, GMBLPlaceManagerDelegate {
     
     // view outlets
     
@@ -29,7 +29,6 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     
     var placeManager: GMBLPlaceManager!
-    var signIn: GPPSignIn?
 
     func setupGraphDisplay() {
         
@@ -120,6 +119,28 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
         
 //        Create the fitness graph
         setupGraphDisplay()
+        
+        /* Check if notifications are enabled
+        
+        //        Check for notification settings, if there is no permission, send a notification
+        let currentSettings = UIApplication.sharedApplication().currentUserNotificationSettings()
+        let required:UIUserNotificationType = UIUserNotificationType.Sound | UIUserNotificationType.Alert; // Add other permissions as required
+        if (currentSettings.types & required) == nil {
+            let message = "Please turn it on in <Settings>."
+            let title = "Notifications are disabled"
+            registerForegroundNotificationForAny(self, message, title)
+        }
+*/
+        
+
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+//        Show a Sign-in page if the user has not signed in yet
+        if loadFromLocal("account") == nil {
+            self.performSegueWithIdentifier("ShowLogin", sender: self)
+        }        
     }
     
     func placeManager(manager: GMBLPlaceManager!, didBeginVisit visit: GMBLVisit!) {
@@ -129,7 +150,7 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
     func placeManager(manager: GMBLPlaceManager!, didEndVisit visit: GMBLVisit!) {
         println("The user exited \(visit.place.name) at \(visit.departureDate)")
         registerBackgroundNotification()
-        registerForegroundNotification(self)
+        registerForegroundNotificationForInput(self)
     }
     
 
@@ -144,27 +165,7 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
         }
     }
-    func finishedWithAuth(auth: GTMOAuth2Authentication!, error: NSError!) {
-        GPPSignIn.sharedInstance()
-        let acccount = signIn?.userEmail
-        storeDataToLocal(acccount!, "account")
-
-    }
     
-    func didDisconnectWithError(error: NSError!) {
-        println("not signed in")
-    }
-    
-    func setUpSignUp(){
-        signIn = GPPSignIn.sharedInstance()
-        signIn?.shouldFetchGooglePlusUser = true
-        signIn?.shouldFetchGoogleUserEmail = true  // Uncomment to get the user's email
-        signIn?.shouldFetchGoogleUserID = true
-        signIn?.clientID = "323701751721-nq3900gl90p3js5nig9i5k1a65cbv371.apps.googleusercontent.com"
-        signIn?.scopes = [kGTLAuthScopePlusLogin]
-        signIn?.delegate = self
-        signIn?.authenticate()
-    }
 
 }
 
