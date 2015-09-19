@@ -118,23 +118,10 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
         placeManager.delegate = self
         
 //        Create the fitness graph
-        setupGraphDisplay()
-        
-        registerForegroundNotificationForInput(self);
-        /* Check if notifications are enabled
-        
-        //        Check for notification settings, if there is no permission, send a notification
-        let currentSettings = UIApplication.sharedApplication().currentUserNotificationSettings()
-        let required:UIUserNotificationType = UIUserNotificationType.Sound | UIUserNotificationType.Alert; // Add other permissions as required
-        if (currentSettings.types & required) == nil {
-            let message = "Please turn it on in <Settings>."
-            let title = "Notifications are disabled"
-            registerForegroundNotificationForAny(self, message, title)
-        }
-*/
-        
+        setupGraphDisplay()        
 
     }
+    
     
     override func viewWillAppear(animated: Bool) {
         

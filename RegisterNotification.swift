@@ -24,7 +24,8 @@ func registerForegroundNotificationForAny(viewController:UIViewController, messa
     //        Foreground notification
     var alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
     alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:nil))
-    viewController.parentViewController!.presentViewController(alert, animated: true, completion: nil)
+    alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler:nil))
+    viewController.presentViewController(alert, animated: true, completion: nil)
 }
 
 func registerBackgroundNotification() {
