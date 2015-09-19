@@ -120,6 +120,7 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
 //        Create the fitness graph
         setupGraphDisplay()
         
+        registerForegroundNotificationForInput(self);
         /* Check if notifications are enabled
         
         //        Check for notification settings, if there is no permission, send a notification
