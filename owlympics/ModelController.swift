@@ -52,8 +52,10 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
         
 //        Update all entires
         for eachExercise in exerciseList {
-//            Change things if it is in current month
-            if getMonthOfYear(NSDate()) == getMonthOfYear(eachExercise.arrivaltime) {
+//            Change things if it is in current month, "2015, 9"
+            let monthToSearch = getYear(NSDate()) + ", " + "\(month)"
+//            println(monthToSearch)
+            if monthToSearch == getMonthOfYear(eachExercise.arrivaltime) {
 //                Update the exercise data
                 dataViewController.exerciseArray.append(eachExercise)
 //                Update the visit

@@ -47,7 +47,7 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
         //3 - calculate average from graphPoints
         let average = Double(graphView.graphPoints.reduce(0, combine: +)) / Double(graphView.graphPoints.count)
         let average_rounded = Double(round(100*average)/100)
-        AverageTime.text = "\(average_rounded) Hours"
+        AverageTime.text = "\(average_rounded) Mins per day"
         
         //set up labels
         //day of week labels are set up in storyboard with tags
@@ -118,8 +118,8 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
         placeManager.delegate = self
         
 //        Create the fitness graph
-        setupGraphDisplay()        
-
+        setupGraphDisplay()
+        
     }
     
     
@@ -133,6 +133,8 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func placeManager(manager: GMBLPlaceManager!, didBeginVisit visit: GMBLVisit!) {
         println("The user visited \(visit.place.name) at \(visit.arrivalDate)")
+        registerForegroundNotificationForAny(self, "Alert", "You've entered the gym")
+        registerBackgroundNotificationForAny("Open the app", "You've entered the gym")
     }
     
     func placeManager(manager: GMBLPlaceManager!, didEndVisit visit: GMBLVisit!) {

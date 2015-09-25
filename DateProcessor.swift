@@ -43,6 +43,30 @@ func getMonthOfYear(date:NSDate) -> String {
     return monthofyearString
 }
 
+/*    Return a string that indicates the exact time.
+The return style would be like "2015-September-09, 7:00 am"    */
+func getExactDay(date:NSDate) -> String {
+    
+    let exactDayFormatter = NSDateFormatter()
+    
+    //    Format of the return value. It has three letters
+    exactDayFormatter.dateFormat = "YYYY-MMMM-dd, h:mm a"
+    let exactDayString = exactDayFormatter.stringFromDate(date)
+    return exactDayString
+}
+
+/*    Return a string that indicates the exact time.
+The return style would be like "2015"    */
+func getYear(date:NSDate) -> String {
+    
+    let yearFormatter = NSDateFormatter()
+    
+    //    Format of the return value. It has three letters
+    yearFormatter.dateFormat = "YYYY"
+    let yearString = yearFormatter.stringFromDate(date)
+    return yearString
+}
+
 /* Calculate the days between two NSDate */
 func calculateDaysBetween(date1:NSDate, date2:NSDate) -> Int {
     

@@ -38,3 +38,14 @@ func registerBackgroundNotification() {
     UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
     
 }
+
+func registerBackgroundNotificationForAny(action: String, message: String) {
+    //        Background notification
+    var localNotification:UILocalNotification = UILocalNotification()
+    //
+    localNotification.alertAction = action
+    localNotification.alertBody = message
+    localNotification.fireDate = NSDate(timeIntervalSinceNow: 5)
+    UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+    
+}

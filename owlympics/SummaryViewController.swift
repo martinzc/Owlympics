@@ -77,7 +77,7 @@ class SummaryViewController: UIViewController,  UITableViewDataSource, UITableVi
         // Configure the cell...
         if exerciseArray.count != 0{
             let event = exerciseArray[exerciseArray.count-1-indexPath.row]
-            cell.textLabel?.text = event.arrivaltime.description
+            cell.textLabel?.text = getExactDay(event.arrivaltime)
             cell.detailTextLabel?.text = event.sport + " for " + event.duration
             if let sport_image = UIImage(named: event.sport) {
                 cell.imageView?.image = sport_image

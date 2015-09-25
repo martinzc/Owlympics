@@ -47,7 +47,7 @@ class HistoryTableViewController: UITableViewController {
         // Configure the cell...
         
         let event = allExercises[ allExercises.count-indexPath.row-1]
-        cell.textLabel?.text = event.arrivaltime.description
+        cell.textLabel?.text = getExactDay(event.arrivaltime)
         cell.detailTextLabel?.text = event.sport + " for " + event.duration
         if let sport_image = UIImage(named: event.sport) {
             cell.imageView?.image = sport_image
