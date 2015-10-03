@@ -7,8 +7,8 @@
 //
 
 import UIKit
-
-class AccountTableViewController: UITableViewController {
+import MessageUI
+class AccountTableViewController: UITableViewController, UITableViewDelegate, MFMailComposeViewControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,13 +37,17 @@ class AccountTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 1
+        return 2
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier("account_detail", forIndexPath: indexPath) as! UITableViewCell
-            cell.textLabel?.text = loadFromLocal("account")
+            if indexPath.row == 0 {
+                cell.textLabel?.text = loadFromLocal("account")
+            }else{
+                cell.textLabel?.text = "Give us FeedBack!"
+            }
             return cell
         }
         else if indexPath.section == 1 {
@@ -70,7 +74,40 @@ class AccountTableViewController: UITableViewController {
         }
     }
     
+    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        if(indexPath.row == 0 && indexPath.section == 0) {
+            if(MFMailComposeViewController.canSendMail()){
+                var emailTitle = "FeedBack for Owlympics"
+                var toRecipient = ["zw21@rice.edu"]
+                var mc:MFMailComposeViewController = MFMailComposeViewController()
+            
+                mc.mailComposeDelegate = self
+                mc.setSubject(emailTitle)
+                mc.setToRecipients(toRecipient)
+            
+                self.presentViewController(mc, animated: true, completion: nil)
+            }else{
+                println("No email found")
+            }
+        }
+    }
     
+    func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
+        switch result.value {
+        case MFMailComposeResultCancelled.value:
+            println("Mail Cancelled")
+        case MFMailComposeResultSaved.value:
+            println("Mail Saved")
+        case MFMailComposeResultSent.value:
+            println("Mail Sent")
+        case MFMailComposeResultFailed.value:
+            println("Mail Failed")
+        default:
+            break
+        }
+        
+        self.dismissViewControllerAnimated(false, completion: nil)
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

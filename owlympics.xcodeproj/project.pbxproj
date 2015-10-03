@@ -472,7 +472,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/martinzhou/Documents/Martin/Development/Projects/Owlympics/owlympics/Header.h;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Wangziyun/Documents/ComputerScience/2015 Research/owlympics/Header.h";
 			};
 			name = Debug;
 		};
@@ -493,7 +493,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/martinzhou/Documents/Martin/Development/Projects/Owlympics/owlympics/Header.h;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Wangziyun/Documents/ComputerScience/2015 Research/owlympics/Header.h";
 			};
 			name = Release;
 		};
