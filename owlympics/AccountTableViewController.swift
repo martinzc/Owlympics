@@ -74,8 +74,11 @@ class AccountTableViewController: UITableViewController, UITableViewDelegate, MF
         }
     }
     
-    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        if(indexPath.row == 0 && indexPath.section == 0) {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        println("index path row is ",indexPath.row)
+        println("section is ", indexPath.section)
+        if(indexPath.row == 1 && indexPath.section == 0) {
+            println("selected")
             if(MFMailComposeViewController.canSendMail()){
                 var emailTitle = "FeedBack for Owlympics"
                 var toRecipient = ["zw21@rice.edu"]
