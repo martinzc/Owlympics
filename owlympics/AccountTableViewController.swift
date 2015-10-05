@@ -31,13 +31,18 @@ class AccountTableViewController: UITableViewController, UITableViewDelegate, MF
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 1
+        return 2
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 2
+        if section == 0 {
+            return 2
+        }
+        else {
+            return 1
+        }
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -45,14 +50,15 @@ class AccountTableViewController: UITableViewController, UITableViewDelegate, MF
             let cell = tableView.dequeueReusableCellWithIdentifier("account_detail", forIndexPath: indexPath) as! UITableViewCell
             if indexPath.row == 0 {
                 cell.textLabel?.text = loadFromLocal("account")
-            }else{
-                cell.textLabel?.text = "Give us FeedBack!"
+            }
+            else {
+                cell.textLabel?.text = "Log out"
             }
             return cell
         }
         else if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCellWithIdentifier("account_detail", forIndexPath: indexPath) as! UITableViewCell
-            cell.textLabel?.text = "Log out"
+            cell.textLabel?.text = "Give us FeedBack!"
             return cell
         }
         else {
@@ -77,7 +83,7 @@ class AccountTableViewController: UITableViewController, UITableViewDelegate, MF
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         println("index path row is ",indexPath.row)
         println("section is ", indexPath.section)
-        if(indexPath.row == 1 && indexPath.section == 0) {
+        if(indexPath.row == 0 && indexPath.section == 1) {
             println("selected")
             if(MFMailComposeViewController.canSendMail()){
                 var emailTitle = "FeedBack for Owlympics"
