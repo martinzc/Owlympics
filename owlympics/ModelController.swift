@@ -43,6 +43,7 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
         dataViewController.dataObject = self.pageData[index]
 //        Load local data and count visits, activities and hours
         let exerciseList = loadFromLocal()
+        
 //        Get to know which month it is
         let month = index + 1
         var visit = 0
@@ -61,12 +62,23 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
 //                Update the visit
                 if !contains(arrivalTimeTracker, eachExercise.arrivaltime) {
                     arrivalTimeTracker.append(eachExercise.arrivaltime)
-                    visit += 1
                 }
 //                Update the activity
                 activity += 1
 //                Update the hour
                 duration += eachExercise.duration.toInt()!
+            }
+        }
+        
+        if let visitList = loadListFromLocal(defaultsKeys.keyVisit) as [NSDate]! {
+            for eachVisit in visitList {
+                //            Change things if it is in current month, "2015, 9"
+                let monthToSearch = getYear(NSDate()) + ", " + "\(month)"
+                //            println(monthToSearch)
+                if monthToSearch == getMonthOfYear(eachVisit) {
+                    //                Update the exercise data
+                    visit += 1
+                }
             }
         }
         
