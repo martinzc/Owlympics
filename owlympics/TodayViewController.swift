@@ -44,10 +44,15 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         maxLabel.text = "\(maxElement(graphView.graphPoints))"
         
-        //3 - calculate average from graphPoints
-        let average = Double(graphView.graphPoints.reduce(0, combine: +)) / Double(graphView.graphPoints.count)
-        let average_rounded = Double(round(100*average)/100)
-        AverageTime.text = "\(average_rounded) Mins per day"
+//        //3 - calculate average from graphPoints
+//        let average = Double(graphView.graphPoints.reduce(0, combine: +)) / Double(graphView.graphPoints.count)
+//        let average_rounded = Double(round(100*average)/100)
+//        AverageTime.text = "\(average_rounded) Mins per day"
+        
+//        Calculate the visit of the last 7 days
+        let visit_num = visitOfPastSevenDays()
+        AverageTime.text = "\(visit_num) visits"
+        
         
         //set up labels
         //day of week labels are set up in storyboard with tags
