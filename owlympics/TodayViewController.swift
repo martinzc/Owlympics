@@ -50,6 +50,7 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
 //        AverageTime.text = "\(average_rounded) Mins per day"
         
 //        Calculate the visit of the last 7 days
+        AverageTime.text = "\(visitOfPastSevenDays()) visits"
         
         
         //set up labels
@@ -146,8 +147,13 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
         registerForegroundNotificationForInput(self)
         
 //        Add this visit into local data
-        if let lstVisit:[NSDate] = loadFromLocal(defaultsKeys.keyVisit) {
-            lstVisit.
+        if let lstVisit = loadListFromLocal(defaultsKeys.keyVisit) as [NSDate]? {
+            var lstTemp = loadListFromLocal(defaultsKeys.keyVisit) as [NSDate]!
+            lstTemp.append(visit.departureDate)
+            storeDataToLocal(lstTemp, defaultsKeys.keyVisit)
+        }
+        else {
+            storeDataToLocal([visit.departureDate], defaultsKeys.keyVisit)
         }
     }
     
