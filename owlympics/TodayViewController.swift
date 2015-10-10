@@ -146,6 +146,11 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
         println("The user exited \(visit.place.name) at \(visit.departureDate)")
         registerBackgroundNotification()
         registerForegroundNotificationForInput(self)
+        
+//        Add this visit into local data
+        if let lstVisit:[NSDate] = loadFromLocal(defaultsKeys.keyVisit) {
+            lstVisit.
+        }
     }
     
 
