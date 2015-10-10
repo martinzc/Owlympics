@@ -81,7 +81,7 @@ class AccountTableViewController: UITableViewController, UITableViewDelegate, MF
             println("selected")
             if(MFMailComposeViewController.canSendMail()){
                 var emailTitle = "FeedBack for Owlympics"
-                var toRecipient = ["zw21@rice.edu"]
+                var toRecipient = ["owlympics.feedback@gmail.com"]
                 var mc:MFMailComposeViewController = MFMailComposeViewController()
             
                 mc.mailComposeDelegate = self

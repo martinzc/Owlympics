@@ -17,6 +17,10 @@ class InputViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     let intensity_lst = ["Light","Mild","Heavy","Very Heavy"]
     
     @IBAction func AddExercise(sender: AnyObject) {
+        addExercise()
+        performSegueWithIdentifier("sentAndDone", sender: self)
+    }
+    func addExercise(){
         if(count(input_exercise.text) > 0 && count(input_duration.text) > 0){
             println("in")
             let httpSender = requestSender()
@@ -28,7 +32,6 @@ class InputViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
             let uuidString = loadFromLocal("account")
             let locationString = "unclear"
             let urlString = "http://ec2-52-6-56-55.compute-1.amazonaws.com/upload"
-            
             httpSender.buildRequestFromStringsAndSend(timeString, durationString: durationString, sportString: sportString, locationString: locationString, intensityString: intensityString, uuidString: uuidString!, urlString: urlString)
             
             var newExercise = Exercise(tim: NSDate(), dur: durationString, spo: sportString, inten: intensityString)
@@ -37,10 +40,10 @@ class InputViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         println("out")
         input_duration.text = ""
         input_exercise.text = ""
-        
-    }
     
-    @IBAction func doneButton(sender: AnyObject) {
+    }
+
+    @IBAction func sendAndDone(sender: AnyObject) {
 
     }
     
@@ -76,7 +79,9 @@ class InputViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     }
     
     
-
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        addExercise()
+    }
     /*
     // MARK: - Navigation
 
