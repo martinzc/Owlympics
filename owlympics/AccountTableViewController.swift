@@ -49,7 +49,7 @@ class AccountTableViewController: UITableViewController, UITableViewDelegate, MF
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier("account_detail", forIndexPath: indexPath) as! UITableViewCell
             if indexPath.row == 0 {
-                cell.textLabel?.text = loadFromLocal("account")
+                cell.textLabel?.text = loadStringFromLocal("account")
             }
             else {
                 cell.textLabel?.text = "Log out"
@@ -98,6 +98,15 @@ class AccountTableViewController: UITableViewController, UITableViewDelegate, MF
             }else{
                 println("No email found")
             }
+        }
+        if(indexPath.row == 1 && indexPath.section == 0) {
+            println("selected2")
+            var signIn = loadFromLocal("signIn") as? GPPSignIn
+            signIn?.signOut()
+//            let indexAccount = NSIndexPath(0, 0)
+//            let cell = tableView.dequeueReusableCellWithIdentifier("account_detail", forIndexPath: indexAccount) as! UITableViewCell
+//            cell.
+            
         }
     }
     

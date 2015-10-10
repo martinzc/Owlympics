@@ -22,7 +22,7 @@ class NavigationViewController: UINavigationController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        if (loadFromLocal("First Time") != nil) {
+        if (loadStringFromLocal("First Time") != nil) {
             //        Check for notification settings, if there is no permission, send a notification
             let currentSettings = UIApplication.sharedApplication().currentUserNotificationSettings()
             let required:UIUserNotificationType = UIUserNotificationType.Sound | UIUserNotificationType.Alert; // Add other permissions as required

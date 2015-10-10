@@ -50,8 +50,6 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
 //        AverageTime.text = "\(average_rounded) Mins per day"
         
 //        Calculate the visit of the last 7 days
-        let visit_num = visitOfPastSevenDays()
-        AverageTime.text = "\(visit_num) visits"
         
         
         //set up labels
@@ -131,7 +129,7 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
     override func viewWillAppear(animated: Bool) {
         
 //        Show a Sign-in page if the user has not signed in yet
-        if loadFromLocal("account") == nil {
+        if loadStringFromLocal("account") == nil {
             self.performSegueWithIdentifier("ShowLogin", sender: self)
         }        
     }

@@ -49,6 +49,7 @@ class LoginViewController: UIViewController, GPPSignInDelegate {
         GPPSignIn.sharedInstance()
         let acccount = signIn?.userEmail
         storeDataToLocal(acccount!, "account")
+        storeDataToLocal(signIn!, "signIn")
         self.performSegueWithIdentifier("FinishAuth", sender: self)
         
     }

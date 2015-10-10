@@ -16,8 +16,19 @@ func storeDataToLocal(string: String, key: String){
 
 }
 
-func loadFromLocal(key: String?) -> String?{
+func loadStringFromLocal(key: String?) -> String?{
+    let data = loadFromLocal(key)
+    return data as? String
+}
+
+
+func storeDataToLocal(object: NSObject, key: String){
     let defaults = NSUserDefaults.standardUserDefaults()
-    let data = defaults.valueForKey(key!) as? String
+    defaults.setValue(object, forKey: key)
+}
+
+func loadFromLocal(key: String?) -> NSObject?{
+    let defaults = NSUserDefaults.standardUserDefaults()
+    let data = defaults.valueForKey(key!) as? NSObject
     return data
 }

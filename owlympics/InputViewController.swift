@@ -29,7 +29,7 @@ class InputViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
             let durationString = input_duration.text
             let intensityString = intensity_lst[intensityPicker.selectedRowInComponent(0)]
             println(intensityString)
-            let uuidString = loadFromLocal("account")
+            let uuidString = loadStringFromLocal("account")
             let locationString = "unclear"
             let urlString = "http://ec2-52-6-56-55.compute-1.amazonaws.com/upload"
             httpSender.buildRequestFromStringsAndSend(timeString, durationString: durationString, sportString: sportString, locationString: locationString, intensityString: intensityString, uuidString: uuidString!, urlString: urlString)

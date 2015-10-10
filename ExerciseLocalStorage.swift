@@ -70,7 +70,6 @@ func durationOfPastSevenDays() -> [Int] {
     }
     
     return durationList
-}
 
 func visitOfPastSevenDays() -> Int {
     
@@ -94,4 +93,4 @@ func visitOfPastSevenDays() -> Int {
     }
     
     return visit
-}
+}}
