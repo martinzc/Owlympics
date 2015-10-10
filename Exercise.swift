@@ -44,5 +44,6 @@ class Exercise:NSObject {
 
 struct defaultsKeys {
     static let keyDict = "DictionaryOfExercise" // Where an array of exercise is stored
+    static let keyVisit = "TimeOfVisits" // Where an array of visits is stored
 }
 
