@@ -78,7 +78,18 @@ class SummaryViewController: UIViewController,  UITableViewDataSource, UITableVi
         if exerciseArray.count != 0{
             let event = exerciseArray[exerciseArray.count-1-indexPath.row]
             cell.textLabel?.text = getExactDay(event.arrivaltime)
-            cell.detailTextLabel?.text = event.sport + " for " + event.duration
+            
+            
+            var input_source: String!
+            
+            if event.user_input == true {
+                input_source = "Not Verified"
+            }
+            else {
+                input_source = "Verified"
+            }
+            
+            cell.detailTextLabel?.text = input_source + "  " + event.sport + " for " + event.duration + " mins."
             if let sport_image = UIImage(named: event.sport) {
                 cell.imageView?.image = sport_image
             }
@@ -86,7 +97,8 @@ class SummaryViewController: UIViewController,  UITableViewDataSource, UITableVi
             return cell
         }
         else {
-            cell.textLabel?.text = "You didn't go to the gym this month"
+            cell.textLabel?.text = "None"
+            cell.detailTextLabel?.text = "No verified data of you going to the Gym this month"
             return cell
         }
     }

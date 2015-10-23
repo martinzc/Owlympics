@@ -42,7 +42,7 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
         //2 - indicate that the graph needs to be redrawn
         graphView.setNeedsDisplay()
         
-        maxLabel.text = "\(maxElement(graphView.graphPoints))"
+        maxLabel.text = "\(Int(maxElement(graphView.graphPoints)))"
         
 //        //3 - calculate average from graphPoints
 //        let average = Double(graphView.graphPoints.reduce(0, combine: +)) / Double(graphView.graphPoints.count)
@@ -167,6 +167,19 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         if let indexPath = self.tableView.indexPathForSelectedRow() {
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        }
+        
+        if (segue.identifier == "userInputData") {
+            var svc = segue.destinationViewController as! InputViewController;
+            
+            svc.userInput = true
+            
+        }
+        
+        else if (segue.identifier == "ShowInput") {
+            var svc = segue.destinationViewController as! InputViewController;
+            
+            svc.userInput = false
         }
     }
     

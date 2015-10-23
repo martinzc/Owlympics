@@ -17,12 +17,14 @@ class Exercise:NSObject {
     var duration: String
     var sport: String
     var intensity: String
+    var user_input: Bool    // True if the user input it manually and false if it is computer detected
     
-    init(tim: NSDate, dur: String, spo: String, inten: String){
+    init(tim: NSDate, dur: String, spo: String, inten: String, userInput: Bool){
         self.arrivaltime = tim
         self.duration = dur
         self.sport = spo
         self.intensity = inten
+        self.user_input = userInput
     }
     
     func encodeWithCoder(aCoder: NSCoder!) {
@@ -30,6 +32,7 @@ class Exercise:NSObject {
         aCoder.encodeObject(intensity, forKey:"intensity")
         aCoder.encodeObject(arrivaltime, forKey:"arrivaltime")
         aCoder.encodeObject(sport, forKey:"sport")
+        aCoder.encodeObject(user_input, forKey:"userInput")
     }
     
     init(coder aDecoder: NSCoder!) {
@@ -38,6 +41,7 @@ class Exercise:NSObject {
         intensity = aDecoder.decodeObjectForKey("intensity") as! String
         arrivaltime = aDecoder.decodeObjectForKey("arrivaltime") as! NSDate
         sport = aDecoder.decodeObjectForKey("sport")as! String
+        user_input = aDecoder.decodeObjectForKey("userInput")as! Bool
         
     }
 }
