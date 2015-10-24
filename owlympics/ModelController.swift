@@ -43,6 +43,7 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
         dataViewController.dataObject = self.pageData[index]
 //        Load local data and count visits, activities and hours
         let exerciseList = loadFromLocal()
+        
 //        Get to know which month it is
         let month = index + 1
         var visit = 0
@@ -52,21 +53,34 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
         
 //        Update all entires
         for eachExercise in exerciseList {
-//            Change things if it is in current month, "2015, 9"
-            let monthToSearch = getYear(NSDate()) + ", " + "\(month)"
-//            println(monthToSearch)
-            if monthToSearch == getMonthOfYear(eachExercise.arrivaltime) {
-//                Update the exercise data
-                dataViewController.exerciseArray.append(eachExercise)
-//                Update the visit
-                if !contains(arrivalTimeTracker, eachExercise.arrivaltime) {
-                    arrivalTimeTracker.append(eachExercise.arrivaltime)
+            if eachExercise.user_input == false {
+                //            Change things if it is in current month, "2015, 9"
+                let monthToSearch = getYear(NSDate()) + ", " + "\(month)"
+                //            println(monthToSearch)
+                if monthToSearch == getMonthOfYear(eachExercise.arrivaltime) {
+                    //                Update the exercise data
+                    dataViewController.exerciseArray.append(eachExercise)
+                    //                Update the visit
+                    if !contains(arrivalTimeTracker, eachExercise.arrivaltime) {
+                        arrivalTimeTracker.append(eachExercise.arrivaltime)
+                    }
+                    //                Update the activity
+                    activity += 1
+                    //                Update the hour
+                    duration += eachExercise.duration.toInt()!
+                }
+            }
+        }
+        
+        if let visitList = loadListFromLocal(defaultsKeys.keyVisit) as [NSDate]! {
+            for eachVisit in visitList {
+                //            Change things if it is in current month, "2015, 9"
+                let monthToSearch = getYear(NSDate()) + ", " + "\(month)"
+                //            println(monthToSearch)
+                if monthToSearch == getMonthOfYear(eachVisit) {
+                    //                Update the exercise data
                     visit += 1
                 }
-//                Update the activity
-                activity += 1
-//                Update the hour
-                duration += eachExercise.duration.toInt()!
             }
         }
         

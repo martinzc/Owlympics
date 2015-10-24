@@ -46,9 +46,19 @@ class HistoryTableViewController: UITableViewController {
 
         // Configure the cell...
         
+        var input_source: String!
+        
         let event = allExercises[ allExercises.count-indexPath.row-1]
         cell.textLabel?.text = getExactDay(event.arrivaltime)
-        cell.detailTextLabel?.text = event.sport + " for " + event.duration
+        
+        if event.user_input == true {
+            input_source = "Not Verified"
+        }
+        else {
+            input_source = "Verified"
+        }
+        
+        cell.detailTextLabel?.text = input_source + "  " + event.sport + " for " + event.duration + " mins."
         if let sport_image = UIImage(named: event.sport) {
             cell.imageView?.image = sport_image
         }

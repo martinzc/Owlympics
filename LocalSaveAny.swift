@@ -32,3 +32,14 @@ func loadFromLocal(key: String?) -> NSObject?{
     let data = defaults.valueForKey(key!) as? NSObject
     return data
 }
+
+func storeDataToLocal(object: [NSDate], key: String){
+    let defaults = NSUserDefaults.standardUserDefaults()
+    defaults.setValue(object, forKey: key)
+}
+
+func loadListFromLocal(key: String?) -> [NSDate]?{
+    let defaults = NSUserDefaults.standardUserDefaults()
+    let data = defaults.valueForKey(key!) as? [NSDate]
+    return data 
+}

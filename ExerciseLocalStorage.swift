@@ -70,27 +70,29 @@ func durationOfPastSevenDays() -> [Int] {
     }
     
     return durationList
+}
 
 func visitOfPastSevenDays() -> Int {
     
     var visit = 0;
     //    Load local data
-    let exerciseList = loadFromLocal()
-    
-    //    Update the durationList according to localData
-    for eachExercise:Exercise in exerciseList {
-        //        Get the two times
-        let exerciseTime = eachExercise.arrivaltime
-        let currentTime = NSDate()
-        
-        //        Calculate the days between the two times
-        let daysBetween = calculateDaysBetween(exerciseTime, currentTime)
-        
-        //        Add the duration to that day if it's within six days
-        if daysBetween < 7 {
-            visit += 0
+    if let exerciseList = loadListFromLocal(defaultsKeys.keyVisit) as [NSDate]! {
+        for exerciseTime:NSDate in exerciseList {
+            //        Get the two times
+            let currentTime = NSDate()
+            
+            //        Calculate the days between the two times
+            let daysBetween = calculateDaysBetween(exerciseTime, currentTime)
+            
+            //        Add the duration to that day if it's within six days
+            if daysBetween < 7 {
+                visit += 0
+            }
         }
     }
     
+    //    Update the durationList according to localData
+    
+    
     return visit
-}}
+}

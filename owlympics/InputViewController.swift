@@ -16,11 +16,17 @@ class InputViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     //    Configure Picker View
     let intensity_lst = ["Light","Mild","Heavy","Very Heavy"]
     
+    var userInput: Bool!
+    
     @IBAction func AddExercise(sender: AnyObject) {
-        addExercise()
-        performSegueWithIdentifier("sentAndDone", sender: self)
+        if addExercise() == true {
+            registerForegroundNotificationForAny(self, "You have succesfully inputted an unverified activity.", "Congratulations")
+        }
+//        performSegueWithIdentifier("sentAndDone", sender: self)
     }
-    func addExercise(){
+    
+    func addExercise() -> Bool {
+        var fields_filled = false
         if(count(input_exercise.text) > 0 && count(input_duration.text) > 0){
             println("in")
             let httpSender = requestSender()
@@ -34,12 +40,16 @@ class InputViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
             let urlString = "http://ec2-52-6-56-55.compute-1.amazonaws.com/upload"
             httpSender.buildRequestFromStringsAndSend(timeString, durationString: durationString, sportString: sportString, locationString: locationString, intensityString: intensityString, uuidString: uuidString!, urlString: urlString)
             
-            var newExercise = Exercise(tim: NSDate(), dur: durationString, spo: sportString, inten: intensityString)
+            var newExercise = Exercise(tim: NSDate(), dur: durationString, spo: sportString, inten: intensityString, userInput: userInput)
             storeToLocal(newExercise)
+            fields_filled = true
+            input_duration.text = ""
+            input_exercise.text = ""
         }
-        println("out")
-        input_duration.text = ""
-        input_exercise.text = ""
+        else {
+            registerForegroundNotificationForAny(self, "You need to fill in all correct information", "Warning")
+        }
+        return fields_filled
     
     }
 
