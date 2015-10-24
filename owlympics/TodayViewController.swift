@@ -146,9 +146,6 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
         registerForegroundNotificationForInput(self)
         
 //        Add this visit into local data
-        if let lstVisit:[NSDate] = loadFromLocal(defaultsKeys.keyVisit) {
-            lstVisit.
-        }
     }
     
 

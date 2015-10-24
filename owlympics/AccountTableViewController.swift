@@ -13,9 +13,19 @@ class AccountTableViewController: UITableViewController, UITableViewDelegate, MF
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        var indexAccount = NSIndexPath(forRow: 0, inSection: 0)
+        let cellAccount = self.tableView(self.tableView, cellForRowAtIndexPath: indexAccount)
+        cellAccount.textLabel?.text = loadStringFromLocal("account")
+        
+        var indexLogOut = NSIndexPath(forRow: 1, inSection: 0)
+        let cellLogOut = self.tableView(self.tableView, cellForRowAtIndexPath: indexLogOut)
+        cellLogOut.textLabel?.text = "Log Out"
+        
+        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "account_detail1")
+        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "account_detail2")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        //self.tableView.registerClass(UITableView.self, forHeaderFooterViewReuseIdentifier: "account_detail")
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
@@ -48,21 +58,18 @@ class AccountTableViewController: UITableViewController, UITableViewDelegate, MF
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier("account_detail", forIndexPath: indexPath) as! UITableViewCell
-            if indexPath.row == 0 {
-                cell.textLabel?.text = loadStringFromLocal("account")
-            }
-            else {
-                cell.textLabel?.text = "Log out"
-            }
+            println("Selected a cell")
+            println("index is" + String(indexPath.row))
+            println(cell.textLabel?.text)
             return cell
         }
         else if indexPath.section == 1 {
-            let cell = tableView.dequeueReusableCellWithIdentifier("account_detail", forIndexPath: indexPath) as! UITableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("account_detail1", forIndexPath: indexPath) as! UITableViewCell
             cell.textLabel?.text = "Give us FeedBack!"
             return cell
         }
         else {
-            let cell = tableView.dequeueReusableCellWithIdentifier("account_detail", forIndexPath: indexPath) as! UITableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("account_detail2", forIndexPath: indexPath) as! UITableViewCell
             return cell
         }
         
@@ -81,10 +88,7 @@ class AccountTableViewController: UITableViewController, UITableViewDelegate, MF
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println("index path row is ",indexPath.row)
-        println("section is ", indexPath.section)
         if(indexPath.row == 0 && indexPath.section == 1) {
-            println("selected")
             if(MFMailComposeViewController.canSendMail()){
                 var emailTitle = "FeedBack for Owlympics"
                 var toRecipient = ["owlympics.feedback@gmail.com"]
@@ -100,14 +104,16 @@ class AccountTableViewController: UITableViewController, UITableViewDelegate, MF
             }
         }
         if(indexPath.row == 1 && indexPath.section == 0) {
-            println("selected2")
             var signIn = loadFromLocal("signIn") as? GPPSignIn
             signIn?.signOut()
-//            let indexAccount = NSIndexPath(0, 0)
-//            let cell = tableView.dequeueReusableCellWithIdentifier("account_detail", forIndexPath: indexAccount) as! UITableViewCell
-//            cell.
+            var indexAccount = NSIndexPath(forRow: 0, inSection: 0)
+            var accountCell = tableView.cellForRowAtIndexPath(indexAccount)! as UITableViewCell
+            storeDataToLocal("Not yet Logged in", "account")
+            accountCell.textLabel?.text = "Not yet Logged in"
             
         }
+//        println("after modification")
+//        print(self.tableView(self.tableView, cellForRowAtIndexPath: indexPath).textLabel?.text)
     }
     
     func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
