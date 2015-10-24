@@ -20,7 +20,7 @@ class InputViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     
     @IBAction func AddExercise(sender: AnyObject) {
         if addExercise() == true {
-            registerForegroundNotificationForAny(self, "You have succesfully inputted an unverified activity.", "Congratulations")
+            registerForegroundNotificationForAny(self, "You have succesfully input an unverified activity.", "Congratulations")
         }
 //        performSegueWithIdentifier("sentAndDone", sender: self)
     }
@@ -35,7 +35,7 @@ class InputViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
             let durationString = input_duration.text
             let intensityString = intensity_lst[intensityPicker.selectedRowInComponent(0)]
             println(intensityString)
-            let uuidString = loadStringFromLocal("account")
+            let uuidString = GPPSignIn.sharedInstance().userEmail
             let locationString = "unclear"
             let urlString = "http://ec2-52-6-56-55.compute-1.amazonaws.com/upload"
             httpSender.buildRequestFromStringsAndSend(timeString, durationString: durationString, sportString: sportString, locationString: locationString, intensityString: intensityString, uuidString: uuidString!, urlString: urlString)

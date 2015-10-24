@@ -15,8 +15,10 @@ class AccountTableViewController: UITableViewController, UITableViewDelegate, MF
 
         var indexAccount = NSIndexPath(forRow: 0, inSection: 0)
         let cellAccount = self.tableView(self.tableView, cellForRowAtIndexPath: indexAccount)
-        cellAccount.textLabel?.text = loadStringFromLocal("account")
-        
+        cellAccount.textLabel?.text = GPPSignIn.sharedInstance().userEmail
+        if(cellAccount.textLabel?.text == nil){
+            cellAccount.textLabel?.text = "Sign in"
+        }
         var indexLogOut = NSIndexPath(forRow: 1, inSection: 0)
         let cellLogOut = self.tableView(self.tableView, cellForRowAtIndexPath: indexLogOut)
         cellLogOut.textLabel?.text = "Log Out"
@@ -104,16 +106,19 @@ class AccountTableViewController: UITableViewController, UITableViewDelegate, MF
             }
         }
         if(indexPath.row == 1 && indexPath.section == 0) {
-            var signIn = loadFromLocal("signIn") as? GPPSignIn
-            signIn?.signOut()
+            //var signIn = loadFromLocal("signIn") as? GPPSignIn
+            GPPSignIn.sharedInstance().signOut()
             var indexAccount = NSIndexPath(forRow: 0, inSection: 0)
             var accountCell = tableView.cellForRowAtIndexPath(indexAccount)! as UITableViewCell
-            storeDataToLocal("Not yet Logged in", "account")
-            accountCell.textLabel?.text = "Not yet Logged in"
-            
+            //storeDataToLocal("Not yet Logged in", "account")
+            accountCell.textLabel?.text = "Sign in"
         }
-//        println("after modification")
-//        print(self.tableView(self.tableView, cellForRowAtIndexPath: indexPath).textLabel?.text)
+        if(indexPath.row == 0 && indexPath.section == 0) {
+            var accountCell = tableView.cellForRowAtIndexPath(indexPath)! as UITableViewCell
+            if (accountCell.textLabel?.text == "Sign in"){
+                self.performSegueWithIdentifier("toLogin", sender: self)
+            }
+        }
     }
     
     func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {

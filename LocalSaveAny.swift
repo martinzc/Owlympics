@@ -24,13 +24,21 @@ func loadStringFromLocal(key: String?) -> String?{
 
 func storeDataToLocal(object: NSObject, key: String){
     let defaults = NSUserDefaults.standardUserDefaults()
-    defaults.setValue(object, forKey: key)
+    //let data = NSKeyedArchiver.archivedDataWithRootObject(object)
+    defaults.setObject(object, forKey: key)
 }
 
 func loadFromLocal(key: String?) -> NSObject?{
     let defaults = NSUserDefaults.standardUserDefaults()
-    let data = defaults.valueForKey(key!) as? NSObject
-    return data
+    let object = defaults.objectForKey(key!) as? NSObject
+    if let object = object {
+        return object
+    }
+//    if let data = data{
+//        let object = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? NSObject
+//        return object
+//    }
+    return nil
 }
 
 func storeDataToLocal(object: [NSDate], key: String){

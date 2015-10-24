@@ -10,8 +10,7 @@ import UIKit
 
 class LoginViewController: UIViewController, GPPSignInDelegate {
     
-    var signIn: GPPSignIn?
-
+    var signIn: GPPSignIn? = GPPSignIn.sharedInstance()
     @IBAction func PressSignIn(sender: AnyObject) {
         setUpSignUp()
     }
@@ -35,7 +34,7 @@ class LoginViewController: UIViewController, GPPSignInDelegate {
     }
     
     func setUpSignUp(){
-        signIn = GPPSignIn.sharedInstance()
+        //signIn = GPPSignIn.sharedInstance()
         signIn?.shouldFetchGooglePlusUser = true
         signIn?.shouldFetchGoogleUserEmail = true  // Uncomment to get the user's email
         signIn?.shouldFetchGoogleUserID = true
@@ -46,10 +45,10 @@ class LoginViewController: UIViewController, GPPSignInDelegate {
     }
     
     func finishedWithAuth(auth: GTMOAuth2Authentication!, error: NSError!) {
-        GPPSignIn.sharedInstance()
+        //signIn = GPPSignIn.sharedInstance()
         let acccount = signIn?.userEmail
-        storeDataToLocal(acccount!, "account")
-        storeDataToLocal(signIn!, "signIn")
+        //storeDataToLocal(acccount!, "account")
+        //storeDataToLocal(signIn!, "signIn")
         self.performSegueWithIdentifier("FinishAuth", sender: self)
         
     }
