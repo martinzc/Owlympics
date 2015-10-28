@@ -10,7 +10,10 @@
 		0B7A9E841BA3B6CC00E3AD81 /* NumericField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7A9E831BA3B6CC00E3AD81 /* NumericField.swift */; };
 		0B7A9E861BA3B6F400E3AD81 /* CharactersField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7A9E851BA3B6F400E3AD81 /* CharactersField.swift */; };
 		0B7A9E881BA3CB9600E3AD81 /* LocalSaveAny.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7A9E871BA3CB9600E3AD81 /* LocalSaveAny.swift */; };
-		A9145FA41BB5B36E00D4A646 /* Gimbal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9145FA31BB5B36E00D4A646 /* Gimbal.framework */; };
+		A90B0DC21BE06B1B00198938 /* Gimbal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90B0DC11BE06B1B00198938 /* Gimbal.framework */; };
+		A90B0DC41BE06B7800198938 /* GoogleOpenSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90B0DC31BE06B7800198938 /* GoogleOpenSource.framework */; };
+		A90B0DC71BE06B8100198938 /* GooglePlus.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A90B0DC51BE06B8100198938 /* GooglePlus.bundle */; };
+		A90B0DC81BE06B8100198938 /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90B0DC61BE06B8100198938 /* GooglePlus.framework */; };
 		A918F32A1BA0E38400970E0A /* ExerciseLocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A918F3291BA0E38400970E0A /* ExerciseLocalStorage.swift */; };
 		A91E4C2E1B84F90500E98CDC /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91E4C2D1B84F90500E98CDC /* GraphView.swift */; };
 		A9203D621B9191C1008B82C3 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9203D611B9191C1008B82C3 /* InputViewController.swift */; };
@@ -31,9 +34,6 @@
 		A9C877B71B65CF0D00D161F2 /* owlympicsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C877B61B65CF0D00D161F2 /* owlympicsTests.swift */; };
 		A9C877C11B65D29C00D161F2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C877C01B65D29C00D161F2 /* libz.dylib */; };
 		A9E0CAE61BA213040008BCFD /* DateProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E0CAE51BA213040008BCFD /* DateProcessor.swift */; };
-		A9EF74641BA3FF78008F3386 /* GoogleOpenSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9EF74601BA3FF78008F3386 /* GoogleOpenSource.framework */; };
-		A9EF74651BA3FF78008F3386 /* GooglePlus.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A9EF74611BA3FF78008F3386 /* GooglePlus.bundle */; };
-		A9EF74661BA3FF78008F3386 /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9EF74621BA3FF78008F3386 /* GooglePlus.framework */; };
 		A9F956CA1B83F7DF005262A8 /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F956C91B83F7DF005262A8 /* HttpRequest.swift */; };
 		A9F956CE1B83FD4B005262A8 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F956CD1B83FD4B005262A8 /* HistoryTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -52,7 +52,10 @@
 		0B7A9E831BA3B6CC00E3AD81 /* NumericField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericField.swift; sourceTree = "<group>"; };
 		0B7A9E851BA3B6F400E3AD81 /* CharactersField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersField.swift; sourceTree = "<group>"; };
 		0B7A9E871BA3CB9600E3AD81 /* LocalSaveAny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalSaveAny.swift; sourceTree = "<group>"; };
-		A9145FA31BB5B36E00D4A646 /* Gimbal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Gimbal.framework; sourceTree = "<group>"; };
+		A90B0DC11BE06B1B00198938 /* Gimbal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Gimbal.framework; sourceTree = "<group>"; };
+		A90B0DC31BE06B7800198938 /* GoogleOpenSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleOpenSource.framework; sourceTree = "<group>"; };
+		A90B0DC51BE06B8100198938 /* GooglePlus.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GooglePlus.bundle; sourceTree = "<group>"; };
+		A90B0DC61BE06B8100198938 /* GooglePlus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GooglePlus.framework; sourceTree = "<group>"; };
 		A918F3291BA0E38400970E0A /* ExerciseLocalStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseLocalStorage.swift; sourceTree = "<group>"; };
 		A91E4C2D1B84F90500E98CDC /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GraphView.swift; path = owlympics/GraphView.swift; sourceTree = "<group>"; };
 		A9203D611B9191C1008B82C3 /* InputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
@@ -78,9 +81,6 @@
 		A9C877C01B65D29C00D161F2 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		A9C877C71B65D48C00D161F2 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		A9E0CAE51BA213040008BCFD /* DateProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateProcessor.swift; sourceTree = "<group>"; };
-		A9EF74601BA3FF78008F3386 /* GoogleOpenSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleOpenSource.framework; sourceTree = "<group>"; };
-		A9EF74611BA3FF78008F3386 /* GooglePlus.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GooglePlus.bundle; sourceTree = "<group>"; };
-		A9EF74621BA3FF78008F3386 /* GooglePlus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GooglePlus.framework; sourceTree = "<group>"; };
 		A9F956C91B83F7DF005262A8 /* HttpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
 		A9F956CD1B83FD4B005262A8 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryTableViewController.swift; path = ../HistoryTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,9 +90,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9145FA41BB5B36E00D4A646 /* Gimbal.framework in Frameworks */,
-				A9EF74661BA3FF78008F3386 /* GooglePlus.framework in Frameworks */,
-				A9EF74641BA3FF78008F3386 /* GoogleOpenSource.framework in Frameworks */,
+				A90B0DC21BE06B1B00198938 /* Gimbal.framework in Frameworks */,
+				A90B0DC81BE06B8100198938 /* GooglePlus.framework in Frameworks */,
+				A90B0DC41BE06B7800198938 /* GoogleOpenSource.framework in Frameworks */,
 				A9C877C11B65D29C00D161F2 /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -176,10 +176,10 @@
 		A9C8779E1B65CF0D00D161F2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				A9145FA31BB5B36E00D4A646 /* Gimbal.framework */,
-				A9EF74601BA3FF78008F3386 /* GoogleOpenSource.framework */,
-				A9EF74611BA3FF78008F3386 /* GooglePlus.bundle */,
-				A9EF74621BA3FF78008F3386 /* GooglePlus.framework */,
+				A90B0DC51BE06B8100198938 /* GooglePlus.bundle */,
+				A90B0DC61BE06B8100198938 /* GooglePlus.framework */,
+				A90B0DC31BE06B7800198938 /* GoogleOpenSource.framework */,
+				A90B0DC11BE06B1B00198938 /* Gimbal.framework */,
 				A9C8779F1B65CF0D00D161F2 /* Info.plist */,
 				A9C877C01B65D29C00D161F2 /* libz.dylib */,
 			);
@@ -294,7 +294,7 @@
 			files = (
 				A990969D1BA0B3450010052E /* Images.xcassets in Resources */,
 				A9C877A61B65CF0D00D161F2 /* Main.storyboard in Resources */,
-				A9EF74651BA3FF78008F3386 /* GooglePlus.bundle in Resources */,
+				A90B0DC71BE06B8100198938 /* GooglePlus.bundle in Resources */,
 				A9C877AB1B65CF0D00D161F2 /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

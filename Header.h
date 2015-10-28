@@ -10,6 +10,7 @@
 #define owlympics_Header_h
 #import <GooglePlus/GooglePlus.h>
 #import <GoogleOpenSource/GoogleOpenSource.h>
+#import <QuartzCore/QuartzCore.h>
 
 #endif
 

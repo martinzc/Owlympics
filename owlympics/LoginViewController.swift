@@ -11,9 +11,16 @@ import UIKit
 class LoginViewController: UIViewController, GPPSignInDelegate {
     
     var signIn: GPPSignIn? = GPPSignIn.sharedInstance()
+    
     @IBAction func PressSignIn(sender: AnyObject) {
         setUpSignUp()
     }
+    
+    @IBAction func Back(sender: AnyObject) {
+        self.performSegueWithIdentifier("FinishAuth", sender: self)
+    }
+    
+    @IBOutlet var BackButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +34,11 @@ class LoginViewController: UIViewController, GPPSignInDelegate {
     
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBarHidden = true
+        BackButton.layer.cornerRadius = 5.0;
+        BackButton.layer.borderColor = UIColor.grayColor().CGColor
+        BackButton.layer.borderWidth = 1.5
+        BackButton.backgroundColor = UIColor.grayColor()
+        BackButton.tintColor = UIColor.blackColor()
     }
     
     override func viewWillDisappear(animated: Bool) {
