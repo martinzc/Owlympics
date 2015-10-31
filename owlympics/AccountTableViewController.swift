@@ -60,8 +60,6 @@ class AccountTableViewController: UITableViewController, UITableViewDelegate, MF
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier("account_detail", forIndexPath: indexPath) as! UITableViewCell
-            println("Selected a cell")
-            println("index is" + String(indexPath.row))
             println(cell.textLabel?.text)
             return cell
         }
@@ -106,11 +104,9 @@ class AccountTableViewController: UITableViewController, UITableViewDelegate, MF
             }
         }
         if(indexPath.row == 1 && indexPath.section == 0) {
-            //var signIn = loadFromLocal("signIn") as? GPPSignIn
             GPPSignIn.sharedInstance().signOut()
             var indexAccount = NSIndexPath(forRow: 0, inSection: 0)
             var accountCell = tableView.cellForRowAtIndexPath(indexAccount)! as UITableViewCell
-            //storeDataToLocal("Not yet Logged in", "account")
             accountCell.textLabel?.text = "Sign in"
         }
         if(indexPath.row == 0 && indexPath.section == 0) {
@@ -123,16 +119,16 @@ class AccountTableViewController: UITableViewController, UITableViewDelegate, MF
     
     func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
         switch result.value {
-        case MFMailComposeResultCancelled.value:
-            println("Mail Cancelled")
-        case MFMailComposeResultSaved.value:
-            println("Mail Saved")
-        case MFMailComposeResultSent.value:
-            println("Mail Sent")
-        case MFMailComposeResultFailed.value:
-            println("Mail Failed")
-        default:
-            break
+            case MFMailComposeResultCancelled.value:
+                println("Mail Cancelled")
+            case MFMailComposeResultSaved.value:
+                println("Mail Saved")
+            case MFMailComposeResultSent.value:
+                println("Mail Sent")
+            case MFMailComposeResultFailed.value:
+                println("Mail Failed")
+            default:
+                break
         }
         
         self.dismissViewControllerAnimated(false, completion: nil)

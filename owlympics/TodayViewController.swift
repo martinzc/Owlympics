@@ -109,19 +109,18 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         
-//        Hide the back button on home screen
+        // Hide the back button on home screen
         self.navigationItem.setHidesBackButton(true, animated: true)
         
         tableView.tableFooterView = UIView()
         
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view, typically from a nib.
-//        Set up for iBeacon
+        // Set up for iBeacon
         placeManager = GMBLPlaceManager()
         placeManager.delegate = self
+        storeDataToLocal("No entry time available", "visitStart");
         
-//        Create the fitness graph
+        //Create the fitness graph
         setupGraphDisplay()
         
     }
@@ -139,14 +138,23 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
         println("The user visited \(visit.place.name) at \(visit.arrivalDate)")
         registerForegroundNotificationForAny(self, "Alert", "You've entered the gym")
         registerBackgroundNotificationForAny("Open the app", "You've entered the gym")
+        
+        //save the time of the visit start. Map the result to "visitStart".
+        let date = NSDate()
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components(.CalendarUnitHour | .CalendarUnitMinute | .CalendarUnitSecond, fromDate: date)
+        let hour = String(components.hour)
+        let minutes = String(components.minute)
+        let seconds = String(components.second)
+        let timeString = hour + ": " + minutes + ": " + seconds
+        storeDataToLocal(timeString, "visitStart")
+        
     }
     
     func placeManager(manager: GMBLPlaceManager!, didEndVisit visit: GMBLVisit!) {
         println("The user exited \(visit.place.name) at \(visit.departureDate)")
         registerBackgroundNotification()
         registerForegroundNotificationForInput(self)
-        
-//        Add this visit into local data
     }
     
 
@@ -163,14 +171,11 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         if (segue.identifier == "userInputData") {
             var svc = segue.destinationViewController as! InputViewController;
-            
             svc.userInput = true
-            
         }
         
         else if (segue.identifier == "ShowInput") {
             var svc = segue.destinationViewController as! InputViewController;
-            
             svc.userInput = false
         }
     }

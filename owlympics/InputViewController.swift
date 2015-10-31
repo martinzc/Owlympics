@@ -15,7 +15,7 @@ class InputViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     @IBOutlet weak var intensityPicker: UIPickerView!
     //    Configure Picker View
     let intensity_lst = ["Light","Mild","Heavy","Very Heavy"]
-    
+    @IBOutlet var durationLabel: UILabel!
     var userInput: Bool!
     
     @IBAction func AddExercise(sender: AnyObject) {
@@ -62,6 +62,9 @@ class InputViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
 
         // Do any additional setup after loading the view.
         intensityPicker.selectRow(intensity_lst.count/2, inComponent: 0, animated: true)
+        durationLabel.text = loadFromLocal("visitStart") as? String
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
