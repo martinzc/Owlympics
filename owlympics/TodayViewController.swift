@@ -177,7 +177,33 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
         else if (segue.identifier == "ShowInput") {
             var svc = segue.destinationViewController as! InputViewController;
             svc.userInput = false
+            let uuidString = GPPSignIn.sharedInstance().userEmail
         }
+    }
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
+        if identifier == "userInputData" {
+            
+            let uuidString = GPPSignIn.sharedInstance().userEmail
+            
+            if (uuidString == nil) {
+                
+                let alert = UIAlertView()
+                alert.title = "Warning"
+                alert.message = "You need to sign in before inputting data"
+                alert.addButtonWithTitle("Ok")
+                alert.show()
+                
+                return false
+            }
+                
+            else {
+                return true
+            }
+        }
+        
+        // by default, transition
+        return true
     }
     
 
