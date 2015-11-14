@@ -19,7 +19,6 @@ class requestSender {
         
         request.HTTPMethod = "POST"
         var stringToPost = postString
-        //        let stringToPost = "json=%5B%7B%22time%22%3A%220%22%2C%22sport%22%3A%220%22%2C%22intensity%22%3A%220%22%2C%22duration%22%3A%220%22%7D%5D&uuid=zw21&data_type=owlympics"
         let body_data = stringToPost.dataUsingEncoding(NSUTF8StringEncoding)
         
         
@@ -65,6 +64,50 @@ class requestSender {
             let body = fields_encode! + "&" + UUIDField + "&" + dataTypeField
             
             sendRequest(urlString, postString: body)
+    }
+    
+    
+    func buildGetRequestAndSend(uuid: String, urlString: String) {
+        let UUIDField = "uuid=" + uuid;
+        let typeField = "type=" + "retrieve"
+        let body = UUIDField + "&" + typeField
+        let feedBack = sendGetRequestAndReturn(uuid, urlString: urlString, body: body)
+        print(feedBack)
+    }
+    
+    
+    func sendGetRequestAndReturn (UUID: String, urlString: String, body: String){
+        let urlPath: String = urlString;
+        var url: NSURL = NSURL(string: urlPath)!
+        var request: NSMutableURLRequest = NSMutableURLRequest(URL: url)
+        
+        request.HTTPMethod = "GET"
+        let body_data = body.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        
+        //set the request header
+        //let body_length = body_data!.length
+        //let body_len_str = String(body_length)
+        
+        //request.setValue(body_len_str, forHTTPHeaderField: "Content-Length")
+        request.setValue("Basic bHVjeTpyZXNlYXJjaHByb2plY3Q=", forHTTPHeaderField: "Authorization")
+        //customize all the other header fields.
+        
+        //configure the requests and build the HTTP body
+        request.timeoutInterval = 60
+        request.HTTPBody = body_data
+        request.HTTPShouldHandleCookies = false
+        //build the request body
+        
+        let queue:NSOperationQueue = NSOperationQueue()
+        var data:NSData
+        //send request and handle errors
+        NSURLConnection.sendAsynchronousRequest(request, queue: queue, completionHandler: { (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
+            var err: NSError
+            var result = NSString(data: data, encoding: NSUTF8StringEncoding)
+            println(result)
+        })
+        println("request sent successfully")
     }
     
 }

@@ -140,14 +140,14 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
         registerBackgroundNotificationForAny("Open the app", "You've entered the gym")
         
         //save the time of the visit start. Map the result to "visitStart".
-        let date = NSDate()
-        let calendar = NSCalendar.currentCalendar()
-        let components = calendar.components(.CalendarUnitHour | .CalendarUnitMinute | .CalendarUnitSecond, fromDate: date)
-        let hour = String(components.hour)
-        let minutes = String(components.minute)
-        let seconds = String(components.second)
-        let timeString = hour + ": " + minutes + ": " + seconds
-        storeDataToLocal(timeString, "visitStart")
+//        let date = NSDate()
+//        let calendar = NSCalendar.currentCalendar()
+//        let components = calendar.components(.CalendarUnitHour | .CalendarUnitMinute | .CalendarUnitSecond, fromDate: date)
+//        let hour = String(components.hour)
+//        let minutes = String(components.minute)
+//        let seconds = String(components.second)
+//        let timeString = hour + ": " + minutes + ": " + seconds
+        storeDataToLocal(NSDate().description, "visitStart")
         
     }
     

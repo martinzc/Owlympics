@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class InputViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
@@ -62,9 +63,24 @@ class InputViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
 
         // Do any additional setup after loading the view.
         intensityPicker.selectRow(intensity_lst.count/2, inComponent: 0, animated: true)
-        durationLabel.text = loadFromLocal("visitStart") as? String
+        let timeText = loadFromLocal("visitStart") as? String
+        if(timeText != "No entry time available"){
+            let formatter = NSDateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
+            let date = formatter.dateFromString(timeText!)!
+            let elapsedTime = Int(NSDate().timeIntervalSinceDate(date))
+            let calendarUnit: NSCalendarUnit = .CalendarUnitHour | .CalendarUnitMinute | .CalendarUnitSecond
+            let userCalendar = NSCalendar.currentCalendar()
+            let currentdate = NSDate()
+            let diffInMin = userCalendar.components(calendarUnit, fromDate: date, toDate: currentdate, options: nil)
         
-        
+            let hour = String(diffInMin.hour)
+            let minute = String(diffInMin.minute)
+            let second = String(diffInMin.second)
+            var duration =  hour + " hour " + minute + " minute " + second + " second."
+            durationLabel.text = duration
+        }
+        durationLabel.text = "No entry time available"
     }
 
     override func didReceiveMemoryWarning() {
