@@ -24,7 +24,7 @@ class NumericField: NSObject, UITextFieldDelegate{
             let components = string.componentsSeparatedByCharactersInSet(inverseSet)
             
             // Rejoin these components
-            let filtered = join("", components)
+            let filtered = components.joinWithSeparator("")
             
             // If the original string is equal to the filtered string, i.e. if no
             // inverse characters were present to be eliminated, the input is valid

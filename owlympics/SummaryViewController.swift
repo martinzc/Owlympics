@@ -72,7 +72,7 @@ class SummaryViewController: UIViewController,  UITableViewDataSource, UITableVi
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("exerciseInSummary", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("exerciseInSummary", forIndexPath: indexPath) 
         
         // Configure the cell...
         if exerciseArray.count != 0{

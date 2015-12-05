@@ -61,13 +61,13 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
                     //                Update the exercise data
                     dataViewController.exerciseArray.append(eachExercise)
                     //                Update the visit
-                    if !contains(arrivalTimeTracker, eachExercise.arrivaltime) {
+                    if !arrivalTimeTracker.contains(eachExercise.arrivaltime) {
                         arrivalTimeTracker.append(eachExercise.arrivaltime)
                     }
                     //                Update the activity
                     activity += 1
                     //                Update the hour
-                    duration += eachExercise.duration.toInt()!
+                    duration += Int(eachExercise.duration)!
                 }
             }
         }

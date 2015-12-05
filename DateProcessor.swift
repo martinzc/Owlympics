@@ -16,7 +16,7 @@ func getDay(date:NSDate) -> Int {
 //    Format of the return value. It has two digits
     dayFormatter.dateFormat = "dd"
     let dayString = dayFormatter.stringFromDate(date)
-    let day = dayString.toInt()
+    let day = Int(dayString)
     return day!
 }
 
@@ -71,8 +71,8 @@ func getYear(date:NSDate) -> String {
 func calculateDaysBetween(date1:NSDate, date2:NSDate) -> Int {
     
     let cal = NSCalendar.currentCalendar()
-    let unit:NSCalendarUnit = .CalendarUnitDay
-    let components = cal.components(unit, fromDate: date1, toDate: date2, options: nil)
+    let unit:NSCalendarUnit = .Day
+    let components = cal.components(unit, fromDate: date1, toDate: date2, options: [])
     let daysBetween = components.day
     return daysBetween
 }

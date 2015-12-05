@@ -14,11 +14,11 @@ class requestSender {
     func sendRequest(urlstring: String, postString: String){
         //build the url request
         let urlPath: String = urlstring
-        var url: NSURL = NSURL(string: urlPath)!
-        var request: NSMutableURLRequest = NSMutableURLRequest(URL: url)
+        let url: NSURL = NSURL(string: urlPath)!
+        let request: NSMutableURLRequest = NSMutableURLRequest(URL: url)
         
         request.HTTPMethod = "POST"
-        var stringToPost = postString
+        let stringToPost = postString
         let body_data = stringToPost.dataUsingEncoding(NSUTF8StringEncoding)
         
         
@@ -38,10 +38,10 @@ class requestSender {
         
         let queue:NSOperationQueue = NSOperationQueue()
         //send request and handle errors
-        NSURLConnection.sendAsynchronousRequest(request, queue: queue, completionHandler: { (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
-            var err: NSError
+        NSURLConnection.sendAsynchronousRequest(request, queue: queue, completionHandler: { (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
+            var _: NSError
         })
-        println("request sent successfully")
+        print("request sent successfully")
     }
     
     func connection(connection: NSURLConnection!, didReceiveResponse response: NSURLResponse!)
@@ -71,15 +71,17 @@ class requestSender {
         let UUIDField = "uuid=" + uuid;
         let typeField = "type=" + "retrieve"
         let body = UUIDField + "&" + typeField
-        let feedBack = sendGetRequestAndReturn(uuid, urlString: urlString, body: body)
-        print(feedBack)
+//        Martin edited on Dec4. Following function is not returning anything
+//        let feedBack = sendGetRequestAndReturn(uuid, urlString: urlString, body: body)
+//        print(feedBack, terminator: "")
+        sendGetRequestAndReturn(uuid, urlString: urlString, body: body)
     }
     
     
     func sendGetRequestAndReturn (UUID: String, urlString: String, body: String){
         let urlPath: String = urlString;
-        var url: NSURL = NSURL(string: urlPath)!
-        var request: NSMutableURLRequest = NSMutableURLRequest(URL: url)
+        let url: NSURL = NSURL(string: urlPath)!
+        let request: NSMutableURLRequest = NSMutableURLRequest(URL: url)
         
         request.HTTPMethod = "GET"
         let body_data = body.dataUsingEncoding(NSUTF8StringEncoding)
@@ -100,14 +102,14 @@ class requestSender {
         //build the request body
         
         let queue:NSOperationQueue = NSOperationQueue()
-        var data:NSData
+        var _:NSData
         //send request and handle errors
-        NSURLConnection.sendAsynchronousRequest(request, queue: queue, completionHandler: { (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
-            var err: NSError
-            var result = NSString(data: data, encoding: NSUTF8StringEncoding)
-            println(result)
+        NSURLConnection.sendAsynchronousRequest(request, queue: queue, completionHandler: { (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
+            var _: NSError
+            let result = NSString(data: data!, encoding: NSUTF8StringEncoding)
+            print(result)
         })
-        println("request sent successfully")
+        print("request sent successfully")
     }
     
 }

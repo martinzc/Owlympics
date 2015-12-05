@@ -10,7 +10,7 @@ import Foundation
 
 func registerForegroundNotificationForInput(viewController:UIViewController) {
     //        Foreground notification
-    var alert = UIAlertController(title: "Alert", message: "You've exited the gym, do you want to input your exercise data?", preferredStyle: UIAlertControllerStyle.Alert)
+    let alert = UIAlertController(title: "Alert", message: "You've exited the gym, do you want to input your exercise data?", preferredStyle: UIAlertControllerStyle.Alert)
     alert.addAction(UIAlertAction(title: "Input data", style: UIAlertActionStyle.Default, handler:{ (_) -> Void in
         viewController.performSegueWithIdentifier("ShowInput", sender: viewController)
     }))
@@ -22,7 +22,7 @@ func registerForegroundNotificationForInput(viewController:UIViewController) {
 func registerForegroundNotificationForAny(viewController:UIViewController, message: String, title: String) {
 //    println("success")
     //        Foreground notification
-    var alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+    let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
     alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:nil))
     alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler:nil))
     viewController.presentViewController(alert, animated: true, completion: nil)
@@ -30,7 +30,7 @@ func registerForegroundNotificationForAny(viewController:UIViewController, messa
 
 func registerBackgroundNotification() {
     //        Background notification
-    var localNotification:UILocalNotification = UILocalNotification()
+    let localNotification:UILocalNotification = UILocalNotification()
 //
     localNotification.alertAction = "Input"
     localNotification.alertBody = "You've exited the gym, do you want to input your exercise data?"
@@ -41,7 +41,7 @@ func registerBackgroundNotification() {
 
 func registerBackgroundNotificationForAny(action: String, message: String) {
     //        Background notification
-    var localNotification:UILocalNotification = UILocalNotification()
+    let localNotification:UILocalNotification = UILocalNotification()
     //
     localNotification.alertAction = action
     localNotification.alertBody = message

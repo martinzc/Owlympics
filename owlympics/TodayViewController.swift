@@ -34,7 +34,7 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         //Use 7 days for graph - can use any number,
         //but labels and sample data are set up for 7 days
-        let noOfDays:Int = 7
+//        _:Int = 7
         
         //1 - replace last day with today's actual data
 //        graphView.graphPoints[graphView.graphPoints.count-1] = counterView.counter
@@ -42,7 +42,7 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
         //2 - indicate that the graph needs to be redrawn
         graphView.setNeedsDisplay()
         
-        maxLabel.text = "\(Int(maxElement(graphView.graphPoints)))"
+        maxLabel.text = "\(Int(graphView.graphPoints.maxElement()!))"
         
 //        //3 - calculate average from graphPoints
 //        let average = Double(graphView.graphPoints.reduce(0, combine: +)) / Double(graphView.graphPoints.count)
@@ -58,9 +58,9 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
         //today is last day of the array need to go backwards
         
         //4 - get today's day number
-        let dateFormatter = NSDateFormatter()
+        _ = NSDateFormatter()
         let calendar = NSCalendar.currentCalendar()
-        let componentOptions:NSCalendarUnit = .CalendarUnitWeekday
+        let componentOptions:NSCalendarUnit = .Weekday
         let components = calendar.components(componentOptions,
             fromDate: NSDate())
         var weekday = components.weekday
@@ -68,7 +68,7 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
         let days = ["S", "S", "M", "T", "W", "TH", "F"]
         
         //5 - set up the day name labels with correct day
-        for i in reverse(1...days.count) {
+        for i in Array((1...days.count).reverse()) {
             if let labelView = graphView.viewWithTag(i) as? UILabel {
                 if weekday == 7 {
                     weekday = 0
@@ -91,12 +91,12 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            let cell_select = tableView.dequeueReusableCellWithIdentifier("summary_select", forIndexPath: indexPath) as! UITableViewCell
+            let cell_select = tableView.dequeueReusableCellWithIdentifier("summary_select", forIndexPath: indexPath) 
             cell_select.textLabel!.text = "Summaries"
             return cell_select
         }
         else if indexPath.row == 1 {
-            let cell_select = tableView.dequeueReusableCellWithIdentifier("history_select", forIndexPath: indexPath) as! UITableViewCell
+            let cell_select = tableView.dequeueReusableCellWithIdentifier("history_select", forIndexPath: indexPath) 
             cell_select.textLabel!.text = "Workout History"
             return cell_select
         }
@@ -118,7 +118,7 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
         // Set up for iBeacon
         placeManager = GMBLPlaceManager()
         placeManager.delegate = self
-        storeDataToLocal("No entry time available", "visitStart");
+        storeDataToLocal("No entry time available", key: "visitStart");
         
         //Create the fitness graph
         setupGraphDisplay()
@@ -135,15 +135,15 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func placeManager(manager: GMBLPlaceManager!, didBeginVisit visit: GMBLVisit!) {
-        println("The user visited \(visit.place.name) at \(visit.arrivalDate)")
-        registerForegroundNotificationForAny(self, "Alert", "You've entered the gym")
-        registerBackgroundNotificationForAny("Open the app", "You've entered the gym")
-        storeDataToLocal(NSDate().description, "visitStart")
+        print("The user visited \(visit.place.name) at \(visit.arrivalDate)")
+        registerForegroundNotificationForAny(self, message: "Alert", title: "You've entered the gym")
+        registerBackgroundNotificationForAny("Open the app", message: "You've entered the gym")
+        storeDataToLocal(NSDate().description, key: "visitStart")
         
     }
     
     func placeManager(manager: GMBLPlaceManager!, didEndVisit visit: GMBLVisit!) {
-        println("The user exited \(visit.place.name) at \(visit.departureDate)")
+        print("The user exited \(visit.place.name) at \(visit.departureDate)")
         registerBackgroundNotification()
         registerForegroundNotificationForInput(self)
     }
@@ -156,23 +156,23 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if let indexPath = self.tableView.indexPathForSelectedRow() {
+        if let indexPath = self.tableView.indexPathForSelectedRow {
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
         }
         
         if (segue.identifier == "userInputData") {
-            var svc = segue.destinationViewController as! InputViewController;
+            let svc = segue.destinationViewController as! InputViewController;
             svc.userInput = true
         }
         
         else if (segue.identifier == "ShowInput") {
-            var svc = segue.destinationViewController as! InputViewController;
+            let svc = segue.destinationViewController as! InputViewController;
             svc.userInput = false
-            let uuidString = GPPSignIn.sharedInstance().userEmail
+            _ = GPPSignIn.sharedInstance().userEmail
         }
     }
     
-    override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject!) -> Bool {
         if identifier == "userInputData" {
             
             let uuidString = GPPSignIn.sharedInstance().userEmail

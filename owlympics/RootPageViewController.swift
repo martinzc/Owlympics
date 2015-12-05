@@ -21,10 +21,10 @@ class RootPageViewController: UIViewController, UIPageViewControllerDelegate{
         self.pageViewController!.delegate = self
         
         // Get current month
-        let calendar = NSCalendar.currentCalendar()
+        _ = NSCalendar.currentCalendar()
         // Set up date object
         let date = NSDate()
-        let components = NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitMonth, fromDate: date)
+        let components = NSCalendar.currentCalendar().components(NSCalendarUnit.Month, fromDate: date)
         let cur_month = components.month
         
 //        This sets which month to start from
@@ -38,7 +38,7 @@ class RootPageViewController: UIViewController, UIPageViewControllerDelegate{
         self.view.addSubview(self.pageViewController!.view)
         
         // Set the page view controller's bounds using an inset rect so that self's view is visible around the edges of the pages.
-        var pageViewRect = self.view.bounds
+        let pageViewRect = self.view.bounds
         self.pageViewController!.view.frame = pageViewRect
         
         self.pageViewController!.didMoveToParentViewController(self)
@@ -67,7 +67,7 @@ class RootPageViewController: UIViewController, UIPageViewControllerDelegate{
     
     func pageViewController(pageViewController: UIPageViewController, spineLocationForInterfaceOrientation orientation: UIInterfaceOrientation) -> UIPageViewControllerSpineLocation {
         // Set the spine position to "min" and the page view controller's view controllers array to contain just one view controller. Setting the spine position to 'UIPageViewControllerSpineLocationMid' in landscape orientation sets the doubleSided property to true, so set it to false here.
-        let currentViewController = self.pageViewController!.viewControllers[0] as! UIViewController
+        let currentViewController = self.pageViewController!.viewControllers![0]
         let viewControllers = [currentViewController]
         self.pageViewController!.setViewControllers(viewControllers, direction: .Forward, animated: true, completion: {done in })
         

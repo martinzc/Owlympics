@@ -21,34 +21,34 @@ class InputViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     
     @IBAction func AddExercise(sender: AnyObject) {
         if addExercise() == true {
-            registerForegroundNotificationForAny(self, "You have succesfully input an unverified activity.", "Congratulations")
+            registerForegroundNotificationForAny(self, message: "You have succesfully input an unverified activity.", title: "Congratulations")
         }
 //        performSegueWithIdentifier("sentAndDone", sender: self)
     }
     
     func addExercise() -> Bool {
         var fields_filled = false
-        if(count(input_exercise.text) > 0 && count(input_duration.text) > 0){
-            println("in")
+        if(input_exercise.text!.characters.count > 0 && input_duration.text!.characters.count > 0){
+            print("in")
             let httpSender = requestSender()
             let timeString = NSDate().description //need get time
             let sportString = input_exercise.text //need to get from the textfiled
             let durationString = input_duration.text
             let intensityString = intensity_lst[intensityPicker.selectedRowInComponent(0)]
-            println(intensityString)
+            print(intensityString)
             let uuidString = GPPSignIn.sharedInstance().userEmail
             let locationString = "unclear"
             let urlString = "http://ec2-52-6-56-55.compute-1.amazonaws.com/upload"
-            httpSender.buildRequestFromStringsAndSend(timeString, durationString: durationString, sportString: sportString, locationString: locationString, intensityString: intensityString, uuidString: uuidString!, urlString: urlString)
+            httpSender.buildRequestFromStringsAndSend(timeString, durationString: durationString!, sportString: sportString!, locationString: locationString, intensityString: intensityString, uuidString: uuidString!, urlString: urlString)
             
-            var newExercise = Exercise(tim: NSDate(), dur: durationString, spo: sportString, inten: intensityString, userInput: userInput)
+            let newExercise = Exercise(tim: NSDate(), dur: durationString!, spo: sportString!, inten: intensityString, userInput: userInput)
             storeToLocal(newExercise)
             fields_filled = true
             input_duration.text = ""
             input_exercise.text = ""
         }
         else {
-            registerForegroundNotificationForAny(self, "You need to fill in all correct information", "Warning")
+            registerForegroundNotificationForAny(self, message: "You need to fill in all correct information", title: "Warning")
         }
         return fields_filled
     
@@ -68,16 +68,16 @@ class InputViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
             let formatter = NSDateFormatter()
             formatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
             let date = formatter.dateFromString(timeText!)!
-            let elapsedTime = Int(NSDate().timeIntervalSinceDate(date))
-            let calendarUnit: NSCalendarUnit = .CalendarUnitHour | .CalendarUnitMinute | .CalendarUnitSecond
+            _ = Int(NSDate().timeIntervalSinceDate(date))
+            let calendarUnit: NSCalendarUnit = [.Hour, .Minute, .Second]
             let userCalendar = NSCalendar.currentCalendar()
             let currentdate = NSDate()
-            let diffInMin = userCalendar.components(calendarUnit, fromDate: date, toDate: currentdate, options: nil)
+            let diffInMin = userCalendar.components(calendarUnit, fromDate: date, toDate: currentdate, options: [])
         
             let hour = String(diffInMin.hour)
             let minute = String(diffInMin.minute)
             let second = String(diffInMin.second)
-            var duration =  hour + " hour " + minute + " minute " + second + " second."
+            let duration =  hour + " hour " + minute + " minute " + second + " second."
             durationLabel.text = duration
         }
         durationLabel.text = "No entry time available"
@@ -99,12 +99,12 @@ class InputViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     }
     
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return intensity_lst[row]
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let intensity = intensity_lst[row]
+        _ = intensity_lst[row]
     }
     
     

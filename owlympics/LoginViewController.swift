@@ -57,13 +57,13 @@ class LoginViewController: UIViewController, GPPSignInDelegate {
     }
     
     func finishedWithAuth(auth: GTMOAuth2Authentication!, error: NSError!) {
-        let acccount = signIn?.userEmail
+        _ = signIn?.userEmail
         self.performSegueWithIdentifier("FinishAuth", sender: self)
         
     }
     
     func didDisconnectWithError(error: NSError!) {
-        println("not signed in")
+        print("not signed in")
     }
     
 

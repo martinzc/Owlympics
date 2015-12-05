@@ -15,7 +15,7 @@ class CircleView: UIView {
     // An empty implementation adversely affects performance during animation.
     override func drawRect(rect: CGRect) {
         // Drawing code
-        var path = UIBezierPath(ovalInRect: rect)
+        let path = UIBezierPath(ovalInRect: rect)
         UIColor.whiteColor().setFill()
         path.fill()
     }

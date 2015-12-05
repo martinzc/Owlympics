@@ -8,18 +8,18 @@
 
 import UIKit
 import MessageUI
-class AccountTableViewController: UITableViewController, UITableViewDelegate, MFMailComposeViewControllerDelegate {
+class AccountTableViewController: UITableViewController, MFMailComposeViewControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        var indexAccount = NSIndexPath(forRow: 0, inSection: 0)
+        let indexAccount = NSIndexPath(forRow: 0, inSection: 0)
         let cellAccount = self.tableView(self.tableView, cellForRowAtIndexPath: indexAccount)
         cellAccount.textLabel?.text = GPPSignIn.sharedInstance().userEmail
         if(cellAccount.textLabel?.text == nil){
             cellAccount.textLabel?.text = "Sign in"
         }
-        var indexLogOut = NSIndexPath(forRow: 1, inSection: 0)
+        let indexLogOut = NSIndexPath(forRow: 1, inSection: 0)
         let cellLogOut = self.tableView(self.tableView, cellForRowAtIndexPath: indexLogOut)
         cellLogOut.textLabel?.text = "Log Out"
         
@@ -59,17 +59,17 @@ class AccountTableViewController: UITableViewController, UITableViewDelegate, MF
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCellWithIdentifier("account_detail", forIndexPath: indexPath) as! UITableViewCell
-            println(cell.textLabel?.text)
+            let cell = tableView.dequeueReusableCellWithIdentifier("account_detail", forIndexPath: indexPath) 
+            print(cell.textLabel?.text)
             return cell
         }
         else if indexPath.section == 1 {
-            let cell = tableView.dequeueReusableCellWithIdentifier("account_detail1", forIndexPath: indexPath) as! UITableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("account_detail1", forIndexPath: indexPath) 
             cell.textLabel?.text = "Give us FeedBack!"
             return cell
         }
         else {
-            let cell = tableView.dequeueReusableCellWithIdentifier("account_detail2", forIndexPath: indexPath) as! UITableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("account_detail2", forIndexPath: indexPath) 
             return cell
         }
         
@@ -90,9 +90,9 @@ class AccountTableViewController: UITableViewController, UITableViewDelegate, MF
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if(indexPath.row == 0 && indexPath.section == 1) {
             if(MFMailComposeViewController.canSendMail()){
-                var emailTitle = "FeedBack for Owlympics"
-                var toRecipient = ["owlympics.feedback@gmail.com"]
-                var mc:MFMailComposeViewController = MFMailComposeViewController()
+                let emailTitle = "FeedBack for Owlympics"
+                let toRecipient = ["owlympics.feedback@gmail.com"]
+                let mc:MFMailComposeViewController = MFMailComposeViewController()
             
                 mc.mailComposeDelegate = self
                 mc.setSubject(emailTitle)
@@ -100,33 +100,33 @@ class AccountTableViewController: UITableViewController, UITableViewDelegate, MF
             
                 self.presentViewController(mc, animated: true, completion: nil)
             }else{
-                println("No email found")
+                print("No email found")
             }
         }
         if(indexPath.row == 1 && indexPath.section == 0) {
             GPPSignIn.sharedInstance().signOut()
-            var indexAccount = NSIndexPath(forRow: 0, inSection: 0)
-            var accountCell = tableView.cellForRowAtIndexPath(indexAccount)! as UITableViewCell
+            let indexAccount = NSIndexPath(forRow: 0, inSection: 0)
+            let accountCell = tableView.cellForRowAtIndexPath(indexAccount)! as UITableViewCell
             accountCell.textLabel?.text = "Sign in"
         }
         if(indexPath.row == 0 && indexPath.section == 0) {
-            var accountCell = tableView.cellForRowAtIndexPath(indexPath)! as UITableViewCell
+            let accountCell = tableView.cellForRowAtIndexPath(indexPath)! as UITableViewCell
             if (accountCell.textLabel?.text == "Sign in"){
                 self.performSegueWithIdentifier("toLogin", sender: self)
             }
         }
     }
     
-    func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
-        switch result.value {
-            case MFMailComposeResultCancelled.value:
-                println("Mail Cancelled")
-            case MFMailComposeResultSaved.value:
-                println("Mail Saved")
-            case MFMailComposeResultSent.value:
-                println("Mail Sent")
-            case MFMailComposeResultFailed.value:
-                println("Mail Failed")
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        switch result.rawValue {
+            case MFMailComposeResultCancelled.rawValue:
+                print("Mail Cancelled")
+            case MFMailComposeResultSaved.rawValue:
+                print("Mail Saved")
+            case MFMailComposeResultSent.rawValue:
+                print("Mail Sent")
+            case MFMailComposeResultFailed.rawValue:
+                print("Mail Failed")
             default:
                 break
         }

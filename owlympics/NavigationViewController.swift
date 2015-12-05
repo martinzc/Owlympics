@@ -25,15 +25,15 @@ class NavigationViewController: UINavigationController {
         if (loadStringFromLocal("First Time") != nil) {
             //        Check for notification settings, if there is no permission, send a notification
             let currentSettings = UIApplication.sharedApplication().currentUserNotificationSettings()
-            let required:UIUserNotificationType = UIUserNotificationType.Sound | UIUserNotificationType.Alert; // Add other permissions as required
-            if (currentSettings.types & required) == nil {
+            let required:UIUserNotificationType = [UIUserNotificationType.Sound, UIUserNotificationType.Alert]; // Add other permissions as required
+            if (currentSettings!.types.intersect(required)) == [] {
                 let message = "For your better user experience. Please turn it on in <Settings>."
                 let title = "Notifications are disabled"
-                registerForegroundNotificationForAny(self, message, title)
+                registerForegroundNotificationForAny(self, message: message, title: title)
             }
         }
         
-        storeDataToLocal("Not first time", "First Time")
+        storeDataToLocal("Not first time", key: "First Time")
     }
     
     

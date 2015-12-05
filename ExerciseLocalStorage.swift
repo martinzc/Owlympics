@@ -24,7 +24,7 @@ func storeToLocal(exercisefile:Exercise) {
     } else {
         var allExercise = [Exercise]()
         allExercise.append(exercisefile)
-        print("there is not data in local storage")
+        print("there is not data in local storage", terminator: "")
 //        println(allExercise)
         let exerciseData = NSKeyedArchiver.archivedDataWithRootObject(allExercise)
         defaults.setValue(exerciseData, forKey: defaultsKeys.keyDict)
@@ -60,11 +60,11 @@ func durationOfPastSevenDays() -> [Int] {
         let currentTime = NSDate()
         
 //        Calculate the days between the two times
-        let daysBetween = calculateDaysBetween(exerciseTime, currentTime)
+        let daysBetween = calculateDaysBetween(exerciseTime, date2: currentTime)
         
 //        Add the duration to that day if it's within six days
         if daysBetween < 7 {
-            let dur:Int! = eachExercise.duration.toInt()
+            let dur:Int! = Int(eachExercise.duration)
             durationList[durationList.count - 1 - daysBetween] += dur
         }
     }
@@ -82,7 +82,7 @@ func visitOfPastSevenDays() -> Int {
             let currentTime = NSDate()
             
             //        Calculate the days between the two times
-            let daysBetween = calculateDaysBetween(exerciseTime, currentTime)
+            let daysBetween = calculateDaysBetween(exerciseTime, date2: currentTime)
             
             //        Add the duration to that day if it's within six days
             if daysBetween < 7 {
