@@ -10,7 +10,6 @@
 		0B7A9E841BA3B6CC00E3AD81 /* NumericField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7A9E831BA3B6CC00E3AD81 /* NumericField.swift */; };
 		0B7A9E861BA3B6F400E3AD81 /* CharactersField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7A9E851BA3B6F400E3AD81 /* CharactersField.swift */; };
 		0B7A9E881BA3CB9600E3AD81 /* LocalSaveAny.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7A9E871BA3CB9600E3AD81 /* LocalSaveAny.swift */; };
-		A90B0DC21BE06B1B00198938 /* Gimbal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90B0DC11BE06B1B00198938 /* Gimbal.framework */; };
 		A90B0DC41BE06B7800198938 /* GoogleOpenSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90B0DC31BE06B7800198938 /* GoogleOpenSource.framework */; };
 		A90B0DC71BE06B8100198938 /* GooglePlus.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A90B0DC51BE06B8100198938 /* GooglePlus.bundle */; };
 		A90B0DC81BE06B8100198938 /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90B0DC61BE06B8100198938 /* GooglePlus.framework */; };
@@ -21,6 +20,7 @@
 		A95E7F9C1B8433BF00410E7B /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95E7F9B1B8433BF00410E7B /* AccountTableViewController.swift */; };
 		A95E7F9E1B84387300410E7B /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95E7F9D1B84387300410E7B /* SummaryViewController.swift */; };
 		A97EFE471B7D382800D7DA74 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97EFE461B7D382800D7DA74 /* Exercise.swift */; };
+		A9802C771C6920C000A70F51 /* Gimbal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9802C761C6920C000A70F51 /* Gimbal.framework */; };
 		A98086101BAC97EF00E3677A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980860F1BAC97EF00E3677A /* LoginViewController.swift */; };
 		A98C429D1BADB44C00D5AB13 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98C429C1BADB44C00D5AB13 /* NavigationViewController.swift */; };
 		A990969D1BA0B3450010052E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A990969C1BA0B3450010052E /* Images.xcassets */; };
@@ -52,7 +52,6 @@
 		0B7A9E831BA3B6CC00E3AD81 /* NumericField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericField.swift; sourceTree = "<group>"; };
 		0B7A9E851BA3B6F400E3AD81 /* CharactersField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersField.swift; sourceTree = "<group>"; };
 		0B7A9E871BA3CB9600E3AD81 /* LocalSaveAny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalSaveAny.swift; sourceTree = "<group>"; };
-		A90B0DC11BE06B1B00198938 /* Gimbal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Gimbal.framework; sourceTree = "<group>"; };
 		A90B0DC31BE06B7800198938 /* GoogleOpenSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleOpenSource.framework; sourceTree = "<group>"; };
 		A90B0DC51BE06B8100198938 /* GooglePlus.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GooglePlus.bundle; sourceTree = "<group>"; };
 		A90B0DC61BE06B8100198938 /* GooglePlus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GooglePlus.framework; sourceTree = "<group>"; };
@@ -63,6 +62,8 @@
 		A95E7F9B1B8433BF00410E7B /* AccountTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
 		A95E7F9D1B84387300410E7B /* SummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		A97EFE461B7D382800D7DA74 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		A9802C741C69201500A70F51 /* Gimbal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gimbal.framework; path = ../../../../../../Downloads/gimbalsdk_2.32_ios/Frameworks/Gimbal.framework; sourceTree = "<group>"; };
+		A9802C761C6920C000A70F51 /* Gimbal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gimbal.framework; path = owlympics/Gimbal.framework; sourceTree = "<group>"; };
 		A980860F1BAC97EF00E3677A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A98C429C1BADB44C00D5AB13 /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		A990969C1BA0B3450010052E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -90,7 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A90B0DC21BE06B1B00198938 /* Gimbal.framework in Frameworks */,
+				A9802C771C6920C000A70F51 /* Gimbal.framework in Frameworks */,
 				A90B0DC81BE06B8100198938 /* GooglePlus.framework in Frameworks */,
 				A90B0DC41BE06B7800198938 /* GoogleOpenSource.framework in Frameworks */,
 				A9C877C11B65D29C00D161F2 /* libz.dylib in Frameworks */,
@@ -143,6 +144,7 @@
 		A9C877921B65CF0D00D161F2 = {
 			isa = PBXGroup;
 			children = (
+				A9802C761C6920C000A70F51 /* Gimbal.framework */,
 				A9C877C71B65D48C00D161F2 /* Header.h */,
 				A918F3281BA0E33200970E0A /* Helper Files */,
 				A9C8779D1B65CF0D00D161F2 /* owlympics */,
@@ -176,10 +178,10 @@
 		A9C8779E1B65CF0D00D161F2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A9802C741C69201500A70F51 /* Gimbal.framework */,
 				A90B0DC51BE06B8100198938 /* GooglePlus.bundle */,
 				A90B0DC61BE06B8100198938 /* GooglePlus.framework */,
 				A90B0DC31BE06B7800198938 /* GoogleOpenSource.framework */,
-				A90B0DC11BE06B1B00198938 /* Gimbal.framework */,
 				A9C8779F1B65CF0D00D161F2 /* Info.plist */,
 				A9C877C01B65D29C00D161F2 /* libz.dylib */,
 			);
@@ -396,6 +398,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -441,6 +444,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
