@@ -10,6 +10,8 @@
 		0B7A9E841BA3B6CC00E3AD81 /* NumericField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7A9E831BA3B6CC00E3AD81 /* NumericField.swift */; };
 		0B7A9E861BA3B6F400E3AD81 /* CharactersField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7A9E851BA3B6F400E3AD81 /* CharactersField.swift */; };
 		0B7A9E881BA3CB9600E3AD81 /* LocalSaveAny.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7A9E871BA3CB9600E3AD81 /* LocalSaveAny.swift */; };
+		0BAFA26F1C7442AB0011A6A4 /* MicrosoftAzureMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BAFA26E1C7442AB0011A6A4 /* MicrosoftAzureMobile.framework */; };
+		0BAFA2731C744AF60011A6A4 /* Gimbal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BAFA2721C744AF60011A6A4 /* Gimbal.framework */; };
 		A90B0DC41BE06B7800198938 /* GoogleOpenSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90B0DC31BE06B7800198938 /* GoogleOpenSource.framework */; };
 		A90B0DC71BE06B8100198938 /* GooglePlus.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A90B0DC51BE06B8100198938 /* GooglePlus.bundle */; };
 		A90B0DC81BE06B8100198938 /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90B0DC61BE06B8100198938 /* GooglePlus.framework */; };
@@ -20,7 +22,6 @@
 		A95E7F9C1B8433BF00410E7B /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95E7F9B1B8433BF00410E7B /* AccountTableViewController.swift */; };
 		A95E7F9E1B84387300410E7B /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95E7F9D1B84387300410E7B /* SummaryViewController.swift */; };
 		A97EFE471B7D382800D7DA74 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97EFE461B7D382800D7DA74 /* Exercise.swift */; };
-		A9802C771C6920C000A70F51 /* Gimbal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9802C761C6920C000A70F51 /* Gimbal.framework */; };
 		A98086101BAC97EF00E3677A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980860F1BAC97EF00E3677A /* LoginViewController.swift */; };
 		A98C429D1BADB44C00D5AB13 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98C429C1BADB44C00D5AB13 /* NavigationViewController.swift */; };
 		A990969D1BA0B3450010052E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A990969C1BA0B3450010052E /* Images.xcassets */; };
@@ -32,7 +33,6 @@
 		A9C877A61B65CF0D00D161F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C877A41B65CF0D00D161F2 /* Main.storyboard */; };
 		A9C877AB1B65CF0D00D161F2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9C877A91B65CF0D00D161F2 /* LaunchScreen.xib */; };
 		A9C877B71B65CF0D00D161F2 /* owlympicsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C877B61B65CF0D00D161F2 /* owlympicsTests.swift */; };
-		A9C877C11B65D29C00D161F2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C877C01B65D29C00D161F2 /* libz.dylib */; };
 		A9E0CAE61BA213040008BCFD /* DateProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E0CAE51BA213040008BCFD /* DateProcessor.swift */; };
 		A9F956CA1B83F7DF005262A8 /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F956C91B83F7DF005262A8 /* HttpRequest.swift */; };
 		A9F956CE1B83FD4B005262A8 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F956CD1B83FD4B005262A8 /* HistoryTableViewController.swift */; };
@@ -52,6 +52,8 @@
 		0B7A9E831BA3B6CC00E3AD81 /* NumericField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericField.swift; sourceTree = "<group>"; };
 		0B7A9E851BA3B6F400E3AD81 /* CharactersField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersField.swift; sourceTree = "<group>"; };
 		0B7A9E871BA3CB9600E3AD81 /* LocalSaveAny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalSaveAny.swift; sourceTree = "<group>"; };
+		0BAFA26E1C7442AB0011A6A4 /* MicrosoftAzureMobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MicrosoftAzureMobile.framework; sourceTree = "<group>"; };
+		0BAFA2721C744AF60011A6A4 /* Gimbal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gimbal.framework; path = owlympics/Gimbal.framework; sourceTree = "<group>"; };
 		A90B0DC31BE06B7800198938 /* GoogleOpenSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleOpenSource.framework; sourceTree = "<group>"; };
 		A90B0DC51BE06B8100198938 /* GooglePlus.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GooglePlus.bundle; sourceTree = "<group>"; };
 		A90B0DC61BE06B8100198938 /* GooglePlus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GooglePlus.framework; sourceTree = "<group>"; };
@@ -62,8 +64,6 @@
 		A95E7F9B1B8433BF00410E7B /* AccountTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
 		A95E7F9D1B84387300410E7B /* SummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		A97EFE461B7D382800D7DA74 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
-		A9802C741C69201500A70F51 /* Gimbal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gimbal.framework; path = ../../../../../../Downloads/gimbalsdk_2.32_ios/Frameworks/Gimbal.framework; sourceTree = "<group>"; };
-		A9802C761C6920C000A70F51 /* Gimbal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gimbal.framework; path = owlympics/Gimbal.framework; sourceTree = "<group>"; };
 		A980860F1BAC97EF00E3677A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A98C429C1BADB44C00D5AB13 /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		A990969C1BA0B3450010052E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -79,7 +79,6 @@
 		A9C877B01B65CF0D00D161F2 /* owlympicsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = owlympicsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9C877B51B65CF0D00D161F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9C877B61B65CF0D00D161F2 /* owlympicsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = owlympicsTests.swift; sourceTree = "<group>"; };
-		A9C877C01B65D29C00D161F2 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		A9C877C71B65D48C00D161F2 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		A9E0CAE51BA213040008BCFD /* DateProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateProcessor.swift; sourceTree = "<group>"; };
 		A9F956C91B83F7DF005262A8 /* HttpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
@@ -91,10 +90,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9802C771C6920C000A70F51 /* Gimbal.framework in Frameworks */,
+				0BAFA2731C744AF60011A6A4 /* Gimbal.framework in Frameworks */,
+				0BAFA26F1C7442AB0011A6A4 /* MicrosoftAzureMobile.framework in Frameworks */,
 				A90B0DC81BE06B8100198938 /* GooglePlus.framework in Frameworks */,
 				A90B0DC41BE06B7800198938 /* GoogleOpenSource.framework in Frameworks */,
-				A9C877C11B65D29C00D161F2 /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,7 +143,7 @@
 		A9C877921B65CF0D00D161F2 = {
 			isa = PBXGroup;
 			children = (
-				A9802C761C6920C000A70F51 /* Gimbal.framework */,
+				0BAFA2721C744AF60011A6A4 /* Gimbal.framework */,
 				A9C877C71B65D48C00D161F2 /* Header.h */,
 				A918F3281BA0E33200970E0A /* Helper Files */,
 				A9C8779D1B65CF0D00D161F2 /* owlympics */,
@@ -178,12 +177,11 @@
 		A9C8779E1B65CF0D00D161F2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				A9802C741C69201500A70F51 /* Gimbal.framework */,
+				0BAFA26E1C7442AB0011A6A4 /* MicrosoftAzureMobile.framework */,
 				A90B0DC51BE06B8100198938 /* GooglePlus.bundle */,
 				A90B0DC61BE06B8100198938 /* GooglePlus.framework */,
 				A90B0DC31BE06B7800198938 /* GoogleOpenSource.framework */,
 				A9C8779F1B65CF0D00D161F2 /* Info.plist */,
-				A9C877C01B65D29C00D161F2 /* libz.dylib */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -476,7 +474,10 @@
 				INFOPLIST_FILE = owlympics/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-lz",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.martinzhou.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -498,7 +499,10 @@
 				INFOPLIST_FILE = owlympics/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-lz",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.martinzhou.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

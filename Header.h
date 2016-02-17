@@ -15,3 +15,4 @@
 #endif
 
 #import <Gimbal/Gimbal.h>
+#import <MicrosoftAzureMobile/MicrosoftAzureMobile.h>

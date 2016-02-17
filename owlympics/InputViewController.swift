@@ -18,7 +18,8 @@ class InputViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     let intensity_lst = ["Light","Mild","Heavy","Very Heavy"]
     @IBOutlet var durationLabel: UILabel!
     var userInput: Bool!
-    
+    var client: MSClient?
+    var table:MSTable?
     @IBAction func AddExercise(sender: AnyObject) {
         if addExercise() == true {
             registerForegroundNotificationForAny(self, message: "You have succesfully input an unverified activity.", title: "Congratulations")
@@ -43,9 +44,21 @@ class InputViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
             
             let newExercise = Exercise(tim: NSDate(), dur: durationString!, spo: sportString!, inten: intensityString, userInput: userInput)
             storeToLocal(newExercise)
+            
+            //azure testing
+            let itemToInsert = ["time": NSDate().description, "sport": input_exercise.text, "duration": input_duration.text, "intensity": intensityString, "uuid" : uuidString]
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+            self.table!.insert(itemToInsert) {
+                (item, error) in
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                if error != nil {
+                    print("Error" + error!.description)
+                }
+            }
             fields_filled = true
             input_duration.text = ""
             input_exercise.text = ""
+            
         }
         else {
             registerForegroundNotificationForAny(self, message: "You need to fill in all correct information", title: "Warning")
@@ -60,7 +73,10 @@ class InputViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //set up data sync with Azure.
+        client = MSClient(applicationURLString: "https://owlympics.azurewebsites.net")
+        table = client!.tableWithName("Activities")
+        
         // Do any additional setup after loading the view.
         intensityPicker.selectRow(intensity_lst.count/2, inComponent: 0, animated: true)
         let timeText = loadFromLocal("visitStart") as? String
