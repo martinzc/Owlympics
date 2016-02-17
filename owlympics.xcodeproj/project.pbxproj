@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B65D4231C74E1D2004D2FB0 /* Gimbal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B65D4221C74E1D1004D2FB0 /* Gimbal.framework */; };
 		0B7A9E841BA3B6CC00E3AD81 /* NumericField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7A9E831BA3B6CC00E3AD81 /* NumericField.swift */; };
 		0B7A9E861BA3B6F400E3AD81 /* CharactersField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7A9E851BA3B6F400E3AD81 /* CharactersField.swift */; };
 		0B7A9E881BA3CB9600E3AD81 /* LocalSaveAny.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7A9E871BA3CB9600E3AD81 /* LocalSaveAny.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B65D4221C74E1D1004D2FB0 /* Gimbal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Gimbal.framework; sourceTree = "<group>"; };
 		0B7A9E831BA3B6CC00E3AD81 /* NumericField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericField.swift; sourceTree = "<group>"; };
 		0B7A9E851BA3B6F400E3AD81 /* CharactersField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersField.swift; sourceTree = "<group>"; };
 		0B7A9E871BA3CB9600E3AD81 /* LocalSaveAny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalSaveAny.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B65D4231C74E1D2004D2FB0 /* Gimbal.framework in Frameworks */,
 				0BAFA26F1C7442AB0011A6A4 /* MicrosoftAzureMobile.framework in Frameworks */,
 				A90B0DC81BE06B8100198938 /* GooglePlus.framework in Frameworks */,
 				A90B0DC41BE06B7800198938 /* GoogleOpenSource.framework in Frameworks */,
@@ -173,6 +176,7 @@
 		A9C8779E1B65CF0D00D161F2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0B65D4221C74E1D1004D2FB0 /* Gimbal.framework */,
 				0BAFA26E1C7442AB0011A6A4 /* MicrosoftAzureMobile.framework */,
 				A90B0DC51BE06B8100198938 /* GooglePlus.bundle */,
 				A90B0DC61BE06B8100198938 /* GooglePlus.framework */,
