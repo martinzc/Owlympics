@@ -11,7 +11,6 @@
 		0B7A9E861BA3B6F400E3AD81 /* CharactersField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7A9E851BA3B6F400E3AD81 /* CharactersField.swift */; };
 		0B7A9E881BA3CB9600E3AD81 /* LocalSaveAny.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7A9E871BA3CB9600E3AD81 /* LocalSaveAny.swift */; };
 		0BAFA26F1C7442AB0011A6A4 /* MicrosoftAzureMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BAFA26E1C7442AB0011A6A4 /* MicrosoftAzureMobile.framework */; };
-		0BAFA2731C744AF60011A6A4 /* Gimbal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BAFA2721C744AF60011A6A4 /* Gimbal.framework */; };
 		A90B0DC41BE06B7800198938 /* GoogleOpenSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90B0DC31BE06B7800198938 /* GoogleOpenSource.framework */; };
 		A90B0DC71BE06B8100198938 /* GooglePlus.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A90B0DC51BE06B8100198938 /* GooglePlus.bundle */; };
 		A90B0DC81BE06B8100198938 /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90B0DC61BE06B8100198938 /* GooglePlus.framework */; };
@@ -53,7 +52,6 @@
 		0B7A9E851BA3B6F400E3AD81 /* CharactersField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersField.swift; sourceTree = "<group>"; };
 		0B7A9E871BA3CB9600E3AD81 /* LocalSaveAny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalSaveAny.swift; sourceTree = "<group>"; };
 		0BAFA26E1C7442AB0011A6A4 /* MicrosoftAzureMobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MicrosoftAzureMobile.framework; sourceTree = "<group>"; };
-		0BAFA2721C744AF60011A6A4 /* Gimbal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gimbal.framework; path = owlympics/Gimbal.framework; sourceTree = "<group>"; };
 		A90B0DC31BE06B7800198938 /* GoogleOpenSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleOpenSource.framework; sourceTree = "<group>"; };
 		A90B0DC51BE06B8100198938 /* GooglePlus.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GooglePlus.bundle; sourceTree = "<group>"; };
 		A90B0DC61BE06B8100198938 /* GooglePlus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GooglePlus.framework; sourceTree = "<group>"; };
@@ -90,7 +88,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BAFA2731C744AF60011A6A4 /* Gimbal.framework in Frameworks */,
 				0BAFA26F1C7442AB0011A6A4 /* MicrosoftAzureMobile.framework in Frameworks */,
 				A90B0DC81BE06B8100198938 /* GooglePlus.framework in Frameworks */,
 				A90B0DC41BE06B7800198938 /* GoogleOpenSource.framework in Frameworks */,
@@ -143,7 +140,6 @@
 		A9C877921B65CF0D00D161F2 = {
 			isa = PBXGroup;
 			children = (
-				0BAFA2721C744AF60011A6A4 /* Gimbal.framework */,
 				A9C877C71B65D48C00D161F2 /* Header.h */,
 				A918F3281BA0E33200970E0A /* Helper Files */,
 				A9C8779D1B65CF0D00D161F2 /* owlympics */,
