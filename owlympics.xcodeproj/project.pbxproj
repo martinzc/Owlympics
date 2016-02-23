@@ -32,6 +32,7 @@
 		A9D5347C1C7CC975005BA42B /* MicrosoftAzureMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BAFA26E1C7442AB0011A6A4 /* MicrosoftAzureMobile.framework */; };
 		A9D5347D1C7CC977005BA42B /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90B0DC61BE06B8100198938 /* GooglePlus.framework */; };
 		A9D5347E1C7CC979005BA42B /* GoogleOpenSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90B0DC31BE06B7800198938 /* GoogleOpenSource.framework */; };
+		A9D534831C7CED72005BA42B /* Gimbal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9D534821C7CED72005BA42B /* Gimbal.framework */; };
 		A9E0CAE61BA213040008BCFD /* DateProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E0CAE51BA213040008BCFD /* DateProcessor.swift */; };
 		A9F956CA1B83F7DF005262A8 /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F956C91B83F7DF005262A8 /* HttpRequest.swift */; };
 		A9F956CE1B83FD4B005262A8 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F956CD1B83FD4B005262A8 /* HistoryTableViewController.swift */; };
@@ -78,6 +79,7 @@
 		A9C877B51B65CF0D00D161F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9C877B61B65CF0D00D161F2 /* owlympicsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = owlympicsTests.swift; sourceTree = "<group>"; };
 		A9C877C71B65D48C00D161F2 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		A9D534821C7CED72005BA42B /* Gimbal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Gimbal.framework; sourceTree = "<group>"; };
 		A9E0CAE51BA213040008BCFD /* DateProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateProcessor.swift; sourceTree = "<group>"; };
 		A9F956C91B83F7DF005262A8 /* HttpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
 		A9F956CD1B83FD4B005262A8 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryTableViewController.swift; path = ../HistoryTableViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9D534831C7CED72005BA42B /* Gimbal.framework in Frameworks */,
 				A9D5347E1C7CC979005BA42B /* GoogleOpenSource.framework in Frameworks */,
 				A9D5347C1C7CC975005BA42B /* MicrosoftAzureMobile.framework in Frameworks */,
 				A9D5347D1C7CC977005BA42B /* GooglePlus.framework in Frameworks */,
@@ -173,6 +176,7 @@
 		A9C8779E1B65CF0D00D161F2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A9D534821C7CED72005BA42B /* Gimbal.framework */,
 				0BAFA26E1C7442AB0011A6A4 /* MicrosoftAzureMobile.framework */,
 				A90B0DC51BE06B8100198938 /* GooglePlus.bundle */,
 				A90B0DC61BE06B8100198938 /* GooglePlus.framework */,
