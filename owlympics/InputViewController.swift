@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class InputViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class InputViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
 
     @IBOutlet weak var input_exercise: UITextField!
     @IBOutlet weak var input_duration: UITextField!
@@ -24,9 +24,12 @@ class InputViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         if addExercise() == true {
             registerForegroundNotificationForAny(self, message: "You have succesfully input an unverified activity.", title: "Congratulations")
         }
-//        performSegueWithIdentifier("sentAndDone", sender: self)
     }
     
+    @IBAction func DoneAdding(sender: AnyObject) {
+        performSegueWithIdentifier("sentAndDone", sender: self)
+        registerForegroundNotificationForAny(self, message: "You have succesfully input an unverified activity.", title: "Congratulations")
+    }
     func addExercise() -> Bool {
         var fields_filled = false
         if(input_exercise.text!.characters.count > 0 && input_duration.text!.characters.count > 0){
@@ -73,6 +76,10 @@ class InputViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // set up the delegates for text field
+        input_duration.delegate = self
+        input_exercise.delegate = self
         //set up data sync with Azure.
         client = MSClient(applicationURLString: "https://owlympics.azurewebsites.net")
         table = client!.tableWithName("Activities")
@@ -97,6 +104,45 @@ class InputViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
             durationLabel.text = duration
         }
         durationLabel.text = "No entry time available"
+    }
+    
+    // When clicking on the field, use this method.
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        
+        if textField == input_duration {
+            // Create a button bar for the number pad
+            let keyboardDoneButtonView = UIToolbar()
+            keyboardDoneButtonView.sizeToFit()
+            
+            // Setup the buttons to be put in the system.
+            let item = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("endEditingNow") )
+            let toolbarButtons = [item]
+            
+            //Put the buttons into the ToolBar and display the tool bar
+            keyboardDoneButtonView.setItems(toolbarButtons, animated: false)
+            textField.inputAccessoryView = keyboardDoneButtonView
+            
+        }
+        return true
+    }
+    
+    // This triggers the textFieldDidEndEditing method that has the textField within it.
+    //  This then triggers the resign() method to remove the keyboard.
+    //  We use this in the "done" button action.
+    func endEditingNow(){
+        self.view.endEditing(true)
+    }
+    
+    // textfield func for the return key
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        input_duration.resignFirstResponder()
+        input_exercise.resignFirstResponder()
+        return true;
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        input_duration.resignFirstResponder()
+        input_exercise.resignFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {

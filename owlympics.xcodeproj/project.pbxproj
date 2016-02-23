@@ -7,14 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B65D4231C74E1D2004D2FB0 /* Gimbal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B65D4221C74E1D1004D2FB0 /* Gimbal.framework */; };
 		0B7A9E841BA3B6CC00E3AD81 /* NumericField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7A9E831BA3B6CC00E3AD81 /* NumericField.swift */; };
 		0B7A9E861BA3B6F400E3AD81 /* CharactersField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7A9E851BA3B6F400E3AD81 /* CharactersField.swift */; };
 		0B7A9E881BA3CB9600E3AD81 /* LocalSaveAny.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7A9E871BA3CB9600E3AD81 /* LocalSaveAny.swift */; };
-		0BAFA26F1C7442AB0011A6A4 /* MicrosoftAzureMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BAFA26E1C7442AB0011A6A4 /* MicrosoftAzureMobile.framework */; };
-		A90B0DC41BE06B7800198938 /* GoogleOpenSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90B0DC31BE06B7800198938 /* GoogleOpenSource.framework */; };
 		A90B0DC71BE06B8100198938 /* GooglePlus.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A90B0DC51BE06B8100198938 /* GooglePlus.bundle */; };
-		A90B0DC81BE06B8100198938 /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90B0DC61BE06B8100198938 /* GooglePlus.framework */; };
 		A918F32A1BA0E38400970E0A /* ExerciseLocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A918F3291BA0E38400970E0A /* ExerciseLocalStorage.swift */; };
 		A91E4C2E1B84F90500E98CDC /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91E4C2D1B84F90500E98CDC /* GraphView.swift */; };
 		A9203D621B9191C1008B82C3 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9203D611B9191C1008B82C3 /* InputViewController.swift */; };
@@ -33,6 +29,10 @@
 		A9C877A61B65CF0D00D161F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C877A41B65CF0D00D161F2 /* Main.storyboard */; };
 		A9C877AB1B65CF0D00D161F2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9C877A91B65CF0D00D161F2 /* LaunchScreen.xib */; };
 		A9C877B71B65CF0D00D161F2 /* owlympicsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C877B61B65CF0D00D161F2 /* owlympicsTests.swift */; };
+		A9D5347B1C7CC973005BA42B /* Gimbal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B65D4221C74E1D1004D2FB0 /* Gimbal.framework */; };
+		A9D5347C1C7CC975005BA42B /* MicrosoftAzureMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BAFA26E1C7442AB0011A6A4 /* MicrosoftAzureMobile.framework */; };
+		A9D5347D1C7CC977005BA42B /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90B0DC61BE06B8100198938 /* GooglePlus.framework */; };
+		A9D5347E1C7CC979005BA42B /* GoogleOpenSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90B0DC31BE06B7800198938 /* GoogleOpenSource.framework */; };
 		A9E0CAE61BA213040008BCFD /* DateProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E0CAE51BA213040008BCFD /* DateProcessor.swift */; };
 		A9F956CA1B83F7DF005262A8 /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F956C91B83F7DF005262A8 /* HttpRequest.swift */; };
 		A9F956CE1B83FD4B005262A8 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F956CD1B83FD4B005262A8 /* HistoryTableViewController.swift */; };
@@ -90,10 +90,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B65D4231C74E1D2004D2FB0 /* Gimbal.framework in Frameworks */,
-				0BAFA26F1C7442AB0011A6A4 /* MicrosoftAzureMobile.framework in Frameworks */,
-				A90B0DC81BE06B8100198938 /* GooglePlus.framework in Frameworks */,
-				A90B0DC41BE06B7800198938 /* GoogleOpenSource.framework in Frameworks */,
+				A9D5347B1C7CC973005BA42B /* Gimbal.framework in Frameworks */,
+				A9D5347E1C7CC979005BA42B /* GoogleOpenSource.framework in Frameworks */,
+				A9D5347C1C7CC975005BA42B /* MicrosoftAzureMobile.framework in Frameworks */,
+				A9D5347D1C7CC977005BA42B /* GooglePlus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,11 +466,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/owlympics",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/owlympics";
 				INFOPLIST_FILE = owlympics/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -491,11 +489,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/owlympics",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/owlympics";
 				INFOPLIST_FILE = owlympics/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
