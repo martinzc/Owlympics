@@ -129,9 +129,9 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
     override func viewWillAppear(animated: Bool) {
         
 //        Show a Sign-in page if the user has not signed in yet
-//        if loadStringFromLocal("account") == nil {
-//            self.performSegueWithIdentifier("ShowLogin", sender: self)
-//        }        
+        if loadStringFromLocal("account") == nil {
+            self.performSegueWithIdentifier("ShowLogin", sender: self)
+        }        
     }
     
     func placeManager(manager: GMBLPlaceManager!, didBeginVisit visit: GMBLVisit!) {

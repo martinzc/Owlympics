@@ -57,7 +57,12 @@ class LoginViewController: UIViewController, GPPSignInDelegate {
     }
     
     func finishedWithAuth(auth: GTMOAuth2Authentication!, error: NSError!) {
-        _ = signIn?.userEmail
+        print("finish signin")
+        let username = signIn?.userEmail
+        storeDataToLocal(username!, key: "account")
+        if loadStringFromLocal("account") == nil{
+            print("account has not been saved")
+        }
         self.performSegueWithIdentifier("FinishAuth", sender: self)
         
     }
