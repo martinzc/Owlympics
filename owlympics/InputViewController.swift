@@ -18,8 +18,8 @@ class InputViewController: UIViewController, UITextFieldDelegate, UIPickerViewDa
     let intensity_lst = ["Light","Mild","Heavy","Very Heavy"]
     @IBOutlet var durationLabel: UILabel!
     var userInput: Bool!
-    var client: MSClient?
-    var table:MSTable?
+    var table: MSSyncTable?
+    var store: MSCoreDataStore?
     @IBAction func AddExercise(sender: AnyObject) {
         if addExercise() == true {
             registerForegroundNotificationForAny(self, message: "You have succesfully input an unverified activity.", title: "Congratulations")
@@ -34,20 +34,20 @@ class InputViewController: UIViewController, UITextFieldDelegate, UIPickerViewDa
         var fields_filled = false
         if(input_exercise.text!.characters.count > 0 && input_duration.text!.characters.count > 0){
             print("in")
-            let httpSender = requestSender()
-            let timeString = NSDate().description //need get time
+//            let httpSender = requestSender()
+//            let timeString = NSDate().description //need get time
             let sportString = input_exercise.text //need to get from the textfiled
             let durationString = input_duration.text
             let intensityString = intensity_lst[intensityPicker.selectedRowInComponent(0)]
             print(intensityString)
             let uuidString = GPPSignIn.sharedInstance().userEmail
-            let locationString = "unclear"
-            let urlString = "http://ec2-52-6-56-55.compute-1.amazonaws.com/upload"
-            httpSender.buildRequestFromStringsAndSend(timeString, durationString: durationString!, sportString: sportString!, locationString: locationString, intensityString: intensityString, uuidString: uuidString!, urlString: urlString)
+//            let locationString = "unclear"
+//            let urlString = "http://ec2-52-6-56-55.compute-1.amazonaws.com/upload"
+//            httpSender.buildRequestFromStringsAndSend(timeString, durationString: durationString!, sportString: sportString!, locationString: locationString, intensityString: intensityString, uuidString: uuidString!, urlString: urlString)
             
             let newExercise = Exercise(tim: NSDate(), dur: durationString!, spo: sportString!, inten: intensityString, userInput: userInput)
             storeToLocal(newExercise)
-            
+
             //azure testing
             let itemToInsert = ["time": NSDate().description, "sport": input_exercise.text, "duration": input_duration.text, "intensity": intensityString, "uuid" : uuidString]
             UIApplication.sharedApplication().networkActivityIndicatorVisible = true
@@ -80,9 +80,13 @@ class InputViewController: UIViewController, UITextFieldDelegate, UIPickerViewDa
         // set up the delegates for text field
         input_duration.delegate = self
         input_exercise.delegate = self
+        
         //set up data sync with Azure.
-        client = MSClient(applicationURLString: "https://owlympics.azurewebsites.net")
-        table = client!.tableWithName("Activities")
+        let client = MSClient(applicationURLString: "https://owlympics.azurewebsites.net")
+        let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!
+        self.store = MSCoreDataStore(managedObjectContext: managedObjectContext)
+        client.syncContext = MSSyncContext(delegate: nil, dataSource: self.store, callback: nil)
+        table = client.syncTableWithName("Activities")
         
         // Do any additional setup after loading the view.
         intensityPicker.selectRow(intensity_lst.count/2, inComponent: 0, animated: true)

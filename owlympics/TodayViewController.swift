@@ -129,12 +129,18 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
     override func viewWillAppear(animated: Bool) {
         
 //        Show a Sign-in page if the user has not signed in yet
+<<<<<<< HEAD
         print("view is appearing")
         if loadStringFromLocal("account") == nil {
             print("can't load account")
             self.performSegueWithIdentifier("ShowLogin", sender: self)
         }   
         graphView.setNeedsDisplay()
+=======
+        if loadStringFromLocal("account") == nil {
+            self.performSegueWithIdentifier("ShowLogin", sender: self)
+        }        
+>>>>>>> 3685add74b62bc0084a3d24cab94db40189304d9
     }
     
     func placeManager(manager: GMBLPlaceManager!, didBeginVisit visit: GMBLVisit!) {
