@@ -103,7 +103,11 @@ class InputViewController: UIViewController, UITextFieldDelegate, UIPickerViewDa
             let duration =  hour + " hour " + minute + " minute " + second + " second."
             durationLabel.text = duration
         }
-        durationLabel.text = "No entry time available"
+        else {
+            durationLabel.text = timeText
+        }
+        storeDataToLocal("No entry time available", key: "visitStart")
+
     }
     
     // When clicking on the field, use this method.
