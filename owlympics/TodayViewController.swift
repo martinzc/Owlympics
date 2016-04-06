@@ -81,6 +81,9 @@ class TodayViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
     }    
     
+    @IBAction func DemoNotification(sender: AnyObject) {
+        registerForegroundNotificationForInput(self)
+    }
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
