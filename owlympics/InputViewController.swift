@@ -34,30 +34,31 @@ class InputViewController: UIViewController, UITextFieldDelegate, UIPickerViewDa
         var fields_filled = false
         if(input_exercise.text!.characters.count > 0 && input_duration.text!.characters.count > 0){
             print("in")
-//            let httpSender = requestSender()
-//            let timeString = NSDate().description //need get time
+            let httpSender = requestSender()
+            let timeString = NSDate().description //need get time
             let sportString = input_exercise.text //need to get from the textfiled
             let durationString = input_duration.text
             let intensityString = intensity_lst[intensityPicker.selectedRowInComponent(0)]
             print(intensityString)
             let uuidString = GPPSignIn.sharedInstance().userEmail
-//            let locationString = "unclear"
-//            let urlString = "http://ec2-52-6-56-55.compute-1.amazonaws.com/upload"
-//            httpSender.buildRequestFromStringsAndSend(timeString, durationString: durationString!, sportString: sportString!, locationString: locationString, intensityString: intensityString, uuidString: uuidString!, urlString: urlString)
+            let locationString = "unclear"
+            //let urlString = "http://ec2-52-6-56-55.compute-1.amazonaws.com/upload"
+            let urlString = "http://ec2-54-152-187-53.compute-1.amazonaws.com/upload"
+            httpSender.buildRequestFromStringsAndSend(timeString, durationString: durationString!, sportString: sportString!, locationString: locationString, intensityString: intensityString, uuidString: uuidString!, urlString: urlString)
             
             let newExercise = Exercise(tim: NSDate(), dur: durationString!, spo: sportString!, inten: intensityString, userInput: userInput)
             storeToLocal(newExercise)
 
             //azure testing
-            let itemToInsert = ["time": NSDate().description, "sport": input_exercise.text, "duration": input_duration.text, "intensity": intensityString, "uuid" : uuidString]
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-            self.table!.insert(itemToInsert) {
-                (item, error) in
-                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                if error != nil {
-                    print("Error" + error!.description)
-                }
-            }
+//            let itemToInsert = ["time": NSDate().description, "sport": input_exercise.text, "duration": input_duration.text, "intensity": intensityString, "uuid" : uuidString]
+//            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+//            self.table!.insert(itemToInsert) {
+//                (item, error) in
+//                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+//                if error != nil {
+//                    print("Error" + error!.description)
+//                }
+//            }
             fields_filled = true
             input_duration.text = ""
             input_exercise.text = ""
