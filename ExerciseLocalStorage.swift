@@ -8,7 +8,7 @@
 
 import Foundation
 
-    
+// Store exercise object to local
 func storeToLocal(exercisefile:Exercise) {
     //        Initialize data storage
     //        Create user default delegate
@@ -32,6 +32,7 @@ func storeToLocal(exercisefile:Exercise) {
 //    println("successfully stored data")
 }
 
+// Load list of exercise file that is stored in local memory
 func loadFromLocal() -> [Exercise] {
     let defaults = NSUserDefaults.standardUserDefaults()
     
@@ -46,6 +47,7 @@ func loadFromLocal() -> [Exercise] {
     return allExercise
 }
 
+// Get the duration of the user being in the gym in the past seven days
 func durationOfPastSevenDays() -> [Int] {
     
     var durationList = [0, 0, 0, 0, 0, 0, 0]
@@ -72,6 +74,7 @@ func durationOfPastSevenDays() -> [Int] {
     return durationList
 }
 
+// Get the number of times the user visisted the gym in the past seven days
 func visitOfPastSevenDays() -> Int {
     
     var visit = 0;

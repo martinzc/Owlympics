@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Create a foreground alert with default message
 func registerForegroundNotificationForInput(viewController:UIViewController) {
     //        Foreground notification
     let alert = UIAlertController(title: "Alert", message: "You've exited the gym, do you want to input your exercise data?", preferredStyle: UIAlertControllerStyle.Alert)
@@ -19,6 +20,7 @@ func registerForegroundNotificationForInput(viewController:UIViewController) {
     
 }
 
+// Create a foreground alert with the message specified by the user
 func registerForegroundNotificationForAny(viewController:UIViewController, message: String, title: String) {
 //    println("success")
     //        Foreground notification
@@ -27,6 +29,7 @@ func registerForegroundNotificationForAny(viewController:UIViewController, messa
     viewController.presentViewController(alert, animated: true, completion: nil)
 }
 
+// Create a background alert with default message
 func registerBackgroundNotification() {
     //        Background notification
     let localNotification:UILocalNotification = UILocalNotification()
@@ -38,6 +41,7 @@ func registerBackgroundNotification() {
     
 }
 
+// Create a background alert with the message specified by the user
 func registerBackgroundNotificationForAny(action: String, message: String) {
     //        Background notification
     let localNotification:UILocalNotification = UILocalNotification()

@@ -8,6 +8,8 @@
 
 import UIKit
 
+// Circle view used in SummaryViewController
+
 class CircleView: UIView {
 
     

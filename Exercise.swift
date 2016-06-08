@@ -7,6 +7,7 @@
 //
 
 /* Defines the structure for exercise objects */
+/* Methods in this class are meant to encode and decode objects so that they can be stored locally */
 
 import Foundation
 
@@ -27,6 +28,7 @@ class Exercise:NSObject {
         self.user_input = userInput
     }
     
+    // Encode objects so that non-string types can be stored in local
     func encodeWithCoder(aCoder: NSCoder!) {
         aCoder.encodeObject(duration, forKey:"duration")
         aCoder.encodeObject(intensity, forKey:"intensity")
@@ -35,17 +37,17 @@ class Exercise:NSObject {
         aCoder.encodeObject(user_input, forKey:"userInput")
     }
     
+    // Decode objects to be read from local
     init(coder aDecoder: NSCoder!) {
-        
         duration = aDecoder.decodeObjectForKey("duration") as! String
         intensity = aDecoder.decodeObjectForKey("intensity") as! String
         arrivaltime = aDecoder.decodeObjectForKey("arrivaltime") as! NSDate
         sport = aDecoder.decodeObjectForKey("sport")as! String
         user_input = aDecoder.decodeObjectForKey("userInput")as! Bool
-        
     }
 }
 
+// Structure to store all the keys to local memory
 struct defaultsKeys {
     static let keyDict = "DictionaryOfExercise" // Where an array of exercise is stored
     static let keyVisit = "TimeOfVisits" // Where an array of visits is stored
