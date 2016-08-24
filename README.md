@@ -1,5 +1,7 @@
 # owlympics
 
+This iOS app serve as a research tool that incorporats location monitor methods such as geofencing and iBeacons and notifies user based on their proximity to gym or any workout equipment.
+
 This makes use of the functionality of iBeacons made by Gimbal Inc. (https://manager.gimbal.com)
 
 Useful links for development:
